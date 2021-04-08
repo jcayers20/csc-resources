@@ -1,0 +1,226 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, mathrsfs, polynom, pifont, tabto}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\lhoi}[1]{\left({#1}\right]} % Left half-open interval
+\newcommand{\rhoi}[1]{\left[{#1}\right)} % Right half-open interval
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\cmark}{\text{ \ding{51}}}
+\newcommand{\xmark}{\text{ \ding{55}}}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}        \draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information
+\title[2-3]{Other Types of Graph}
+\subtitle{Section 2-3}
+\author{Jacob Ayers}
+\institute{Lesson \#4}
+\date{MAT 110}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Construct horizontal and vertical bar charts
+			\item Construct Pareto charts
+			\item Construct time series graphs
+			\item Construct pie graphs
+			\item Construct stem and leaf plots
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Other Types of Graph}
+		In this lesson, we will study other commonly-used types of graph.
+		
+		We can construct most of these in Google Sheets, but we will do stem-and-leaf plots by hand.
+	\end{frame}
+
+	\begin{frame}{Bar Charts}
+		Bar graphs represent data by using vertical or horizontal bars whose heights or lengths represent the frequencies of the data. \pause
+		
+		They are used when data is qualitative or categorical. \pause
+		
+		Let's take a look at a couple examples in Google Sheets (see lesson data on Moodle).
+	\end{frame}
+
+	\begin{frame}{Pareto Charts}
+		
+		A Pareto chart is essentially a vertical bar graph where the bars are arranged from highest to lowest. \pause
+		
+		As with bar charts, we use Pareto charts when data is qualitative or categorical. \pause
+		
+		Let's take a look at a couple examples in Google Sheets (see lesson data on Moodle).
+	\end{frame}
+
+	\begin{frame}{Time Series Graphs}
+		A time series graph is used to represent data that occur over a specified graph. \pause
+		
+		It is a line graph where the horizontal axis is the year, and the vertical axis is the data value. \pause
+		
+		Let's take a look at a couple examples in Google Sheets (see lesson data on Moodle).
+	\end{frame}
+
+	\begin{frame}{Pie Charts}
+		Pie charts show the relationship between the parts and the whole by visually comparing the size of each part. \pause
+		
+		It is a circle that is divided into sections/wedges according to the percentage of frequencies in each category. \pause
+		
+		We use pie charts when the variable is nominal or categorical. \pause
+		
+		Let's take a look at a couple examples in Google Sheets (see lesson data on Moodle).
+	\end{frame}
+
+	\begin{frame}{Stem and Leaf Plots}
+		A stem and leaf plot is a data plot that uses part of the data as the stem and part as the leaf to form groups or classes. \pause
+		
+		Example: 17, 31, 9, 18, 36, 24 \pause
+		
+		We'll let the tens place be the stem, and the ones place be the leaf. \pause
+		
+		\begin{tabular}{c|l}
+			Stem & Leaf \\ \hline
+			0 & 9 \\
+			1 & 7 \; 8 \\
+			2 & 4 \\
+			3 & 1 \; 6
+		\end{tabular}
+	\end{frame}
+
+	\begin{frame}{Stem and Leaf Plots}
+		A listing of calories per ounce of selected salad dressings (not fat-free) is given below. Construct a stem and leaf plot for the data (use leaves of 10, 11, etc.).
+		
+		100 130 130 130 110 110 120 130 140 100 \\
+		140 170 160 130 160 120 150 100 145 145 \\
+		145 115 120 100 120 160 140 120 180 100 \\
+		160 120 140 150 190 150 180 160 \pause
+		
+		First, sort the data from least to greatest so that we can easily construct the plot: \pause
+		
+		100 100 100 100 100 110 110 115 120 120 \\
+		120 120 120 120 130 130 130 130 130 140 \\
+		140 140 140 145 145 145 150 150 150 160 \\
+		160 160 160 160 170 180 180 190 \pause
+	\end{frame}
+
+	\begin{frame}{Stem and Leaf Plots}
+		Now, we can construct the plot. \pause
+		
+		\begin{tabular}{c|l}
+			Stem & Leaf \\ \hline
+			10 & 0 \; 0 \; 0 \; 0 \; 0 \\
+			11 & 0 \; 0 \; 5 \\
+			12 & 0 \; 0 \; 0 \; 0 \; 0 \; 0 \\
+			13 & 0 \; 0 \; 0 \; 0 \; 0 \\
+			14 & 0 \; 0 \; 0 \; 0 \; 5 \; 5 \; 5 \\
+			15 & 0 \; 0 \; 0 \\
+			16 & 0 \; 0 \; 0 \; 0 \; 0 \\
+			17 & 0 \\
+			18 & 0 \; 0 \\
+			19 & 0
+		\end{tabular}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Complete Assignment 2
+			\item Begin Module 3 \begin{itemize}
+				\item Read 3-1
+				\item Watch Video Lesson \#5
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

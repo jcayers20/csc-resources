@@ -1,0 +1,420 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, mathrsfs, polynom, pifont, tabto}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\lhoi}[1]{\left({#1}\right]} % Left half-open interval
+\newcommand{\rhoi}[1]{\left[{#1}\right)} % Right half-open interval
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\cmark}{\text{ \ding{51}}}
+\newcommand{\xmark}{\text{ \ding{55}}}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Data Collection and Sampling Techniques; Experimental Design}
+\subtitle{1.3 and 1.4}
+\author{Jacob Ayers}
+\institute{Lesson \#2}
+\date{MAT 110}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Identify sampling techniques
+			\item Explain the difference between observational studies and experimental studies
+			\item Expalin how statistics can be used or misused
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Data Collection}
+		We use data in many ways: \begin{itemize}
+			\item determine whether we're meeting goals
+			\item determine needs of a population
+			\item learn about consumers of a product
+			\item gain insight into people's perception of political events
+		\end{itemize} \pause
+	
+		In order to use data, we must first collect it.
+		
+		There are a variety of ways of collecting data.
+	\end{frame}
+
+	\begin{frame}{Data Collection}
+		Often, data is collected using a survey.
+		
+		\textit{Telephone surveys} are surveys that are conducted over the phone. \pause
+		
+		\underline{Pros:} \begin{itemize}
+			\item Relatively cheap
+			\item More candid responses (not face-to-face)
+		\end{itemize} \pause
+	
+		\underline{Cons:} \begin{itemize}
+			\item Not everyone can/will be reached by phone
+			\item Easy for interviewer to influence person being surveyed with tone of voice
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Data Collection}
+		\textit{Mailed questionnaires} are surveys that are sent through the mail. \pause
+		
+		\underline{Pros:} \begin{itemize}
+			\item Even cheaper than telephone surveys
+			\item Easily cover wide geographic areas
+			\item Respondents can remain anonymous, which leads to more candid responses
+		\end{itemize} \pause
+	
+		\underline{Cons:} \begin{itemize}
+			\item Low response rate
+			\item Inappropriate answers to questions (anonymity)
+			\item Not everyone will be able to read/understand the questions
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Data Collection}
+		\textit{Personal interviews} are surveys in which people are interviewed. \pause
+		
+		\underline{Pros:} \begin{itemize}
+			\item In-depth responses
+		\end{itemize}
+	
+		\underline{Cons:} \begin{itemize}
+			\item Costly
+			\item Difficult to cover wide geographic area
+			\item Potential for bias in selection of respondents
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Data Collection}
+		Which method is best? \pause
+		
+		Researchers must weigh cost and effectiveness when they choose how to collect data - there are no hard-and-fast rules. \pause
+		
+		If you need to reach a lot of people, you might choose either a mailed questionnaire or a telephone survey because they are cheaper than interviewing people personally.
+		
+		If you want in-depth answers, a personal interview may be the best choice.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		How we select our sample is very important - we want to ensure that everyone in the population has an equal chance of being selected.
+		
+		Example: conducting a survey on a street corner from 8-noon would exclude people who work during that time. The information we obtain is likely to be biased. \pause
+		
+		There are four main ways that researchers obtain unbiased samples.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		\begin{block}{Random Sampling}
+			A \textit{random sample} is a sample in which the members are selected either by chance methods or using random numbers
+		\end{block}
+	
+		One way to do a random sample: put everyone's name in a hat, then draw $x$ names from the hat. \pause
+		
+		This method has a tendency to be biased, since it's hard to thoroughly mix up the names. \pause
+		
+		Better way: Random number generator on a computer or a calculator.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		\begin{block}{Systematic Sampling}
+			A \textit{systematic sample} is a sample obtained by selecting every $k$th member of the population.
+		\end{block}
+	
+		Example: say there are 1000 members of the population and we want a sample size of 50. \pause
+		
+		We would select every $\dfrac{1000}{50} = 20$ members. The first member (between 1 and 20) would be selected at random, and then every 20th member after would be selected.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		\begin{block}{Stratfied Sampling}
+			A \textit{stratified sample} is a sample obtained by dividing the population into subgroups based on some characteristic, then selecting subjects at random from each subgroup.
+		\end{block}
+	
+		Samples within each subgroup are selected using random sampling; there can be many subgroups.
+		
+		Example: Say I own ten restaurants and I want to get a feel for the difference in service at each location. \pause
+		
+		I could randomly select 25 customers from each restaurant to generate a stratified sample.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		\begin{block}{Cluster Sampling}
+			A \textit{cluster sample} is a sample obtained by dividing the population into subgroups (as in stratified sampling), then selecting all members of one or more of the clusters as the members of the sample.
+		\end{block}
+	
+		Example: Say I own ten restaurants and I want to know people's thoughts on the menu. \pause
+		
+		I could randomly select two of the restaurants and survey all the customers who walk in to generate a cluster sample.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		Determine the type of sampling that was used in each case:
+		
+		\textbf{To check the accuracy of a machine filling coffee cups, every fifth cup is selected and weighed.}
+		
+		\onslide<2->{Since every fifth cup is measured, this is a systematic sample.}
+		
+		\textbf{To determine how long people exercise, a researcher interviews 5 people from a yoga class, 5 people from a weightlifting class, 5 people from an aerobics class, and 5 people from a swimming class.}
+		
+		\onslide<3>{Since members of the sample are selected from various subgroups, this is a stratified sample.}
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		Determine the type of sampling that was used in each case:
+		
+		\textbf{In a large school district, a researcher numbers all of the full-time teachers and randomly selects 30 to be interviewed.}
+		
+		\onslide<2->{Since the sample is obtained at random, it is a random sample.}
+		
+		\textbf{For 15 minutes, all customers entering a specific Walmart store on a specific day are asked how many miles from the store they live.}
+		
+		\onslide<3>{Since all members of the sample come from the same subgroup, this is a cluster sample.}
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		Which method is best? \pause
+		
+		It depends on the population and the researcher's needs.
+		
+		Random sample: can be used any time the population can be numbered \pause
+		
+		Systematic Sample: selects subjects in ordered population; fast and convenient when population is easily numbered \pause
+		
+		Stratified Sample: useful when you want to determine differences between subgroups and on assembly lines \pause
+		
+		Cluster Sample: can be done quickly and cheaply, but one cluster may not represent the entire population
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		No sample is a perfect representation of the population from which it was chosen.
+		
+		There will always be some degree of error in the results. \pause
+		
+		\begin{block}{Definition}
+			\textit{Sampling error} is the difference obtained from a sample and the results obtained from the population.
+		\end{block} \pause
+	
+		Example: Say you are president of a college whose student population is 60\% female. If I obtain a sample that is 63\% female, then the difference of 3\% is due to sampling error. \pause
+		
+		Usually, the degree of sampling error is unknown.
+	\end{frame}
+
+	\begin{frame}{Sampling Techniques}
+		In addition to sampling error, there is nonsampling error.
+		
+		\begin{block}{Definition}
+			A \textit{nonsampling error} occurs when the data are obtained erroneously or the sample is biased.
+		\end{block} \pause
+	
+		Examples of nonsampling error: \begin{itemize}
+			\item measuring temperature on a defective thermometer
+			\item researcher makes an error in recording a value
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Experimental Design}
+		There are two types of study: \pause
+		
+		\textit{Observational studies} are studies in which the researcher simply watches what is happening or what has happened in the past and tries to draw conclusions based on these observations. \pause
+		
+		\textit{Experimental studies} are studies in which the researcher manipulates one variable and tries to determine how that manipulation affects other variables.
+	\end{frame}
+
+	\begin{frame}{Observational Studies}
+		There are three main types of observational study: \begin{itemize}[<+->]
+			\item Cross-sectional studies - data all gathered at one time
+			\item Retrospective studies - data gathered from past records
+			\item Longitudinal studies - data gathered over time (past and present)
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Observational Studies}
+		Advantages of observational studies: \begin{itemize}
+			\item occurs in natural setting - people won't be influenced by the researcher
+			\item can be done in situations where performing an experiment would be unethical/dangerous (e.g. studying suicide rate)
+			\item can be done using variables that the researcher is unable to manipulate (e.g. smokers vs. non-smokers)
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Observational Studies}
+		Disadvantages of observational studies: \begin{itemize}
+			\item unable to determine direct cause-effect relationship between variables
+			\item can be costly and time-consuming
+			\item when gathering data from outside sources, the accuracy of your results is dependent upon the accuracy of their data
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Experimental Studies}
+		Example: divide students into two groups (randomly assign to each group). Each person does as many push-ups as possible. \pause
+		
+		One group is given instructions to try to increase the number of push-ups they can do by 10\% each day, while the other is simply told to do their best. \pause
+		
+		After four days, the test was performed again. \pause
+		
+		Here, the researchers manipulated one variable (instructions given) and measured the change in another variable (improvement at doing push-ups).
+	\end{frame}
+
+	\begin{frame}{Experimental Studies}
+		The \textit{independent variable} is the variable that the researcher manipulates. \pause
+		
+		The \textit{dependent variable} is the variable that changes as a result of the manipulation. \pause
+		
+		In our previous example, the instructions given were the independent variable and the number of push-ups was the dependent variable.
+	\end{frame}
+
+	\begin{frame}{Experimental Studies}
+		In our example, the students were divided into two groups - this is something that happens in all experiments \pause
+		
+		The group that received special instructions is called the \textit{treatment group}, while the group that did not is called the \textit{control group}.
+	\end{frame}
+
+	\begin{frame}{Experimental Studies}
+		Advantages of experimental studies: \begin{itemize}
+			\item researcher gets to decide who is selected and who goes in what group
+			\item researcher gets to control the independent variable
+		\end{itemize} \pause
+	
+		Example: Researcher can determine what dosage of a medicine the treatment group receives (control group receives a placebo)
+	\end{frame}
+
+	\begin{frame}{Experimental Studies}
+		Disadvantages of experimental studies: \begin{itemize}
+			\item may occur in unnatural setting - results don't translate
+			\item Hawthorne effect - subjects behave differently when they know they're part of an experiment
+			\item Confounding variables - variables other than the independent variable may impact results
+			\item Placebo effect - even members of control group may respond positively to ``treatment"
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Experimental Design}
+		Researchers randomly assigned 10 people to each of three different groups. Group 1 was instructed to write an essay about the hassles in their lives. Group 2 was instructed to write an essay about circumstances that made them feel thankful. Group 3 was asked to write an essay about events they felt neutral about. After the exercise, they were given a questionnaire on their outlook on life. The researchers found that those who wrote about circumstances that made them feel thankful had a more optimistic outlook on life. The conclusion is that focusing on the positive makes you more optimistic about life in general.
+	\end{frame}
+
+	\begin{frame}{Experimental Design}
+		\textbf{Was this an observational study or an experimental study?} \\
+		\onslide<2->{The researcher had control over which type of essay each participant wrote, so this is an experimental study.}
+		
+		\textbf{What is the independent variable?} \\
+		\onslide<3->{The independent variable is the type of essay written.}
+		
+		\textbf{What is the dependent variable?} \\
+		\onslide<4->{The dependent variable is the result of the questionnaire.}
+		
+		\textbf{What may be a confounding variable?} \\
+		\onslide<5->{There are many possible confounding variables. For example, income is not controlled for, and it could certainly have an impact on one's outlook on life.}
+	\end{frame}
+
+	\begin{frame}{Experimental Design}
+		\textbf{What can you say about the sample size?} \\
+		\onslide<2->{The sample size is $10 \times 3 = 30$.}
+		
+		\textbf{Do you agree with the conclusion?} \\
+		\onslide<3->{This answer is subjective.}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Complete Assignment \#1
+			\item Begin Module \#2
+			\begin{itemize}
+				\item Read 2.1 and 2.2
+				\item Watch Video Lesson \#3
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

@@ -1,0 +1,419 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, mathrsfs, polynom, pifont, tabto}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\lhoi}[1]{\left({#1}\right]} % Left half-open interval
+\newcommand{\rhoi}[1]{\left[{#1}\right)} % Right half-open interval
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\cmark}{\text{ \ding{51}}}
+\newcommand{\xmark}{\text{ \ding{55}}}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Types of Statistics; Variables and Types of Data}
+\subtitle{1.1 and 1.2}
+\author{Jacob Ayers}
+\institute{Lesson \#1}
+\date{MAT 110}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Demonstrate knowledge of statistical terms
+			\item Differentiate between descriptive and inferential statistics
+			\item Identify types of data
+			\item Identify levels of measurement
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Introduction to Statistics}
+		\begin{block}{Definition}
+			\textit{Statistics} is the science of conducting studies to collect, organize, summarize, analyze, and draw conclusions from data.
+		\end{block}
+	
+		\pause
+	
+		You are probably familiar with basic concepts of probability through life experience, but high school math generally does not spend much time on this important branch of mathematics.
+	
+		Statistics is used in just about every field: \pause \begin{itemize}
+			\item Sports: keeping records of players' performance \pause
+			\item Medical: determine mortality rate of a virus \pause
+			\item Government: determine voting rate, polling 
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Introduction to Statistics}
+		Reasons to study statistics: \pause \begin{itemize}
+			\item Learn to read and understand studies performed in your desired field \pause
+			\item Learn methods of conducting research that you can use in your field \pause
+			\item Become a better consumer and citizen
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Basic Terms}
+		Statisticians study variables. In statistics, a \textit{variable} is a characteristic or attribute that can assume different values. \pause
+		
+		\textit{Data} are the values that the variables can assume. \pause
+		
+		We will be studying random variables in this course. A \textit{random variable} is a variable whose value is determined by chance. \pause
+		
+		To study variables, statisticians collect data. This collection of data forms a \textit{data set}. Each value in the set is called a \textit{data value}.
+	\end{frame}
+
+	\begin{frame}{Basic Terms}
+		We will often need to distinguish between a population and a sample. \pause
+		
+		A \textit{population} consists of all subjects that are being studied. \pause
+		
+		A \textit{sample} is a group of subjects that is selected from a population. \pause
+		
+		One example of a study involving an entire population is the U.S. Census. \pause
+		
+		Most of the time, studies involve samples because it is very difficult to obtain data from an entire population.
+	\end{frame}
+
+	\begin{frame}{Basic Terms}
+		When studying a sample, statisticians make efforts to ensure that the sample they select is representative of the population. \pause
+		
+		Information is said to be \textit{biased} if \pause \begin{itemize}
+			\item the results from the sample are significantly different from the results of a census of the population, or
+			\item the sample is not representative of the population
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Branches of Statistics}
+		There are two main areas of statistics. \pause
+		
+		\begin{block}{Descriptive Statistics}
+			Descriptive statistics consists of the collection, organization, summarization, and presentation of data.
+		\end{block} \pause
+	
+		Key concept: In descriptive statistics, our goal is only to \textit{describe} situations. We are not seeking to make predictions. \pause
+		
+		Examples of descriptive statistics: \pause \begin{itemize}
+			\item Calculating median household income using census data
+			\item Calculating a baseball player's batting average
+			\item Rolling a die 100 times, then making a bar graph to illustrate how often each number comes up
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Branches of Statistics}
+		\begin{block}{Inferential Statistics}
+			Inferential statistics consists of generalizing from samples to populations, performing estimations and hypothesis tests, determining relationships between variables, and making predictions.
+		\end{block} \pause
+		
+		Key concept: In inferential statistics, our goal is to use the data we have to draw an inference (prediction) of some sort. \pause
+		
+		Examples of inferential statistics: \pause \begin{itemize}
+			\item Determine whether median household income of a neighborhood is correlated with crime rates
+			\item Using batting average (and other statistics) to estimate how much you should pay a player
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Branches of Statistics}
+		Determine whether descriptive or inferential statistics were used:
+		
+		In a weight loss study using teenagers at Boston University, 52\% of the group said that they lost weight and kept it off by counting calories.
+		
+		\onslide<2->{No prediction or generalization is being made. Descriptive statistics were used.}
+		
+		Based on a sample of 2739 respondents, it is estimated that pet owners spend a total of 14 billion dollars on veterinary care for their pets.
+		
+		\onslide<3>{An inference is being drawn based on the data from the sample. Inferential statistics were used.}
+	\end{frame}
+
+	\begin{frame}{Branches of Statistics}
+		Determine whether descriptive or inferential statistics were used:
+		
+		A study conducted by a research network found that people with fewer than 12 years of education had lower life expectancies than those with more years of education.
+		
+		\onslide<2->{An inference is being drawn about the relationship between two variables. Inferential statistics were used.}
+		
+		A survey of 1507 smartphone users showed that 38\% of them purchased insurance at the same time as they purchased the phone.
+		
+		\onslide<3>{No prediction or generalization is being made. Descriptive statistics were used.}
+	\end{frame}
+
+	\begin{frame}{Types of Variable}
+		\begin{block}{Definition}
+			\textit{Qualitative variables} are variables that have distinct categories (not numeric)
+		\end{block}
+	
+		\begin{block}{Definition}
+			\textit{Quantitative variables} are variables that can be counted or measured
+		\end{block} \pause
+	
+		Examples of qualitative variables: gender, blood type, eye color \pause
+		
+		Examples of quantitative variables: weight, heart rate, temperature
+	\end{frame}
+
+	\begin{frame}{Types of Variables}
+		There are two types of quantitative variable: \pause
+		
+		\textit{Discrete variables} assume values that can be counted.
+		
+		Examples: number of students in a class, number of text messages sent \pause
+		
+		\textit{Continuous variables} can assume an infinite number of values between any two specific values; they are obtained by measuring.
+		
+		Examples: time, temperature, length
+	\end{frame}
+
+	\begin{frame}{Types of Variables}
+		Classify each variable as discrete or continuous:
+		
+		\textbf{Votes received by a mayoral candidate in a city election}
+		
+		\onslide<2->{The number of votes can be counted; this is a discrete variable.}
+		
+		\textbf{Systolic blood pressure readings}
+		
+		\onslide<3->{While the accuracy of the measurement is limited by the accuracy of the device, systolic blood pressure can take on any positive real value. This is a continuous variable.}
+		
+		\textbf{Temperatures at a seashore resort}
+		
+		\onslide<4>{Again, temperature can take on any real value. It is a continuous variable.}
+	\end{frame}
+
+	\begin{frame}{Class Boundaries}
+		Continuous data can take on infinitely many values between any two specific data points, but devices have limits in terms of accuracy.
+		
+		Usually answers are rounded to the nearest given unit (e.g. heights to the nearest inch, weights to the nearest ounce) \pause
+		
+		Example: If I report that my height is 72 inches, what is the range of possible values for my actual height? \pause
+		
+		Any height from 71.5 inches up to (but not including) 72.5 inches would round to 72 inches.
+		
+		So the \textit{boundary} of 72 inches is 71.5-72.5 inches
+	\end{frame}
+
+	\begin{frame}{Class Boundaries}
+		The \textit{boundary} of a number is the class that it would fall into before being rounded.
+		
+		The boundaries of a continuous variable are given in one additional decimal place, and always end with a 5.
+		
+		Find the boundary of each value:
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				24 ft
+				
+				19.63 tons
+				
+				200.6 joules
+				
+				3.1415 in
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\onslide<2->{23.5-24.5 ft}
+				
+				\onslide<3->{19.625-19.635 tons}
+				
+				\onslide<4->{200.55-200.65 joules}
+				
+				\onslide<5>{3.14145-3.14155 in}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		There are four \textit{levels of measurement}, or \textit{measurement scales} - two for qualitative data, and two for quantitative data. \pause
+		
+		Qualitative data can be measured at the nominal level or at the ordinal level. \pause
+		
+		Quantitative data can be measured at the interval level or at the ratio level.
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		\begin{block}{Nominal Level of Measurement}
+			At the nominal level of measurement, data is classified into categories that cannot be ranked.
+			
+			Given two data values, we can only say they are either the same or different from one another ($=$, $\neq$). We cannot say that one is better than another.
+		\end{block} \pause
+	
+		Examples of nominal data: \begin{itemize}
+			\item political party (Democrat, Independent, Libertarian, Republican, etc.) \pause
+			\item eye color (blue, brown, green, red, etc.) \pause
+			\item ethnicity (Asian, Black, Caucasian, Native American, etc.)
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		\begin{block}{Ordinal Level of Measurement}
+			At the ordinal level of measurement, data is classified into categories that can be ranked.
+			
+			Given two data values, we can tell whether they are the same or different from one another. In addition, we can compare the two using an inequality symbol (> or <)
+		\end{block} \pause
+	
+		Examples of ordinal data: \begin{itemize}
+			\item Letter grade earned in a course (A, B, C, D, F) \pause
+			\item Size of a t-shirt (S, M, L, XL, XXL, etc.) \pause
+			\item Place earned in a race (1st, 2nd, 3rd, etc.)
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		\begin{block}{Interval Level of Measurement}
+			At the interval level of measurement, there is a precise difference between any two data values.
+			
+			We can determine whether two values are the same or different, we can compare using inequality symbols, and we can measure the distance between the two values. Interval data has no meaningful zero.
+		\end{block} \pause
+	
+		Examples of interval data: \begin{itemize}
+			\item Temperature ($\d$C or $\d$F) \pause
+			\item IQ \pause
+			\item Date an apple was harvested
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		\begin{block}{Ratio Level of Measurement}
+			At the ratio level of measurement, there is a precise difference between any two data values; furthermore, there is a true zero and a true ratio between any two data values.
+			
+			We can tell whether two values are the same or different, we can compare using inequality symbols, we can measure the distance, and we can calculate the ratio.
+		\end{block} \pause
+	
+		Examples of ratio level data: \begin{itemize}
+			\item Revenue earned by companies \pause
+			\item Age \pause
+			\item Height
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		Here is a summary of the levels of measurement:
+		
+		\begin{tabular}{|c|c|c|c|c|c|} \hline
+			\textbf{Measurement Level} & \textbf{Type} & \textbf{$=/\neq$} & \textbf{$>/<$} & \textbf{$+/-$} & \textbf{$\times/\div$} \\ \hline
+			Nominal & Qualitative & $\cmark$ & $\xmark$ & $\xmark$ & $\xmark$ \\ \hline
+			Ordinal & Qualitative & $\cmark$ & $\cmark$ & $\xmark$ & $\xmark$ \\ \hline
+			Interval & Quantitative & $\cmark$ & $\cmark$ & $\cmark$ & $\xmark$ \\ \hline
+			Ratio & Quantitative & $\cmark$ & $\cmark$ & $\cmark$ & $\cmark$ \\ \hline
+		\end{tabular}
+	\end{frame}
+
+	\begin{frame}{Levels of Measurement}
+		Determine the level of measurement for each variable:
+		
+		Amazon's quarterly profits
+		
+		\onslide<2->{Ratio}
+		
+		Colors of baseball hats sold in a store
+		
+		\onslide<3->{Nominal}
+		
+		Sizes of pizza (S, M, L)
+		
+		\onslide<4->{Ordinal}
+		
+		Year of birth
+		
+		\onslide<5>{Interval}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Read 1.3 and 1.4
+			\item Watch Video Lesson \#2
+			\item Complete Assignment \#1
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

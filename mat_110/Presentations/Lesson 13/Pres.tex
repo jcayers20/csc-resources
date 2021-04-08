@@ -1,0 +1,236 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, mathrsfs, polynom, pifont, tabto}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\lhoi}[1]{\left({#1}\right]} % Left half-open interval
+\newcommand{\rhoi}[1]{\left[{#1}\right)} % Right half-open interval
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\cmark}{\text{ \ding{51}}}
+\newcommand{\xmark}{\text{ \ding{55}}}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}        \draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information
+\title[4-5]{Probability and Counting Rules}
+\subtitle{Section 4-5}
+\author{Jacob Ayers}
+\institute{Lesson \#13}
+\date{MAT 110}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Solve probability problems using counting rules
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		In Video Lessons 9-11, we looked at probability rules. \\
+		In Video Lesson 12, we looked at counting rules. \pause
+		
+		In this lesson, we'll put them together. \pause
+		
+		Recall: $P(E) = \dfrac{\text{number events in $E$}}{\text{number events in sample space}}$
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		Find the probability of getting 4 aces when 5 cards are drawn from an ordinary deck of cards. \pause
+		
+		Note that the order in which the cards are drawn does not matter, so we'll use combinations when necessary. \pause
+		
+		The number of possibilities in the sample space is $_{52} C _5 = 2598960$, since we're taking 5 cards from a 52-card deck.
+		
+		There are 4 aces in the deck - we want to get all four of them. There is $_4 C _4 = 1$ way of doing so. \pause
+		
+		There are 48 non-aces in the deck - we want to get 1 of them. There are $_{48} C _1 = 48$ ways of doing so. \pause
+		
+		So $P(\text{4 aces}) = \dfrac{1 \cdot 48}{2598960} \approx 0.0000185$
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		A box contains 24 integrated circuits, 4 of which are defective. If 4 are sold at random, find the following probabilities. \begin{enumerate}[a)]
+			\item Exactly 2 are defective.
+			\item None is defective.
+			\item All are defective.
+			\item At least 1 is defective.
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		a) Exactly two are defective. \pause
+		
+		The number of outcomes in the sample space is $_{24} C _4 = 10626$. \pause \\
+		There are 4 defective circuits; we want 2. There are $_4 C _2 = 6$ ways of getting them. \pause \\
+		There are 20 working circuits; we want 2. There are $_{20} C _2 = 190$ ways of getting them. \pause
+		
+		So, $P(\text{exactly 2 defective circuits}) = \dfrac{6 \cdot 190}{10626} \approx 0.107$. \pause
+		
+		b) None are defective. \pause
+		
+		The number of outcomes in the sample space is still 10626. \pause \\
+		Now, we want no defective circuits. There is $_4 C _0 = 1$ way of getting this outcome. \pause \\
+		We want 4 good circuits. There are $_{20} C _4 = 4845$ ways of getting this outcome. \pause
+		
+		So, $P(\text{no defective circuits}) = \dfrac{4845}{10626} \approx 0.456$.
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		c) All are defective. \pause
+		
+		The number of outcomes in the sample space is still 10626. \pause \\
+		We want 4 defective circuits this time. There is $_4 C _4 = 1$ way of getting this outcome. \\ \pause
+		We want no good circuits. There is $_{20} C _0 = 1$ way of getting this outcome. \pause
+		
+		So, $P(\text{all circuits defective}) = \dfrac{1}{10626} \approx 0.0000941$. \pause
+		
+		d) At least one is defective.
+		
+		We could do this using one of two methods: \pause \\
+		$P(\text{at least one defective}) = P(1) + P(2) + P(3) + P(4)$ or \pause \\
+		$P(\text{at least one defective}) = 1 - P(0)$. \pause
+		
+		I'll take option 2. $P(\text{at least one defective}) = 1 - 0.456 \approx 0.544$
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		A student needs to select two topics to write two term papers for a course. There are 8 topics in economics and 11 topics in science. Find the probability that she selects one topic in economics and one topic in science to complete her assignment. \pause
+		
+		The number of outcomes in the sample space is $_{19} C _2 = 171$. \pause \\
+		There are 8 econ topics; we want to choose 1. There are $_8 C _1 = 8$ ways of doing so. \pause \\
+		There are 11 science topics; we want to choose 1. There are $_{11} C _1 = 11$ ways of doing so. \pause
+		
+		So $P(\text{one econ and one science}) = \dfrac{88}{171} \approx 0.515$.
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		There are 8 married couples in a tennis club. If 1 man and 1 woman are selected at random to plan the summer tournament, find the probability that they are married to each other. \pause
+		
+		The number of outcomes in the sample space is $8 \cdot 8 = 64$. \pause \\
+		The number of outcomes in which the two selected are married is 8, since there are 8 couples. \pause
+		
+		So $P(\text{married}) = \dfrac{8}{64} = 0.125$.
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		All holly plants are dioecious --- a male plant must be planted within 30 to 40 feet of a female plant in order to yield berries. A home improvement store has 12 unmarked holly plants for sale, 8 of which are female. If a homeowner buys 3 plants at random, what is the probability that berries will be produced? \pause
+		
+		In order to get berries, we need at least one male plant and one female plant. There are two ways of achieving this, given that 3 plants were purchased: \pause \begin{itemize}
+			\item One female and two males
+			\item Two females and one male
+		\end{itemize} \pause
+		So if we find these two probabilities and add them, we'll have our answer.
+	\end{frame}
+
+	\begin{frame}{Probability and Counting Rules}
+		$P(\text{one female, two males}) = \dfrac{_8 C _1 \cdot _4 C _2}{_{12} C _3} = \dfrac{12}{55}$ \pause
+		
+		$P(\text{two females, one male}) = \dfrac{_8 C _2 \cdot _4 C _1}{_{12} C _3} = \dfrac{28}{55}$ \pause
+		
+		So $P(\text{berries}) = \dfrac{12}{55} + \dfrac{28}{55} = \dfrac{40}{55} \approx 0.727$
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Complete Assignment \#6
+			\item Begin Module \#8 \begin{itemize}
+				\item Read 5-1
+				\item Watch Video Lesson \#14
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}
