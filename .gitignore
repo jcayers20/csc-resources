@@ -274,3 +274,10 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Video Files
+*.mkv
+*.mp4
+
+# Presentation PDF's
+Pres.pdf
