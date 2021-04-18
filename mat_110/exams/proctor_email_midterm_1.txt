@@ -1,0 +1,33 @@
+Dear <proctor name>,
+
+Thank you very much for agreeing to proctor exams for my students this semester.
+The first midterm exam will take place on <date>. It will be administered
+digitally through Moodle. Students may use the following materials on the exam:
+
+	*	As much blank scratch paper as needed
+	
+	*	One page (8.5"x11"; front/back) of notes
+	
+	*	Calculator (scientific or graphing)
+	
+	*	Google Sheets
+
+Students may use their own laptops, or you may provide them with one. The use
+of other electronic devices (e.g. smartphones, smartwatches, etc.) is strictly
+prohibited. In addition, students should not have any tabs other than the test
+tab open at any time. If a student uses any other electronic device or attempts
+to use his/her computer for any purpose other than taking the exam, please
+inform me so that I can apply a score of zero to his/her exam. The test has a
+strict time limit of 80 minutes. Please remind students to use the restroom,
+get a drink, etc. prior to beginning; once the timer begins, it cannot be
+paused.
+
+In order to access the exam, students will need to enter a password. The
+password for the exam is:
+
+	<passcode>
+
+Please do not provide this passcode prior to test day.
+
+Should you have any questions or concerns, please do not hesitate to reach out
+to me. Thanks again for your willingness to proctor the exam!

@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 7568228  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 1</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">If the probability that it will rain tomorrow is \( 0.27 \), find the probability that it will not rain tomorrow.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.73 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 1 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568237  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 10</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Which of the following probability distributions is valid?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"><br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"><br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"><br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"><br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568229  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">In a federal prison, inmates can select to complete high school, take college courses, or do neither. The following survey results were obtained using ages of the inmates.</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"></p><p dir="ltr" style="text-align: left;">If a prisoner is selected at random, find the probability that the prisoner is under 30 or taking college courses.<br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.620 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.723 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.589 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.517 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568230  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 3</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A single card is selected at random from a standard 52-card deck. Find the probability that the card is a jack or a red card.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.538 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.500 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.577 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.462 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568231  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 4</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Twenty-five percent of all deaths (all ages) are caused by diseases of the heart. Ischemic heart disease accounts for 16.4% of all deaths and heart failure for 2.3%. Choose one death at random. Find the probability that it is from heart failure, given that it was from heart disease.<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">9.2%<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">14.0%<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">65.6%<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2.3%<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568232  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 5</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Two cards are drawn from a standard 52-card deck <em>with</em> replacement. Find the probability that both are spades.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.063 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.059 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.067 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( 0.071 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568233  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 6</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[An ice cream parlor offers 31 flavors of ice cream, 6 different syrup options, and 8 different candy toppings. How many unique sundaes can be created using one flavor of ice cream, one syrup, and one candy topping?<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">1488<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2232<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">1116<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">1736<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568234  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 7</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">There are 9 endangered amphibian species in the United States. How many ways can a student select 3 of these species to write a report about? The order of selection is important.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">504<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">450<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">84<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">27<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568235  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 8</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A buyer decides to stock 8 different posters. How many ways can she select these 8 if there are 20 from which to choose?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">125970<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">5079110400<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">160<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2035815<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568236  -->
+  <question type="multichoice">
+    <name>
+      <text>Question 9</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A drawer contains 11 identical red socks and 8 identical black socks. Suppose that you choose two socks at random in the dark. Find the probability that you get a pair of black socks.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.164<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.257<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.322<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.515<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568238  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 11</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A bank has a drive-through service. The number of customers arriving during a 15-minute period is distributed as shown. Find the mean for the distribution.</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"><br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2.0<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2.1<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2.3<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2.2<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568239  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 12</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">During a recent paint sale at Corner Hardware, the number of cans of paint purchased was distributed as shown. Find the standard deviation of the distribution.</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"><br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">1.2<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">1.5<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">1.8<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">2.1<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568240  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 13</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A landscape contractor bids on jobs where he can make $3000 profit. The probabilities of getting 1, 2, 3, or 4 jobs per month are shown.</p><p dir="ltr" style="text-align: left;"><img src="@@PLUGINFILE@@/image.png" alt="" role="presentation"></p><p dir="ltr" style="text-align: left;">Find the contractor's expected profit per month.<br></p>]]></text>
+<file name="image.png" path="/" encoding="base64">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</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">$7200<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">$6800<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">$7600<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">$6400<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568241  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 14</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[A fair six-sided die is rolled 10 times. Find the probability that exactly 3 5's are rolled.<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.155<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.930<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.070<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.845<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568242  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 15</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><em>Public Opinion</em> reported that 5% of Americans are afraid of being alone in a house at night. If a random sample of 20 Americans is selected, find the probability that at least 3 people in the sample who are afraid of being alone at night.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.075<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.016<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.003<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.048<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568243  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 16</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Eighty-five percent of Americans favor spending government money to develop alternative sources of fuel for automobiles. For a random sample of 120 Americans, find the variance for the number of favor government spending for alternative fuels.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">15.3<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">3.9<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">102<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">8.8<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568244  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 17</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Find the area under the standard normal distribution curve between \( z = 1.09 \) and \( z = 1.83 \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.1042<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.1052<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.1032<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.1022<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568245  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 18</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Find \( P(z &lt; -1.51) \). Use the standard normal distribution.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0655<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.9345<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0537<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0793<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568246  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 19</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Find \( P(z &gt; 0.69) \). Use the standard normal distribution.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.2451<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.7549<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.6900<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.3100<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568247  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 20</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A worker in the automobile industry works an average of 43.7 hours per week. If the distribution is approximately normal with a standard deviation of 1.6 hours, what is the probability that a randomly selected automobile worker works less than 40 hours per week?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0104<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.3031<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.1251<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0172<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568248  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 21</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The mean number of miles driven per vehicle annually in the United States is 12,494 miles. Choose a randomly selected vehicle, and assume the annual mileage is normally distributed with a standard deviation of 1290 miles. What is the probability that the vehicle was driven more than 15,000 miles?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0262<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0268<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0256<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.0250<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568249  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 22</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The average number of potholes per 10 miles of paved U.S. roads is 130. Assume this variable is approximately normally distributed and has a standard deviation of 5. Find the probability that a randomly selected road has between 128 and 136 potholes per 10 miles.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.5403<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.5410<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.5406<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">0.5399<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7568250  -->
+  <question type="numerical">
+    <name>
+      <text>Question 23</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr">An advertising company plans to 
+market a product to low-income families. A study states that for a 
+particular area, the average income per family is $24,596 and the 
+standard deviation is $6256. If the company plans to target the bottom 
+18% of the families based on income, find the cutoff income. Assume the 
+variable is normally distributed.<br></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>18841</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>1</tolerance>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>18870</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>1</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+<!-- question: 7568251  -->
+  <question type="numerical">
+    <name>
+      <text>Question 24</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The average length of a hospital stay for all diagnoses is 4.8 days. If we assume that the lengths of hospital stays are normally distributed with a <em>variance</em> of 2.1, then 10% of hospital stays are longer than how many days? Round your answer to the nearest tenth.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>6.7</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.1</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+<!-- question: 7568252  -->
+  <question type="numerical">
+    <name>
+      <text>Question 25</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr">The <em>Old Farmer's Almanac</em>
+ reports that the average person uses 123 gallons of water daily. If the
+ standard deviation is 21 gallons, find the probability that the mean of
+ a randomly selected sample of 15 people will be between 120 and 126 
+gallons. Assume the variable is normally distributed.<br></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>0.4176</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.0001</tolerance>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>0.4199</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.0001</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+</quiz>
