@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Enumerated List",
+    "shortcut": "Ctrl+Shift+L",
+    "tag": [
+        "\\begin{enumerate}[%|Sym%|]",
+        "\\item Item",
+        "\\end{enumerate}"
+    ],
+    "trigger": ""
+}

@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Tab To Width",
+    "shortcut": "Ctrl+Shift+T",
+    "tag": [
+        "\\tabto{%| \\textwidth}"
+    ],
+    "trigger": ""
+}

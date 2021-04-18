@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Block",
+    "shortcut": "Ctrl+Shift+B",
+    "tag": [
+        "\\begin{block}{%|Title%|}",
+        "",
+        "\\end{block}"
+    ],
+    "trigger": ""
+}

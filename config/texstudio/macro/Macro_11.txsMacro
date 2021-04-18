@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Graphic",
+    "shortcut": "Ctrl+Shift+G",
+    "tag": [
+        "\\includegraphics[width=%|width%|]{}"
+    ],
+    "trigger": ""
+}

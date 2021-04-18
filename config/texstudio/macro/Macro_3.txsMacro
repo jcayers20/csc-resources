@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "New Frame",
+    "shortcut": "Ctrl+Shift+N",
+    "tag": [
+        "\\begin{frame}{%|Frame Title%|}",
+        "",
+        "\\end{frame}"
+    ],
+    "trigger": ""
+}

@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Bulleted List",
+    "shortcut": "Ctrl+Shift+I",
+    "tag": [
+        "\\begin{itemize}",
+        "\\item %|First Item%|",
+        "\\end{itemize}"
+    ],
+    "trigger": ""
+}

@@ -1,0 +1,14 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Onslide",
+    "shortcut": "Ctrl+Shift+O",
+    "tag": [
+        "\\onslide<%|->{}"
+    ],
+    "trigger": ""
+}

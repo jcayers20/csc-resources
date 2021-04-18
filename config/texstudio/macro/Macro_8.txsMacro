@@ -1,0 +1,24 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Book Exercise",
+    "shortcut": "Ctrl+Shift+E",
+    "tag": [
+        "\\begin{bex}{%|Exercise%|}",
+        "{",
+        "",
+        "}",
+        "\\end{bex}",
+        "",
+        "% My answer here",
+        "",
+        "",
+        "% \\vspace{}",
+        "% \\vfill % \\newpage"
+    ],
+    "trigger": ""
+}

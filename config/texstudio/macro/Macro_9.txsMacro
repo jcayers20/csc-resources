@@ -1,0 +1,16 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Flalign",
+    "shortcut": "Ctrl+Shift+F",
+    "tag": [
+        "\\begin{flalign*}",
+        "%|Content%|",
+        "\\end{flalign*}"
+    ],
+    "trigger": ""
+}
