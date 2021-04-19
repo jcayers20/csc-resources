@@ -279,5 +279,10 @@ TSWLatexianTemp*
 *.mkv
 *.mp4
 
-# Presentation PDF's
-Pres.pdf
+# Image Files
+*.png
+*.jpg
+*.jpeg
+
+# pdf files
+*.pdf
