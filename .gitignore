@@ -279,10 +279,5 @@ TSWLatexianTemp*
 *.mkv
 *.mp4
 
-# Image Files
-*.png
-*.jpg
-*.jpeg
-
 # pdf files
 *.pdf
