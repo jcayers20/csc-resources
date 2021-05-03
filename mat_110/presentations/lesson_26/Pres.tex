@@ -1,0 +1,167 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, mathrsfs, polynom, pifont, tabto}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\lhoi}[1]{\left({#1}\right]} % Left half-open interval
+\newcommand{\rhoi}[1]{\left[{#1}\right)} % Right half-open interval
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\cmark}{\text{ \ding{51}}}
+\newcommand{\xmark}{\text{ \ding{55}}}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}        \draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information
+\title[8-3]{$t$ Test for the Mean}
+\subtitle{Section 8-3}
+\author{Jacob Ayers}
+\institute{Lesson \#26}
+\date{MAT 110}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use the $t$ test to test means when $\sigma$ is unknown
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{The $t$ Test}
+		As we did when studying confidence intervals, we use the $t$ test when we don't know the population standard deviation. \pause
+		
+		Recall: The $t$ distribution is a family of curves based on degrees of freedom. Its shape is similar to that of the normal distribution. \pause
+		
+		\includegraphics[width=\textwidth]{t-test-stat.png}
+	\end{frame}
+
+	\begin{frame}{The $t$ Test}
+		The process for using the $t$ test is identical to that for the $z$ test, except we use a different table to find the critical value. \pause \begin{enumerate}[1)]
+			\item State the hypotheses (null and alternative \pause)
+			\item Find the CV(s) using the $t$ table (available on Moodle or Table F in Appendix A) \pause
+			\item Find the test value (using formula from last slide) \pause
+			\item Make the decision (reject if in critical region, don't reject if in noncritical region) \pause
+			\item Summarize (see chart at end of Section 8-1 for ``templates")
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{The $t$ Test}
+		Find the critical value(s) for the $t$ test for each: \begin{enumerate}[a)]
+			\item $n = 12$, $\alpha = 0.01$, left-tailed
+			\item $n = 16$, $\alpha = 0.05$, right-tailed
+			\item $n = 7$, $\alpha = 0.10$, two-tailed
+			\item $n = 11$, $\alpha = 0.025$, right-tailed
+			\item $n = 10$, $\alpha = 0.05$, two-tailed
+		\end{enumerate} \pause
+	
+		a) $-2.718$ \pause \\
+		b) $1.753$ \pause \\
+		c) $\pm 1.943$ \pause \\
+		d) $2.228$ \pause \\
+		e) $\pm 2.262$
+	\end{frame}
+
+	\begin{frame}{The $t$ Test}
+		Let's look at some examples.
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Read 8-4
+			\item Watch Video Lesson \#27
+			\item Complete Assignment 13
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}
