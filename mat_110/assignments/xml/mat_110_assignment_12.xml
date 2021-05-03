@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 7608216  -->
+  <question type="essay">
+    <name>
+      <text>p. 435 #2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Many people believe that the average number of Facebook friends is 338. The population standard deviation is 43.2. A random sample of 50 high school students in a particular county revealed that the average number of Facebook friends was 350. At \( \alpha = 0.05 \), is there sufficient evidence to conclude that the mean number of friends is greater than 338?<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"><strong>Hypotheses:</strong> \( H_0: \mu = 338 \); \( H_1: \mu &gt; 338 \)<br></p><p dir="ltr"><strong>Critical Value:</strong> \( z = 1.65 \)</p><p dir="ltr"><strong>Test Value:</strong> \( z = 1.96 \)</p><p dir="ltr"><strong>Decision:</strong> Reject \( H_0 \).</p><p dir="ltr"><strong>Summary: </strong>There is sufficient evidence to support the claim that \( \mu &gt; 338 \).<strong><br></strong></p><br><p></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr" style="text-align: left;"><strong>Critical Value:</strong> z = <br></p><p dir="ltr" style="text-align: left;"><strong>Test Value:</strong> z = <br></p><p dir="ltr" style="text-align: left;"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr" style="text-align: left;"><strong>Summary:<br></strong></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608220  -->
+  <question type="essay">
+    <name>
+      <text>p. 435 #4</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The average "moviegoer" sees 8.5 movies a year. A <em>moviegoer</em> is defined as a person who sees at least one movie in a theater in a 12-month period. A random sample of 40 moviegoers from a large university revealed that the average number of movies seen per person was 9.6. The population standard deviation is 3.2 movies. At the 0.05 level of significance, can it be concluded that this represents a difference from the national average?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> \( H_0: \mu = 8.5 \); \( H_1: \mu \neq 8.5 \)<br></p><p dir="ltr"><strong>Critical Value:</strong> \( z = \pm 1.96 \)</p><p dir="ltr"><strong>Test Value:</strong> \( z = 2.17 \)</p><p dir="ltr"><strong>Decision:</strong> Reject \( H_0 \).</p><p dir="ltr"><strong>Summary:</strong> There is sufficient evidence to support the claim that the mean is different from 8.5.<strong><br></strong></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"></p><p dir="ltr"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr"><strong>Critical Value:</strong> z = <br></p><p dir="ltr"><strong>Test Value:</strong> z = <br></p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr"><strong>Summary:<br></strong></p><br><p></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608230  -->
+  <question type="essay">
+    <name>
+      <text>p. 435 #6</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">According to the National Association of Home Builders, the average cost of building a home in the Northeast is $117.91 per square foot. A random sample of 36 new homes indicated that the mean cost was $122.57 and the standard deviation was $20. Can it be concluded that the mean cost differs from $117.91, using the 0.10 level of significance?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> H_0: \mu = 117.91&nbsp; and H_1: \mu \neq 117.91<br></p><p dir="ltr"><strong>Critical Value: </strong>z = 1.65<br></p><p dir="ltr"><strong>Test Value:</strong> z = 1.40<br></p><p dir="ltr"><strong>Decision:</strong> Do not reject H_0</p><p dir="ltr"><strong>Summary:</strong> There is not enough evidence to reject the claim that the mean cost is $117.91 per square foot. <br></p><p dir="ltr"><br></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr" style="text-align: left;"><strong>Critical Value: </strong>z = <br></p><p dir="ltr" style="text-align: left;"><strong>Test Value:</strong> z =</p><p dir="ltr" style="text-align: left;"><strong>Decision:</strong> (Reject / Do not reject) H_0</p><p dir="ltr" style="text-align: left;"><strong>Summary:</strong> <br></p><p dir="ltr" style="text-align: left;"><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608232  -->
+  <question type="essay">
+    <name>
+      <text>p. 436 #10</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The average number of miles a person drives per day is 24. A researcher wishes to see if people over age 60 drive less than 24 miles per day. She selects a random sample of 49 drivers over the age of 60 and finds that the mean number of miles driven is 22.8. The population standard deviation is 3.5 miles. At \( \alpha = 0.05 \) is there sufficient evidence that those drivers over 60 years old drive less on average than 24 miles per day?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> H_0: \mu = 24&nbsp; and H_1: \mu &lt; 24<br></p><p dir="ltr"><strong>Critical Value: </strong>z = 1.65<br></p><p dir="ltr"><strong>Test Value:</strong> z = -2.40<br></p><p dir="ltr"><strong>Decision:</strong> Reject H_0</p><p dir="ltr"><strong>Summary:</strong> There is enough evidence to support the claim that people over 60 drive less on average per day. <br></p><p dir="ltr"><br></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr"><strong>Critical Value: </strong>z = <br></p><p dir="ltr"><strong>Test Value:</strong> z =</p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0</p><p dir="ltr"><strong>Summary:</strong> <br></p><p dir="ltr"><br></p><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608233  -->
+  <question type="essay">
+    <name>
+      <text>p. 436 #16</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A researcher claims that the yearly consumption of soft drinks per person is 52 gallons. In a sample of 50 randomly selected people, the mean of the yearly consumption was 56.3 gallons. The standard deviation of the population is 3.5 gallons. Find the \( P \)-value for the test. On the basis of the \( P \)-value, is the researcher's claim valid?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"></p><p dir="ltr"><strong>Hypotheses:</strong> H_0: \mu = 52&nbsp; and H_1: \mu \neq 52<br></p><p dir="ltr"><strong>P-Value</strong> &lt; 0.0001<strong><br></strong></p><p dir="ltr"><strong>Decision:</strong> Reject H_0</p><p dir="ltr"><strong>Summary:</strong>&nbsp; There is a significant difference between the population mean and 52. The researcher's claim is not valid.<br></p><p dir="ltr"><br></p><br><p></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr"><strong>P-Value: </strong><strong><br></strong></p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0</p><p dir="ltr"><strong>Summary:</strong> <br></p><p dir="ltr"><br></p><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608231  -->
+  <question type="essay">
+    <name>
+      <text>p. 436 #8</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The mean salary of federal government employees on the General Schedule is $59,593. The average salary of 30 randomly selected state employees who do similar work is $58,800 with \( \sigma = \$1500 \). At the 0.01 level of significance, can it be concluded that state employees earn on average less than federal employees?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> H_0: \mu = 59593&nbsp; and H_1: \mu &lt; 59593<br></p><p dir="ltr"><strong>Critical Value: </strong>z = -2.33<br></p><p dir="ltr"><strong>Test Value:</strong> z = -2.90<br></p><p dir="ltr"><strong>Decision:</strong> Reject H_0</p><p dir="ltr"><strong>Summary:</strong> There is enough evidence to support the claim that state employees earn less than federal employees. <br></p><p dir="ltr"><br></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses:</strong> H_0:&nbsp; and H_1: <br></p><p dir="ltr"><strong>Critical Value: </strong>z = <br></p><p dir="ltr"><strong>Test Value:</strong> z =</p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0</p><p dir="ltr"><strong>Summary:</strong> <br></p><p dir="ltr"><br></p><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608234  -->
+  <question type="essay">
+    <name>
+      <text>p. 437 #20</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A special cable has a breaking strength of 800 pounds. The standard deviation of the population is 12 pounds. A researcher selects a random sample of 20 cables and finds that the average breaking strength is 793 pounds. Can he reject the claim that the breaking strength is 800 pounds? Find the \( P \)-value. Should the null hypothesis be rejected at \( \alpha = 0.01 \)? Assume that the variable is normally distributed.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"></p><p dir="ltr"><strong>Hypotheses:</strong> H_0: \mu = 800&nbsp; and H_1: \mu \neq 800<br></p><p dir="ltr"><strong>Critical Value: </strong>0.01<br></p><p dir="ltr"><strong>P-Value: </strong>0.0090<strong><br></strong></p><p dir="ltr"><strong>Decision:</strong> Reject H_0</p><p dir="ltr"><strong>Summary: </strong>There is sufficient evidence to reject the claim that the average breaking strength is 800 pounds. <br></p><p dir="ltr"><br></p><br><p></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"></p><p dir="ltr"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr"><strong>Critical Value:</strong> 0.01<br></p><p dir="ltr"><strong>P-Value: </strong><strong><br></strong></p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0</p><p dir="ltr"><strong>Summary:</strong> <br></p><p dir="ltr"><br></p><br><p></p><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608209  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14a alternative</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Select the alternative hypothesis for the conjecture below:</p><p>The average age of first-year medical students is at least 27 years.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608205  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14a null</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Select the null hypothesis for the conjecture below:</p><p>The average age of first-year medical students is at least 27 years.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 27 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608210  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14b alternative</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Select the alternative hypothesis for the conjecture below.</p><p>The average experience (in season) for an NBA player is 4.71.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608206  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14b null</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Select the null hypothesis for the conjecture below.</p><p>The average experience (in season) for an NBA player is 4.71.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 4.71 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608211  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14c alternative</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Select the alternative hypothesis for the conjecture below.<br></p><p dir="ltr" style="text-align: left;">The average number of monthly visits/sessions on the Internet by a person at home has increased from 36 in 2009.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608207  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14c null</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Select the null hypothesis for the conjecture below.<br></p><p dir="ltr" style="text-align: left;">The average number of monthly visits/sessions on the Internet by a person at home has increased from 36 in 2009.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 36 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608212  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14d alternative</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Select the alternative hypothesis for the conjecture below.</p><p dir="ltr" style="text-align: left;">The average cost of a cell phone is $79.95.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608208  -->
+  <question type="multichoiceset">
+    <name>
+      <text>p. 426 #14d null</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Select the null hypothesis for the conjecture below.</p><p dir="ltr" style="text-align: left;">The average cost of a cell phone is $79.95.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu = 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu \neq 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &gt; 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">\( H_0: \mu &lt; 79.95 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 7608200  -->
+  <question type="numerical">
+    <name>
+      <text>p. 426 #12a</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Using the \( z \) table, find the critical value for a left-tailed test with \( \alpha = 0.02 \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>-2.05</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.005</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+<!-- question: 7608201  -->
+  <question type="numerical">
+    <name>
+      <text>p. 426 #12b</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Using the \( z \) table, find the critical value for a right-tailed test with \( \alpha = 0.05 \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>1.65</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.005</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+<!-- question: 7608202  -->
+  <question type="numerical">
+    <name>
+      <text>p. 426 #12c</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr">Using the \( z \) table, find the <em>positive</em> critical value for a two-tailed test with \( \alpha = 0.01 \).<br></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>2.58</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.005</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+<!-- question: 7608203  -->
+  <question type="numerical">
+    <name>
+      <text>p. 426 #12d</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr">Using the \( z \) table, find the critical value for a left-tailed test with \( \alpha = 0.04 \).<br></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>-1.75</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.005</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+<!-- question: 7608204  -->
+  <question type="numerical">
+    <name>
+      <text>p. 426 #12e</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr">Using the \( z \) table, find the critical value for a left-tailed test with \( \alpha = 0.08 \).<br></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>-1.41</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+      <tolerance>0.005</tolerance>
+    </answer>
+    <unitgradingtype>0</unitgradingtype>
+    <unitpenalty>0.1000000</unitpenalty>
+    <showunits>3</showunits>
+    <unitsleft>0</unitsleft>
+  </question>
+
+</quiz>
