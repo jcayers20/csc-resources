@@ -1,0 +1,306 @@
+\documentclass[t]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, polynom}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[3.4]{Zeros of Polynomial Functions}
+\subtitle{Section 3.4}
+\author{Jacob Ayers}
+\institute{Lesson \#13}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use the Fundamental Theorem of Algebra to determine number of zeros of polynomial functions
+			\item Find rational zeros of polynomial functions
+			\item Find complex zeros using conjugate pairs
+			\item Find zeros of polynomials by factoring
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{FTA and Linear Factorization Theorem}
+		We start with the Fundamental Theorem of Algebra, proven by the famous mathematician Carl Friedrich Gauss.
+		
+		\begin{block}{Fundamental Theorem of Algebra (FTA)}
+			If $f(x)$ is a polynomial function of degree $n$, where $n > 0$, then $f$ has at least one zero in the complex number system.
+		\end{block}
+	
+		\pause
+	
+		We can actually go further than that, though.
+		
+		\pause
+		
+		\begin{block}{Linear Factorization Theorem}
+			If $f(x)$ is a polynomial function of degree $n$, where $n > 0$, then $f(x)$ has exactly $n$ linear factors $$f(x) = a_n\fp{x-c_1}\fp{x-c_2}\cdots\fp{x-c_n}$$ where $c_1,c_2,\dots,c_n$ are complex numbers.
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{FTA and Linear Factorization Theorem}
+		Example: Determine the number of zeros that each of the following functions has:
+		
+		$f(x) = x^4 - 1$ \\ \pause $4$ \pause
+		
+		$f(x) = 3x^3 - 7x + 11$ \\ \pause $3$
+		
+		\pause $f(x) = 5x^9$ \\ \pause $9$
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		The \textit{Rational Zero Test} relates the possible rational zeros of a function to its leading coefficient and its constant term.
+		
+		\pause
+		
+		\begin{block}{The Rational Zero Test}
+			If the polynomial $$f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_2x^2 + a_1x + a_0$$ has integer coefficients, then every rational zero of $f$ has the form $$\dfrac{p}{q}$$ where $p$ is a factor of $a_0$ and $q$ is a factor of $a_n$.
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		List all \textit{possible} rational zeros of $f(x) = x^3 + 7x^2 - 13x - 8$. \pause
+		
+		$\pm 1, \pm 2, \pm 4, \pm 8$ \vspace{18pt}
+		
+		List all \textit{possible} rational zeros of $f(x) = 2x^4 - 5x^3 + x^2 - 7x - 36$ \pause
+		
+		$\pm 1, \pm 2, \pm 3, \pm \dfrac32, \pm 4, \pm 6, \pm 9, \pm \dfrac92, \pm 12, \pm 18$
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		Find all rational zeros of $f(x) = x^4 - x^3 + x^2 - 3x - 6$. \pause
+		
+		The possible rational zeros (using RZT) are: $\pm 1, \pm 2, \pm 3, \pm 6$
+		
+		We can use repeated division to find all the rational zeros.
+		
+		First, we try $x = 1$:
+		
+		\pause
+		
+		\polyhornerscheme[x=1]{x^4 - x^3 + x^2 - 3x - 6}
+		
+		\pause
+		
+		The remainder isn't zero, so we know that $x = 1$ is \textit{not} a zero.		
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		Moving on to $x = -1$: \pause
+		
+		\polyhornerscheme[x=-1]{x^4 - x^3 + x^2 - 3x - 6}
+		
+		\pause
+		
+		Since the remainder is zero, $x = -1$ is a zero. Specifically, $x^4 - x^3 + x^2 - 3x - 6 = (x+1)(x^3-2x^2+3x-6)$. \pause
+		
+		We could keep using the original function, but let's make it easier on ourselves by testing out rational zeros on $x^3 - 2x^2 + 3x - 6$.
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		$f(x) = (x+1)(x^3 - 2x^2 + 3x - 6)$
+		
+		Working through the divisions until we find another one that works:
+		
+		\pause
+		
+		\polyhornerscheme[x=1]{x^3 - 2x^2 + 3x - 6} \pause \polyhornerscheme[x=-1]{x^3 - 2x^2 + 3x - 6} \\
+		\polyhornerscheme[x=2]{x^3 - 2x^2 + 3x - 6} \pause \\ $x = 2$ works; $f(x) = (x+1)(x-2)(x^2 + 3)$
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		We know that $x^2 + 3$ isn't going to produce any real zeros, let alone rational zeros, so $x = -1$ and $x = 2$ are the only rational zeros of $f(x)$.
+	\end{frame}
+	
+	\begin{frame}{The Rational Zero Test}
+		Find all rational zeros of $x^3 - 15x^2 + 75x - 125$.
+		
+		\only<2->{First, list all possible rational zeros: $\pm 1, \pm 5, \pm 25, \pm 125$ }
+		
+		\only<3->{Next, test these possible zeros until one is found:} 
+		
+		\only<3-4>{\polyhornerscheme[x=1]{x^3 - 15x^2 + 75x - 125}}
+		
+		 \only<4>{\polyhornerscheme[x=-1]{x^3 - 15x^2 + 75x - 125}}
+		 
+		 \only<5->{\polyhornerscheme[x=5]{x^3 - 15x^2 + 75x - 125}}
+		 
+		 \only<6->{So $x = 5$ is a rational zero, and $f(x) = (x-5)(x^2 - 10x + 25)$}
+		 
+		 \only<7->{We don't need to continue dividing; we know that $x^2 - 10x + 25 = (x-5)^2$.}
+		 
+		 \only<8>{So $f(x) = (x-5)^3$ and $x = 5$ is the only rational zero of the function.}
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		Find all real solutions of the function $-10x^3 + 15x^2 + 16x - 12 = 0$.
+		
+		\pause
+		
+		First, list all possible rational zeros: $\dfrac{\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12}{\pm 1, \pm 2, \pm 5, \pm 10}$ \pause
+		
+		In list form: $\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12, \pm \dfrac12, \pm \dfrac32, \newline \pm \dfrac15, \pm \dfrac25, \pm\dfrac35, \pm\dfrac45, \pm\dfrac65, \pm\dfrac{12}{5}, \pm\dfrac{1}{10}, \pm\dfrac{3}{10}$ \vspace{18pt} \pause
+		
+		That's a lot of possibilities!!! We're not testing all of them; let's use a graph to try to narrow it down.
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		Looking at the graph, there are three zeros: \pause \\
+		One appears to be at $x = 2$. \pause \\
+		Another is between $0.5$ and $1$. \pause \\
+		Finally, one is between $-1$ and $-1.5$. \pause
+		
+		Since $2$ looks like a surefire solution, let's test it and see where that takes us. \pause
+		
+		\polyhornerscheme[x=2]{-10x^3 + 15x^2 + 16x - 12} \pause
+	\end{frame}
+
+	\begin{frame}{The Rational Zero Test}
+		So $-10x^3 + 15x^2 + 16x - 12 = (x-2)(-10x^2 - 5x + 6)$. You can use the quadratic formula to show that the other two real zeros are $x = \dfrac{5 + \sqrt{265}}{-20} \approx -1.0639$ and $x = \dfrac{5 - \sqrt{265}}{20} \approx 0.5639$.
+	\end{frame}
+
+	\begin{frame}{Conjugate Pairs}
+		\begin{block}{Complex Zeros Occur in Conjugate Pairs}
+			Let $f$ be a polynomial function with real coefficients. If $a + bi, b\neq 0$ is a zero of $f$, then $a - bi$ is also a zero of $f$.
+		\end{block}
+	
+		This fact will prove useful to us as we try to find zeros of polynomials.
+	\end{frame}
+
+	\begin{frame}{Conjugate Pairs}
+		Find a fourth-degree polynomial $f$ with real coefficients that has $-1$, $-1$, and $3i$ as zeros. \pause
+		
+		Since $3i$ is a zero of the function, $-3i$ is also a zero of the function. So our function is of the form $$f(x) = a(x+1)(x+1)(x-3i)(x+3i)$$ by the Linear Factorization Theorem. \pause
+		
+		Let $a = 1$ (because that's easy to work with; you can let it be whatever you want). Multiplying this out (I used Wolfram|Alpha), we get $f(x) = x^4 + 2x^3 + 10x^2 + 18x + 9$.
+	\end{frame}
+
+	\begin{frame}{Conjugate Pairs}
+		Find the \textit{quartic} (fourth-degree) polynomial $f$ with real coefficients that has $1$, $-2$, and $2i$ as zeros, and $f(-1) = 10$. \pause
+		
+		This problem is similar to the last one. The only difference is we don't get to choose $a$. \pause
+		
+		First, we know that $-2i$ is our fourth zero. So $$f(x) = a\fb{(x-1)(x+2)(x-2i)(x+2i)} = a\fp{x^4 + x^3 + 2x^2 + 4x - 8}$$
+	\end{frame}
+
+	\begin{frame}{Conjugate Pairs}
+		Now, we need to find a value of $a$ so that when we plug $-1$ into the function, we get $10$. That can be accomplished using basic algebra. \pause
+		\begin{flalign*}
+		a\fb{(-1)^4 + (-1)^3 + 2(-1)^2 + 4(-1) - 8} &= 10 & \\
+		a\fb{1 - 1 + 2(1) -4 - 8} &= 10 & \\
+		a\fp{-10} &= 10 & \\
+		a &= -1
+		\end{flalign*} \pause
+		So our function is $f(x)=-\fp{x^4 + x^3 + 2x^2 + 4x - 8}$.
+	\end{frame}
+
+	\begin{frame}{Factoring Polynomials}
+		Find all the zeros of $f(x) = 3x^3 - 2x^2 + 48x - 32$ given that $4i$ is a zero of $f$. \pause
+		
+		There are a total of $3$ zeros, and we are given two of them (since $4i$ is a zero, so is $-4i$). We just need to find the third one. \pause
+		
+		First, note that $(x-4i)(x+4i) = x^2 + 16$. So if we divide $3x^3 - 2x^2 + 48x - 32$ by $x^2 + 16$, we will find our third factor. \pause
+		\polylongdiv{3x^3 - 2x^2 + 48x - 32}{x^2 + 16}
+	\end{frame}
+
+	\begin{frame}{Factoring Polynomials}
+		Write $f(x) = x^4 + 8x^2 - 9$ as the product of linear factors and list all the zeros of the function. \pause
+		
+		Take a look at this function. Can you think of a way that we could do this without resorting to using the rational zero test and repeated synthetic division? \pause
+		
+		We could use substitution. Let $u = x^2$ so that $f(x) = u^2 + 8u - 9$. Finding the zeros of this function is easy: $u^2 + 8u - 9 = 0 \Rightarrow (u+9)(u-1) = 0 \Rightarrow u = \set{-9, 1}$ \pause
+		
+		So $x^2 = -9 \Rightarrow x = \pm 3i$ or $x^2 = 1 \Rightarrow x = \pm 1$. We have found all four zeros.
+		
+		As a product of linear factors: $f(x) = (x + 1)(x-1)(x+3i)(x-3i)$.
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Post questions in Lesson 13 Forum, if you have any
+			\item Complete Assignment 6
+			\item Begin Module 8
+			\begin{itemize}
+				\item Read 3.5
+				\item Watch Video Lesson \#14
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+\end{document}

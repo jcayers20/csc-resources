@@ -1,0 +1,271 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[5.5]{Exponential and Logarithmic Models}
+\subtitle{Section 5.5}
+\author{Jacob Ayers}
+\institute{Lesson \#21}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use exponential growth and decay functions to model and solve real-life problems
+			\item Use Gaussian functions to model and solve real-life problems
+			\item Use logistic growth functions to model and solve real-life problems
+			\item Use logarithmic functions to model and solve real-life problems
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Types of Models}
+		In this lesson, we will look at the five most common exponential/logarithmic models: \begin{enumerate}[1)]
+			\item<2-> Exponential Growth: $f(x) = ae^{bx}, b > 0$
+			\item<3-> Exponential Decay: $f(x) = ae^{bx}, b < 0$
+			\item<4-> Gaussian: $f(x) = ae^{-(x - b)^2 / c}$
+			\item<5-> Logistic Growth: $f(x) = \dfrac{a}{1 + be^{-rx}}$
+			\item<6-> Logarithmic: $f(x) = a + b \ln x$ and $f(x) = y = a + b \log x$
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Using Models}
+		The amount $S$ (in billions of dollars) spent on mobile online advertising in the United States from 2010 through 2014 can be approximated by the model $$S = 0.00036e^{0.7563t}, 10\leq t \leq 14$$ where $t$ represents the year, with $t = 10$ corresponding to 2010. \begin{enumerate}[a)]
+			\item What type of model is this?
+			\item In what year will the amount spent on mobile online advertising reach \$300 billion?
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Using Models}
+		$S = 0.00036e^{0.7563t}$
+		
+		a) Since this model is of the form $f(t) = ae^{bt}$ with $b > 0$, this is an exponential growth model.
+		
+		\onslide<2->{b) We would like to know when $S = 300$.}
+		\begin{flalign*}
+		\onslide<3->{300 &= 0.00036e^{0.7563t} & \\}
+		\onslide<4->{833333.33 &= e^{0.7563t} & \\}
+		\onslide<5->{0.7563t &\approx 13.633189 & \\}
+		\onslide<6->{t &\approx 18.0262}
+		\end{flalign*}
+		
+		\onslide<7>{The amount spent on mobile online advertising will be about \$300 billion in 2018.}
+	\end{frame}
+
+	\begin{frame}{Using Models - Exponential Growth}
+		The number of bacteria in a culture is increasing according to the law of exponential growth. After 1 hour there are 100 bacteria, and after 2 hours there are 250 bacteria. How many bacteria will there be after 4 hours? \pause
+		
+		There are two things that we must do in order to solve this problem: \pause \begin{enumerate}[1)]
+			\item Find a model of the form $f(t) = ae^{bt}$ where $b > 0$ since this is exponential growth. \pause
+			\item Find $f(4)$ since we want to know how many bacteria after four hours.
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Using Models - Exponential Growth}
+		1) We are given two points that will need to be on the curve: $(1, 100)$ and $(2, 250)$. Using these two points, we can set up and solve a system of equations to solve for $a$ and $b$:
+		\begin{flalign*}
+		\onslide<2->{100 &= ae^{b} \then a = \dfrac{100}{e^b}& \\}
+		\onslide<3->{250 &= ae^{2b}}
+		\end{flalign*}
+		\onslide<4->{Using substitution:}
+		\begin{flalign*}
+		\onslide<5->{250 &= \fp{\dfrac{100}{e^b}}e^{2b} & \\}
+		\onslide<6->{250 &= 100e^b & \\}
+		\onslide<7->{e^b &= 2.5 & \\}
+		\onslide<8>{b &= \ln 2.5 \approx 0.9163}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Using Models - Exponential Growth}
+		We now know that $b = \ln 2.5 \approx 0.9163$ and that $a = \dfrac{100}{e^b}$, so we can find $a$:
+		\begin{flalign*}
+		\onslide<2->{a &= \dfrac{100}{e^{\ln 2.5}} & \\}
+		\onslide<3->{&= \dfrac{100}{2.5} & \\}
+		\onslide<4->{&= 40}
+		\end{flalign*}
+		\onslide<5->{So our model is $f(t) = 40e^{0.9163t}$}
+		
+		\onslide<6>{2) $f(4) = 40e^{4\ln 2.5} = 40(39.0625) \approx 1563$ bacteria}
+	\end{frame}
+
+	\begin{frame}{Using Models - Exponential Decay}
+		We can estimate the age of an organic material using a method called \textit{carbon dating}. The carbon dating model is $$R = \dfrac{1}{10^{12}}e^{-t/8223}$$ where $R$ represents the ratio of carbon-14 to carbon-12 $t$ yeras after death. Use this model to estimate the age of a newly discovered fossil for which the ratio of carbon-14 to carbon-12 is $\dfrac{1}{10^{14}}$.
+		\begin{flalign*}
+		\onslide<2->{\dfrac{1}{10^{14}} &= \dfrac{1}{10^{12}}e^{-t/8223} & \\}
+		\onslide<3->{\dfrac{1}{100} &= e^{-t/8223} & \\}
+		\onslide<4->{\ln 0.01 &= -t/8223 & \\}
+		\onslide<5>{t &= -8223\ln 0.01 \approx 37868.31 \text{ yr}}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Using Models - Gaussian Models}
+		The most common Gaussian model is the Normal Distribution; you'll spend a lot of time with this distribution in statistics. \pause The standard normal distribution has the formula $$f(x) = \dfrac{1}{\sqrt{2\pi}}e^{-x^2 / 2}$$ and its graph is called a bell-shaped curve. \pause
+		
+		We calculate the \textit{average value} of a population by observing the maximum value of the graph.
+	\end{frame}
+
+	\begin{frame}{Using Models - Gaussian Models}
+		In 2015, the SAT criticial reading scores for college-bound seniors in the United States roughly followed the normal (Gaussian) distribution $$y = 0.0034e^{-(x-495)^2/26912}, 200\leq q \leq 800$$ where $x$ is the SAT score for critical reading. Use a graphing utility to graph this function and estimate the average SAT critical reading score. \pause
+		
+		You could use a graphing calculator or an online tool such as GeoGebra to do this. You would want to set your window for $x$-values from 200 to 800 and your $y$-values from 0 to some very small number (I'll use 0.01). \pause The average score is $495$.
+	\end{frame}
+
+	\begin{frame}{Using Models - Logistic Growth}
+		On a college campus of 5000 students, one student returns from vacation with a contagious and long-lasting virus. The spread of the virus is modeled by $$f(t) = \dfrac{5000}{1 + 4999e^{-0.8t}}$$ where $f(t)$ is the number of infected students and $t$ is the time, in days. The college will cancel classes when 40\% or more of the students are infected. \pause \begin{enumerate}[a)]
+			\item After how long will 250 students be infected?
+			\item After how long will the college cancel classes?
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Using Models - Logistic Growth}
+		a) We need to find the value of $t$ for which $f(t) = 250$. \begin{flalign*}
+		\onslide<2->{250 &= \dfrac{5000}{1 + 4999e^{-0.8t}} & \\}
+		\onslide<3->{250\fp{1 + 4999e^{-0.8t}} &= 5000 & \\}
+		\onslide<4->{1 + 4999e^{-0.8t} &= 20 & \\}
+		\onslide<5->{4999e^{-0.8t} &= 19 & \\}
+		\onslide<6->{e^{-0.8t} &= \dfrac{19}{4999} & \\}
+		\onslide<7->{-0.8t &= \ln\dfrac{19}{4999} & \\}
+		\onslide<8->{t &\approx 6.97}
+		\end{flalign*}
+		\onslide<9>{After about 7 days, 250 students will be infected.}
+	\end{frame}
+
+	\begin{frame}{Using Models - Logistic Growth}
+		b) 40\% of 5000 is 2000, so we are looking for the value of $t$ for which $f(t) = 2000$.
+		\begin{flalign*}
+		\onslide<2->{2000 &= \dfrac{5000}{1 + 4999e^{-0.8t}} & \\}
+		\onslide<3->{2000\fp{1 + 4999e^{-0.8t}} &= 5000 & \\}
+		\onslide<4->{1 + 4999e^{-0.8t} &= 2.5 & \\}
+		\onslide<5->{4999e^{-0.8t} &= 1.5 & \\}
+		\onslide<6->{e^{-0.8t} &= \dfrac{1.5}{4999} & \\}
+		\onslide<7->{-0.8t &= \ln\dfrac{1.5}{4999} & \\}
+		\onslide<8->{t &\approx 10.14}
+		\end{flalign*}
+		\onslide<9>{The college will cancel classes after 10 days.}
+	\end{frame}
+
+	\begin{frame}{Using Models - Logarithmic Models}
+		One common application of logarithmic models is the \textit{Richter scale}, which is used to measure the intensity of earthquakes. On the Richter scale, the magnitude $R$ of an earthquake of intensity $I$ is given by $$R = \log \dfrac{I}{I_0}$$ where $I_0 = 1$ is the minimum intensity used for comparison.
+	\end{frame}
+
+	\begin{frame}{Using Models - Logarithmic Models}
+		The largest recorded earthquake in Illinois occurred on November, 1968. It had a magnitude of 5.4 and was felt in 23 states. Find the intensity of this earthquake.
+		
+		\onslide<2->{We have that $R = 5.4$ and we need to find the value of $I$.}
+		\begin{flalign*}
+		\onslide<3->{5.4 &= \log \dfrac{I}{1} & \\}
+		\onslide<4->{5.4 &= \log I & \\}
+		\onslide<5->{10^{5.4} &= I & \\}
+		\onslide<6->{I &\approx 251188.6432}
+		\end{flalign*}
+		\onslide<7>{The intensity of the earthquake was about 251189.}
+	\end{frame}
+
+	\begin{frame}{Using Models - Logarithmic Models}
+		The largest recorded earthquake in US history struck just off Prince William Sound in Alaska on March 28, 1964. Its magnitude was 9.2. How many times as intense was this earthquake, compared to Illinois's largest earthquake?
+		\begin{flalign*}
+		\onslide<2->{9.2 &= \log I & \\}
+		\onslide<3->{I &= 10^{9.2} \approx 1584893192 & \\}
+		\onslide<4->{\dfrac{1584893192}{251188.6432} &\approx 6309.5734}
+		\end{flalign*}
+		\onslide<5>{This earthquake was about 6,310 times as intense as the one in Illinois.}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Prepare for and Take Midterm 2
+			\begin{itemize}
+				\item Post Questions in Lesson 21 Forum or Midterm 2 Forum, if you have any
+				\item Work on study guid (NOT a graded assignment)
+				\item Attend conference Monday night
+				\item Midterm 2 is Wednesday
+			\end{itemize}
+			\item Complete Assignment \#10
+			\item Begin Module \#13
+			\begin{itemize}
+				\item Read 9.1 and 9.2
+				\item Watch Video Lesson \#22
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

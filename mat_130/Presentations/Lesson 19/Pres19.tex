@@ -1,0 +1,237 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[5.3]{Properties of Logarithms}
+\subtitle{Section 5.3}
+\author{Jacob Ayers}
+\institute{Lesson \#19}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use the change-of-base formula to evaluate logarithms
+			\item Use properties of logarithms to evaluate or rewrite logarithmic expressions
+			\item Use properties of logarithms to expand or condense logarithmic expressions
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{The Change-of-Base Formula}
+		In the previous video, we saw that calculators will only solve common logarithms or natural logarithms. 
+		
+		We could evaluate logarithms with other bases mentally for certain values of $x$, but there are a lot of logarithms that we'd have no way of evaluating right now. \pause
+		
+		Example: Evaluate $\log_4 25$. \pause
+		
+		As an exponential equation, this is $4^y = 25$. $25$ isn't a perfect power of $4$, so there's currently no way for us to know the exact value of $y$. We do know it's between $2$ and $3$, though. \pause
+		
+		It turns out that there is a way to evaluate any logarithm using a calculator - the change of base formula.	
+	\end{frame}
+
+	\begin{frame}{The Change-of-Base Formula}
+		\begin{block}{Change-of-Base Formula}
+			Let $a$ and $x$ be positive real numbers with $a \neq 1$. Then $\log_a x$ can be converted to a different base as follows: \begin{enumerate}[1)]
+				\item Base $10$: $\log_a x = \dfrac{\log x}{\log a}$
+				\item Base $e$: $\log_a x = \dfrac{\ln x}{\ln a}$
+			\end{enumerate}
+		\end{block} \pause
+	
+		We have $\log$ and $\ln$ buttons on our calculator, so we now have the power to evaluate any logarithm.
+	\end{frame}
+
+	\begin{frame}{The Change-of-Base Formula}
+		Evaluate $\log_4 25$ \pause
+		
+		Using the change-of-base formula to change to base $10$: \\ $\log_4 25 = \dfrac{\log 25}{\log 4} \approx \dfrac{1.397940009}{0.6020599913} \approx 2.3219$ \vspace{8pt} \\ \pause
+		OR Using change-of-base formula to change to base $e$: \\ $\log_4 25 = \dfrac{\ln 25}{\ln 4} \approx \dfrac{3.218875825}{1.386294361} \approx 2.3219$ \pause \vspace{18pt}
+		
+		It doesn't matter which base you switch to - you get the same answer.
+	\end{frame}
+
+	\begin{frame}{The Change-of-Base Formula}
+		Evaluate using the change-of-base formula: \begin{enumerate}[a)]
+			\item $\log_2 12$
+			\item $\log_5 0.2368$
+			\item $\log_{11} 162571$
+		\end{enumerate} \pause
+		\begin{enumerate}[a)]
+			\item $\log_2 12 = \dfrac{\log 12}{\log 2} \approx 3.5850$
+			\item $\log_5 0.2368 = \dfrac{\log 0.2368}{\log 5} \approx -0.8951$
+			\item $\log_{11} 162571 = \dfrac{\log 162571}{\log 11} \approx 5.0039$
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Properties of Logarithms}
+		\begin{block}{Properties of Logarithms}
+			Let $a\in\R^+$ such that $a \neq 1$, let $n \in \R$, and let $u,v\in\R^+$. Then \begin{enumerate}[1)]
+				\item Product Property: $\log_a (uv) = \log_a u + \log_a v$
+				\item Quotient Property: $\log_a \fp{\dfrac{u}{v}} = \log_a u - \log_a v$
+				\item Power Property: $\log_a u^n = n \log_a u$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Properties of Logarithms}
+		Use properties of logarithms to write in terms of $\ln 3$ and $\ln 5$. \begin{enumerate}[a)]
+			\item $\ln 75$
+			\item $\ln \dfrac{9}{125}$
+		\end{enumerate}
+		\begin{flalign*}
+		\onslide<2->{\ln 75 &= \ln\fp{3\cdot 5^2} & \text{factor 75} & \\}
+		\onslide<3->{&= \ln 3 + \ln 5^2 & \text{Product Property} & \\}
+		\onslide<4->{&= \ln 3 + 2 \ln 5 & \text{Power Property}}
+		\end{flalign*}
+		\begin{flalign*}
+		\onslide<5->{\ln \dfrac{9}{125} &= \ln \dfrac{3^2}{5^3} & \text{factor 9 and 125} & \\}
+		\onslide<6->{&= \ln 3^2 - \ln 5^3 & \text{Quotient Property} & \\}
+		\onslide<7>{&= 2 \ln 3 - 3 \ln 5 & \text{Power Property}}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Properties of Logarithms}
+		Find the exact values of $\log_5 \sqrt[4]{5}$ and $\ln e^6 - \ln e^2$ without using a calculator. \pause
+		
+		$\log_5 \sqrt[4]{5} = \log_5 \fp{5^{1/4}} = \dfrac{1}{4}$ \pause
+		
+		$\ln e^6 - \ln e^2 = 6 - 2 = 4$
+	\end{frame}
+
+	\begin{frame}{Expanding and Condensing Logarithmic Expressions}
+		To \textit{expand} a logarithmic expression is to write a single logarithm as multiple logarithms. \pause
+		
+		What I'll be looking for when you expand a logarithmic expression: \begin{itemize}
+			\item Write as many logarithms as possible \pause
+			\item Always pull powers out as constants \pause
+			\item List all addition first, then all subtraction
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Expanding and Condensing Logarithmic Expressions}
+		Expand the logarithmic expression $\log_4 7x^3y^2 z^5$
+		\begin{flalign*}
+		\onslide<2->{\log_4 7x^3y^2z^5 &= \log_4 7\cdot x^3 \cdot y^2 \cdot z^5 & \\}
+		\onslide<3->{&= \log_4 7 + \log_4 x^3 + \log_4 y^2 + \log_4 z^5 & \\}
+		\onslide<4->{&= \log_4 7 + 3 \log_4 x + 2 \log_4 y + 5 \log_4 z}
+		\end{flalign*}
+		
+		\onslide<5->{Expand the logarithmic expression $\log \dfrac{2\sqrt{a}b^3}{9c^{11}\sqrt[3]{d}}}$
+		\begin{flalign*}
+		\onslide<6->{\log \dfrac{2\sqrt{a}b^3}{9c^{11}\sqrt[3]{d}} &= \log 2 \cdot \sqrt{a} \cdot b^3 \div 9 \div c^{11} \div \sqrt[3]{d} & \\}
+		\onslide<7->{&= \log 2 + \log a^{1/2} + \log b^3 - \log 9 - \log c^{11} - \log d^{1/3} & \\}
+		\onslide<8>{&= \log 2 + \dfrac12 \log a + 3 \log b - \log 9 - 11 \log c - \dfrac13 \log d}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Expanding and Condensing Logarithmic Expressions}
+		To \textit{condense} a logarithmic expression is to write multiple logarithms (of the same base) as a single logarithm. \pause
+		
+		What I'll be looking for when you condense a logarithmic expression: \begin{itemize}
+			\item Your answer should use only one logarithm  \pause
+			\item If there is division involved, your answer should be the logarithm of a fraction \pause
+			\item Variables should be listed in alphabetical order
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Expanding and Condensing Logarithmic Expressions}
+		Condense the logarithmic expression $\dfrac12 \log x + 3\log(x+1)$
+		\begin{flalign*}
+		\onslide<2->{\dfrac12 \log x + 3\log(x+1) &= \log x^{1/2} + \log\fp{x+1}^3 & \\}
+		\onslide<3->{&= \log x^{1/2}\fp{x+1}^3}
+		\end{flalign*}
+		\onslide<4->{Condense the logarithmic expression $4 \ln a + 2\ln b + \dfrac75 \ln c - \ln d - 3\ln f - \dfrac13\ln g$}
+		\begin{flalign*}
+		\onslide<5->{4 \ln a + 2\ln b + \dfrac75 \ln c - \ln d - 3\ln f - \dfrac13\ln g &= \ln a^4 + \ln b^2 + \ln c^{7/5}& \\ &- \ln d - \ln f^3 - \ln g^{1/3} & \\}
+		\onslide<6->{&= \ln \dfrac{a^4b^2c^{7/5}}{df^3g^{1/3}}}
+		\end{flalign*}
+	\end{frame}
+	
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Ask questions in Lesson 19 Forum, if you have any
+			\item Complete Assignment \#9
+			\item Begin Module \#11
+			\begin{itemize}
+				\item Read 5.4
+				\item Watch Video Lesson \#20
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+\end{document}

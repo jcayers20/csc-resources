@@ -1,0 +1,308 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Sequences and Series}
+\subtitle{Section 11.1}
+\author{Jacob Ayers}
+\institute{Lesson \#28}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use sequence notation to write the terms of sequences
+			\item Use factorial notation
+			\item Use summation notation to write sums
+			\item Find the sums of series
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Sequences}
+		\begin{block}{Definition}
+			An \textit{infinite sequence} is a function whose domain is the set of positive integers $\N$. The function values $$a_1, a_2, a_3, \dots, a_n, \dots$$ are the \textit{terms} of the sequence. When the domain of the function consists of only the first $n$ positive integers, the sequence is a \textit{finite sequence}.
+		\end{block}
+	
+		Sometimes it is convenient to start with $a_0$ instead of $a_1$.
+		
+		Many sequences are written as equations.
+	\end{frame}
+
+	\begin{frame}{Sequences}
+		Write the first four terms of the sequence given by $a_n = 2n + 1$. \pause
+		
+		$a_1 = 2(1) + 1 = 3$ \\ \pause
+		$a_2 = 2(2) + 1 = 5$ \\ \pause
+		$a_3 = 2(3) + 1 = 7$ \\ \pause
+		$a_4 = 2(4) + 1 = 9$ \\ \pause
+		
+		Write the first four terms of the sequence given by $a_n = \dfrac{(-1)^n}{n}$. \pause
+		
+		$a_1 = \dfrac{(-1)^1}{1} = -1$ \\ \pause
+		$a_2 = \dfrac{(-1)^2}{2} = \dfrac12$ \\ \pause
+		$a_3 = \dfrac{(-1)^3}{3} = -\dfrac13$ \\ \pause
+		$a_4 = \dfrac{(-1)^4}{4} = \dfrac14$
+	\end{frame}
+
+	\begin{frame}{Writing Expressions}
+		Write an expression for the apparent $n$th term of the sequence $1, 5, 9, 13, \dots$ \pause
+		
+		\begin{tabular}{c|cccc}
+			$n$ & 1 & 2 & 3 & 4 \\ \hline
+			$a_n$ & 1 & 5 & 9 & 13
+		\end{tabular} \pause
+	
+		Pattern: It looks like each term is $3$ less than $4$ times its index. \pause
+		
+		Expression: $a_n = 4n-3$ \pause
+		
+		It may have been easier to find an expression if we had started at zero. \pause
+		
+		\begin{tabular}{c|cccc}
+			$n$ & 0 & 1 & 2 & 3 \\ \hline
+			$a_n$ & 1 & 5 & 9 & 13
+		\end{tabular} \pause
+	
+		In this case, it's pretty obvious that $a_n = 4n + 1$.
+	\end{frame}
+
+	\begin{frame}{Writing Expressions}
+		Write an expression for the apparent $n$th term of the sequence $2, -4, 6, -8$. \pause
+		
+		\begin{tabular}{c|cccc}
+			$n$ & 1 & 2 & 3 & 4 \\ \hline
+			$a_n$ & 2 & -4 & 6 & -8
+		\end{tabular} \pause
+	
+		Pattern: First, we notice that the sign is alternating. The first term is positive, so there will be a $(-1)^{n+1}$ involved in our expression. \pause Looking at the terms, each term's absolute value is twice $n$. \pause
+		
+		Expression: $a_n = (-1)^{n+1}(2n)$
+	\end{frame}
+
+	\begin{frame}{Recursive Sequences}
+		A \textit{recursive sequence} is a sequence in which the $n$th term is defined using previous terms. You need to know the first few terms in order to be able to write the sequence.
+		
+		One very well-known sequence is the \textit{Fibonacci} sequence.
+	\end{frame}
+
+	\begin{frame}{Recursive Sequences}
+		Write the first six terms of the \textit{Fibonacci} sequence, which is defined as follows: \\
+		$a_0 = 1$ \\
+		$a_1 = 1$ \\
+		$a_k = a_{k-2} + a_{k-1}, k \geq 2$ \pause
+		
+		You find each term in the sequence by adding the two terms that came before it. \pause
+		
+		$a_0 = 1$ \\ \pause
+		$a_1 = 1$ \\ \pause 
+		$a_2 = 1 + 1 = 2$ \\ \pause
+		$a_3 = 1 + 2 = 3$ \\ \pause
+		$a_4 = 2 + 3 = 5$ \\ \pause
+		$a_5 = 3 + 5 = 8$ \\ \pause
+	\end{frame}
+
+	\begin{frame}{Factorials}
+		\begin{block}{Definition}
+			If $n$ is a positive integer, then \textit{$n$ factorial} is defined as $$n! = n\cdot(n-1)\cdot(n-2)\cdots 4\cdot 3 \cdot 2 \cdot 1$$ Zero factorial is defined as $0! = 1$.
+		\end{block}
+	
+		\onslide<2->{Example: $6! = 6\cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720$} 
+		
+		\onslide<3->{Find the first four terms of the sequence given by $a_n = \dfrac{3^n + 1}{n!}$. Begin with $n = 0$.}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\onslide<4->{$a_0 = \dfrac{3^0 + 1}{0!} = \dfrac{1}{1} = 1$} \\
+				\onslide<6->{$a_2 = \dfrac{3^2 + 1}{2!} = \dfrac{10}{2} = 5$}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\onslide<5->{$a_1 = \dfrac{3^1 + 1}{1!} = \dfrac{4}{1} = 4$} \\
+				\onslide<7->{$a_3 = \dfrac{3^3 + 1}{3!} = \dfrac{28}{6} = \dfrac{14}{3}$}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Factorials}
+		Simplify $\dfrac{10!}{4!6!}$. \pause
+		
+		First, expand both the numerator and denominator:
+		
+		$\dfrac{10\cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}{4 \cdot 3 \cdot 2 \cdot 1 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}$ \pause
+		
+		Next, cancel anything that can be cancelled:
+		
+		$\dfrac{10\cdot 9 \cdot 8 \cdot 7}{4 \cdot 3 \cdot 2 \cdot 1}$ \pause
+		
+		We can simplify this further:
+		
+		$\dfrac{5\cdot 3 \cdot 4 \cdot 7}{2 \cdot 1 \cdot 1 \cdot 1} = 210$
+	\end{frame}
+
+	\begin{frame}{Using Technology}
+		A graphing calculator can evaluate factorial expressions.
+		
+		I'll be demonstrating with a TI-84 Plus, but have posted a video showing how to do it on a Casio fx-9750 GII as well. \\
+		
+		Example: Simplify $\dfrac{8!}{6!2!}$ \pause
+		
+		The calculator gives a solution of $28$.
+	\end{frame}
+
+	\begin{frame}{Summation Notation}
+		\begin{block}{Definition}
+			The sum of the first $n$ terms of a sequence is represented by $$\sum_{i=1}^{n} a_i = a_1 + a_2 + a_3 + a_4 + \cdots + a_n$$ where $i$ is the \textit{index}, $n$ is the \textit{upper limit} and $1$ is the \textit{lower limit}.
+		\end{block} \pause
+	
+		This notation which involves the Greek letter $\Sigma$ (sigma) is known as \textit{summation notation} or \textit{sigma notation}.
+	\end{frame}
+
+	\begin{frame}{Summation Notation}
+		Find the sum $\displaystyle{\sum_{i=1}^{4} (4i + 1)}$. \pause
+		\begin{flalign*}
+		\onslide<2->{\sum_{i=1}^4 (4i + 1) &= \fb{4(1) + 1} + \fb{4(2) + 1} + \fb{4(3)+1} + \fb{4(4)_1} & \\}
+		\onslide<3->{&= 5 + 9 + 13 + 17 & \\}
+		\onslide<4->{&= 44}
+		\end{flalign*}
+		Find the sum $\displaystyle{\sum_{k=3}^7} (k^2 - 3)$
+		\begin{flalign*}
+		\onslide<5->{\sum_{k=3}^7 (k^2 - 3) &= \fp{3^2 - 3} + \fp{4^2 - 3} + \fp{5^2 - 3} + \fp{6^2 - 3} + \fp{7^2 - 3} & \\}
+		\onslide<6->{&= 6 + 13 + 22 + 33 + 46 & \\}
+		\onslide<7->{&= 120}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Series}
+		\begin{block}{Definition}
+			Consider the infinite sequence $a_1, a_2, a_3, \dots, a_i, \dots$ \begin{enumerate}[1)]
+				\item The sum of the first $n$ terms of the sequence is called a \textit{finite series} or the \textit{$n$th partial sum} of the sequence and is denoted by \vspace{-12pt} $$a_1 + a_2 + a_3 + \cdots + a_n = \sum_{i=1}^n a_i$$
+				\item The sum of all the terms of the sequence is called an \textit{infinite series} and is denoted by $$a_1 + a_2 + a_3 + \cdots + a_i + \cdots = \sum_{i=1}^\infty a_i$$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Series}
+		For the series $\displaystyle{\sum_{i=1}^\infty} \dfrac{5}{10^i}$, find (a) the fourth partial sum and (b) the sum.
+		
+		\onslide<2->{(a) The fourth partial sum is $\displaystyle{\sum_{i=1}^4 \dfrac{5}{10^i}}$.}
+		\begin{flalign*}
+		\onslide<3->{\sum_{i=1}^4 \dfrac{5}{10^i} &= \dfrac{5}{10^1} + \dfrac{5}{10^2} + \dfrac{5}{10^3} + \dfrac{5}{10^4} & \\}
+		\onslide<4->{&= 0.5 + 0.05 + 0.005 + 0.0005 & \\}
+		\onslide<4->{&= 0.5555}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Series}
+		(b) \begin{flalign*}
+		\sum_{i=1}^\infty \dfrac{5}{10^i} &= \dfrac{5}{10^1} + \dfrac{5}{10^2} + \dfrac{5}{10^3} + \dfrac{5}{10^4} + \dfrac{5}{10^5} + \cdots & \\
+		\onslide<2->{&= 0.5 + 0.05 + 0.005 + 0.0005 + 0.00005 + \cdots & \\}
+		\onslide<3->{&= 0.55555\dots & \\}
+		\onslide<4->{&= \dfrac59}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Post questions in Lesson 28 Forum, if you have any
+			\item Read 11.2 and 11.3
+			\item Watch Video Lesson \#29
+			\item Prepare for Final Exam
+		\end{itemize}
+	
+	\vfill
+	
+	Thanks for watching!
+	\end{frame}
+	
+\end{document}

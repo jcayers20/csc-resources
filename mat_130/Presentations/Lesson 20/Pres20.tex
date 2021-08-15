@@ -1,0 +1,253 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[5.4]{Exponential and Logarithmic Equations}
+\subtitle{Section 5.4}
+\author{Jacob Ayers}
+\institute{Lesson \#20}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Solve exponential and logarithmic equations
+			\item Use exponential and logarithmic equations to model and solve real-life problems
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		We can solve exponential and logarithmic equations using the following strategies: \begin{itemize}
+			\item Using one-to-one properties \pause
+			\item Using inverse properties \pause
+			\item Rewriting logarithmic equations as exponential equations
+		\end{itemize} \pause
+	
+		The strategy we use depends on the structure of the problem.
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $2^x = 512$
+		\begin{flalign*}
+		\onslide<2->{\log_2 2^x &= \log_2 512 & \\}
+		\onslide<3->{x &= \log_2 512 = 9}
+		\end{flalign*}
+		\onslide<4->{Solve for $x$: $\log_6 x = 3$}
+		\begin{flalign*}
+		\onslide<5->{6^3 &= x & \\}
+		\onslide<6->{x &= 216}
+		\end{flalign*}
+		\onslide<7->{Solve for $x$: $5 - e^x = 0$}
+		\begin{flalign*}
+		\onslide<8->{5 &= e^x & \\}
+		\onslide<9->{\ln 5 &= \ln e^x & \\}
+		\onslide<10>{x & = \ln 5 \approx 1.6094}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $e^{2x} = e^{x^2 - 8}$
+		\begin{flalign*}
+		\onslide<2->{2x &= x^2 - 8 & \\}
+		\onslide<3->{x^2 - 2x - 8 &= 0 & \\}
+		\onslide<4->{(x-4)(x+2) &= 0 & \\}
+		\onslide<5->{x &= \set{-2, 4}}
+		\end{flalign*}
+		\onslide<6->{Solve for $x$: $2\fp{5^x} = 32$}
+		\begin{flalign*}
+		\onslide<7->{5^x &= 16 & \\}
+		\onslide<8->{\log_5 5^x &= \log_5 16 & \\}
+		\onslide<9->{x &= \log_5 16 & \\}
+		\onslide<10>{&= \dfrac{\log 16}{\log 5} \approx 1.7227}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $e^x - 7 = 23$
+		\begin{flalign*}
+		\onslide<2->{e^x = 30 & \\}
+		\onslide<3->{\ln e^x &= \ln 30 & \\}
+		\onslide<4->{x &= \ln 30 \approx 3.4012}
+		\end{flalign*}
+		\onslide<5->{Solve for $x$: $6\fp{2^{t+5}} + 4 = 11$}
+		\begin{flalign*}
+		\onslide<6->{6\fp{2^{t+5}} &= 7 & \\}
+		\onslide<7->{2^{t+5} &= \dfrac76 & \\}
+		\onslide<8->{t + 5 &= \log_2 \dfrac76 & \\}
+		\onslide<9->{t &= \log_2 \fp{\dfrac76} - 5 \approx -4.7776}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $e^{2x} - 7e^x + 12 = 0$
+		\begin{flalign*}
+		\onslide<2->{\text{Let } u &= e^x & \\}
+		\onslide<3->{u^2 - 7u + 12 &= 0 & \\}
+		\onslide<4->{(u-4)(u-3) &= 0 & \\}
+		\onslide<5->{u &= \set{3, 4} & \\}
+		\onslide<6->{e^x &= 3 \then x = \ln 3 \approx 1.0986 & \\}
+		\onslide<7->{e^x &= 4 \then x = \ln 4 \approx 1.3863}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $\ln x = \dfrac23$
+		\begin{flalign*}
+		\onslide<2->{e^{2/3} &= x & \\}
+		\onslide<3->{x &\approx 1.9477}
+		\end{flalign*}
+		\onslide<4->{Solve for $x$: $\log_2 \fp{2x-3} = \log_2\fp{x + 4}$}
+		\begin{flalign*}
+		\onslide<5->{2x - 3 &= x + 4 & \\}
+		\onslide<6->{x &= 7}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $\log 4x - \log\fp{12 + x} = \log 2$
+		\begin{flalign*}
+		\onslide<2->{\log\fp{\dfrac{4x}{12+x}} &= \log 2 & \\}
+		\onslide<3->{\dfrac{4x}{12 + x} &= 2 & \\}
+		\onslide<4->{4x &= 24 + 2x & \\}
+		\onslide<5->{x &= 12}
+		\end{flalign*}
+		\onslide<6->{Solve for $x$: $3 \log_4 (6x) = 9$}
+		\begin{flalign*}
+		\onslide<7->{\log_4 (6x) &= 3 & \\}
+		\onslide<8->{4^3 &= 6x & \\}
+		\onslide<9->{6x &= 64 \then x = \dfrac{32}{3}}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Exponential and Logarithmic Equations}
+		Solve for $x$: $\log x + \log (x-9) = 1$
+		\begin{flalign*}
+		\onslide<2->{\log\fb{x(x-9)} &= 1 & \\}
+		\onslide<3->{10^1 &= x^2 - 9x & \\}
+		\onslide<4->{x^2 - 9x - 10 &= 0 & \\}
+		\onslide<5->{(x-10)(x+1) &= 0 & \\}
+		\onslide<6->{x &= \set{-1, 10}}
+		\end{flalign*}
+		\onslide<7>{But if we plug in $-1$ for $x$, $\log x$ is undefined. So $x = -1$ is an extraneous solution and the only solution is $x = 10$.}
+	\end{frame}
+
+	\begin{frame}{Applications}
+		You invest \$1000 at an annual interest rate of 4.85\%, compounded continuously. How long will it take your money to double?
+		
+		\onslide<2->{This is a continuously compounding interest problem with $P = 1000$, $r = 0.0485$, and $A = 2000$. We need to find $t$.}
+		\begin{flalign*}
+		\onslide<3->{2000 &= 1000e^{0.0485t} & \\}
+		\onslide<4->{2 &= e^{0.0485t} & \\}
+		\onslide<5->{\ln 2 &= 0.0485t & \\}
+		\onslide<6->{t &= \dfrac{\ln 2}{0.0485} \approx 14.29}
+		\end{flalign*}
+		\onslide<7>{It will take about 14.29 years for your investment to double.}
+	\end{frame}
+
+	\begin{frame}{Applications}
+		The retail sales $y$ (in billions of dollars) of e-commerce companies in the United States from 2009 through 2014 can be modeled by $$y = -614 + 342.2\ln t, 9 \leq 5 \leq 14$$ where $t$ represents the year with $t = 9$ corresponding to 2009. During which year did sales reach \$180 billion? \pause
+		
+		We have that $y = 180$ and we need to find $t$.
+	\end{frame}
+
+	\begin{frame}{Applications}
+		$y = -614 + 342.2 \ln t$
+		
+		\begin{flalign*}
+		\onslide<2->{180 &= -614 + 342.2 \ln t & \\}
+		\onslide<3->{794 &= 342.2 \ln t & \\}
+		\onslide<4->{2.320280538 &= \ln t & \\}
+		\onslide<5->{e^{2.320280538} = t & \\}
+		\onslide<6->{t &\approx 10.17}
+		\end{flalign*}
+		
+		\onslide<7>{Sales reached \$180 billion in 2010.}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Ask questions in Lesson 20 Forum, if you have any
+			\item Read 5.5
+			\item Watch Video Lesson \#21
+			
+			\vfill
+			
+			Thanks for watching!
+		\end{itemize}
+	\end{frame}
+	
+\end{document}

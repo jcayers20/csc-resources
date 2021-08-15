@@ -1,0 +1,350 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Font Colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[1.7 and 1.8]{Linear and Polynomial Inequalities}
+\subtitle{Sections 1.7 and 1.8}
+\author{Jacob Ayers}
+\institute{Lesson \#7}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+
+% Slide 1 (Title Slide)
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Slide 2 (Objectives)
+\begin{frame}[t]{Objectives}
+\begin{itemize}
+	\item Solve linear inequalities in one variable
+	\item Solve polynomial inequalities
+	\item Solve applied problems involving inequalities
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Review: Intervals and Inequalities}
+Recall: we write intervals using brackets (to represent possible equality) and parentheses (to represent strict inequality)
+
+\pause
+
+Write $[-1,3]$ as an inequality in $x$. \\ \pause
+$-1 \leq x \leq 3$ \vspace{8pt}
+
+\pause
+
+Write $(-\infty, 6)$ as an inequality in $x$. \\ \pause
+$x < 6$ \vspace{8pt}
+
+\pause
+
+Write $x \geq -4$ as an interval. \\ \pause
+$[-4, \infty)$ \vspace{8pt}
+
+\pause
+
+Write $6 \leq x < 9$ as an interval. \\ \pause
+$[6, 9)$
+\end{frame}
+
+\begin{frame}[t]{Properties of Inequalities}
+Inequalities have many of the same properties as the equal sign, but there is one key difference.
+
+\begin{block}{Properties of Inequalities}
+\begin{enumerate}[1)]
+\item Transitive Property: If $a < b$ and $b < c$, then $a < c$
+\item Addition of Inequalities: If $a < b$ and $c < d$, then $a + c < b + d$
+\item Addition of a Constant: If $a < b$, then $a + c < b + c$ for any $c \in \R$
+\red{
+\item Multiplication of a Constant: If $a < b$ and $c \in \R$, then \begin{itemize}
+\red{\item $ac < bc$ if $c > 0$}
+\red{\item $ac > bc$ if $c < 0$}
+\end{itemize}
+}
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Solving Linear Inequalities}
+What those properties tell us is:
+
+We can solve linear inequalities just like we did linear equations, except we must change the direction of the sign when we multiply (or divide) by a negative number.
+
+\pause
+
+Solve for $x$: $3(2 + x) \leq 2x - 9$
+\pause
+\begin{flalign*}
+3(2 + x) &\leq 2x - 9 & \\
+6 + 3x &\leq 2x - 9 & \\
+6 + x &\leq -9 & \\
+x &\leq -15
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Solving Linear Inequalities}
+Solve for $x$: $2 - \dfrac53 x > x - 6$
+
+\begin{flalign*}
+\onslide<2->{2 - \dfrac53 x &> x - 6 & \\}
+\onslide<3->{-\dfrac53 x &> x - 8 & \\}
+\onslide<4->{-\dfrac83 x &> 8 & \\}
+\onslide<5>{x &< 3 &}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Solving Linear Inequalities Graphically}
+We can also solve inequalities using a graphing calculator or a graphing utility.
+
+I've posted brief supplemental videos showing you how to do this with the Casio fx-9750 GII, the TI 83/84 family, and GeoGebra.
+\end{frame}
+
+\begin{frame}[t]{Double Inequalities}
+A double inequality is an inequality of the form $a < x < b$ (note: either sign could be $\leq$)
+
+We solve double inequalities using the same methods as before, but we do everything to all three components of the inequality.
+
+\onslide<2->{Solve for $x$: $-12 < 3x - 9 \leq 3$}
+\begin{flalign*}
+\onslide<3->{-12 &< 3x - 9 \leq 3 & \\}
+\onslide<4->{-3 &< 3x \leq 12 & \\}
+\onslide<5->{-1 &< x \leq 4}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{An Application of Linear Inequalities}
+Yennefer has a choice of two internet providers (assume that they provide the same quality of service). Provider A will only charge \$20 for installation because her new home is already wired for their service, and they charge \$90 per month. Provider B is new to town and will have to wire the home, so they are charging \$300 for installation. But they only charge \$50 per month. After how long will it be a better deal to go with Provider B?
+
+\pause
+
+Cost Models: \\
+Provider A: $90m + 20$ \\
+Provider B: $50m + 300$
+\end{frame}
+
+\begin{frame}[t]{An Application of Linear Inequalities}
+We want Provider B to be cheaper than Provider A. In other words,
+
+\pause
+
+Cost of Provider B < Cost of Provider A
+\pause
+\begin{flalign*}
+50m + 300 &< 90m + 20 & \\
+-40m &< -280 & \\
+m &> 7
+\end{flalign*}
+\pause
+So after 8 months, Provider B will be a better deal.
+\end{frame}
+
+\begin{frame}[t]{Polynomial Inequalities}
+To solve polynomials, we make use of the fact that a polynomial can only change signs at its zeros.
+
+\begin{block}{Test Intervals for a Polynomial Inequality}
+\begin{enumerate}[1)]
+\item Find all real zeros of the polynomial, and arrange them in increasing order. We will call these values \textit{key values}.
+\item Use the key numbers to determine the test intervals.
+\item Pick one value in each test interval and evaluate the polynomial at that value. When the value of the polynomial is negative, the polynomial has negative values for every $x$-value in that interval. When the value of the polynomial is negative, the polynomial has negative values for every $x$-value in that interval.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Solving Polynomial Inequalities}
+Solve the inequality $x^2 - x - 20 < 0$
+
+\pause
+
+First, find the zeros of the polynomial: \\
+$x^2 - x - 20 = (x-5)(x+4) \Rightarrow x = \set{-4, 5}$
+
+\pause
+
+Next, write the test intervals: \\
+Interval 1: $(-\infty, -4)$ \\
+Interval 2: $(-4, 5)$ \\
+Interval 3: $(5, \infty)$
+
+\pause
+
+Now, pick one $x$-value in each interval to plug in: \\
+\pause Interval 1: $x = -5; \; \text{ } (-5)^2 - (-5) - 20 = 10$ \\
+\pause Interval 2: $x = 0; \; \text{ } 0^2 - 0 - 20 = -20$ \\
+\pause Interval 3: $x = 6; \; \text{ } 6^2 - 6 - 20 = 10$
+
+\pause
+
+Conclusion: The solution to the inequality $x^2 - x - 20 < 0$ is $(-4, 5)$.
+\end{frame}
+
+\begin{frame}[t]{Solving Polynomial Inequalities}
+Solve $3x^3 - x^2 - 12x > -4$
+
+\onslide<2->{First, we need to make sure the right-hand side is zero: $3x^3 - x^2 - 12x + 4 > 0$}
+
+\onslide<3->{With that out of the way, we'll need to find our key values:}
+\begin{flalign*}
+\onslide<4->{3x^3 - x^2 - 12x + 4 &= 0 & \\}
+\onslide<5->{x^2(3x - 1) - 4(3x - 1) &= 0 & \\}
+\onslide<6->{\fp{x^2 - 4}(3x - 1) &= 0 & \\}
+\onslide<7->{(x+2)(x-2)(3x-1) &= 0 & \\}
+\onslide<8>{x &= \set{-2, \dfrac13, 2}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Solving Polynomial Inequalities}
+Solve for $x$: $3x^3 - x^2 - 12x + 4 > 0$
+
+Next, we write our test intervals; there are four this time.
+$(-\infty, -2)$ \hspace{0.5in} $\fp{-2, \dfrac13}$ \hspace{0.5in} $\fp{\dfrac13, 2}$ \hspace{0.5in} $(2, \infty)$
+
+\pause
+
+Choose one value in each and plug it in to the polynomial:
+\pause Interval 1: $-3; \; \text{ } 3(-3)^3 - (-3)^2 - 12(-3) + 4 = -50$ \\
+\pause Interval 2: $0; \; \text{ } 3(0)^3 - 0^2 - 12(0) + 4 = 4$ \\
+\pause Interval 3: $1; \; \text{ } 3(1)^3 - 1^2 - 12(1) + 4 = -6$ \\
+\pause Interval 4: $3; \; \text{ } 3(3)^3 - 3^2 - 12(3) + 4 = 40$
+
+\pause
+
+So the solution to the inequality $3x^3 - x^2 - 12x > -4$ is $\fp{-2, \dfrac13} \cup (2, \infty)$
+\end{frame}
+
+\begin{frame}[t]{Solving Polynomial Inequalities - Unusual Solution Set}
+Solve for $x$: $x^2 + 6x + 9 < 0$
+
+\pause
+
+First, find key values: \\
+$x^2 + 6x + 9 = (x+3)^2 \Rightarrow x = -3$
+
+\pause
+
+Next, find test intervals: \\
+$(-\infty, -3)$ and $(-3, \infty)$
+
+\pause
+
+Pick one value in each interval and plug it in: \\
+\pause Interval 1: $-4; \; \text{ } (-4)^2 + 6(-4) + 9 = 1$ \\
+\pause Interval 2: $0; \; \text{ } 0^2 + 6(0) + 9 = 9$
+
+\pause
+
+This polynomial is never negative. We write $\emptyset$ to indicate that there is no real solution to the inequality.
+\end{frame}
+
+\begin{frame}[t]{Application - Finding Domain}
+Find the domain of $\sqrt{x^2 - 7x + 10}$.
+
+\pause
+
+Recall that this expression will only be defined when the expression under the square root is at least 0. We must solve the inequality $x^2 - 7x + 10 \geq 0$.
+
+\pause
+
+Key Values: $x = 2$ and $x = 5$ (you can confirm by factoring)
+
+\pause
+
+Test Intervals: $(-\infty, 2)$, $(2, 5)$, $(5, \infty)$
+
+Chosen Values and Results: $0 \Rightarrow 10$, $3 \Rightarrow -2$, $6 \Rightarrow 4$
+
+Conclusion: The domain of the expression is $(-\infty, 2] \cup [5, \infty)$. We used brackets in this case because the inequality we were asked to solve wasn't strict.
+\end{frame}
+
+\begin{frame}[t]{Next Steps}
+\begin{itemize}
+\item Post questions in the Lesson 7 Forum, if you have any
+\item Read 2.1 and 2.2
+\item Watch Video Lesson \#6
+\item Complete Assignment \#3
+\end{itemize}
+
+\vfill
+
+Thanks for watching!
+\end{frame}
+
+\end{document}

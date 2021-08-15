@@ -1,0 +1,330 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf, tabto}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Arithmetic and Geometric Sequences and Series}
+\subtitle{Sections 11.2 and 11.3}
+\author{Jacob Ayers}
+\institute{Lesson \#29}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Recognize, write, and find the $n$th terms of arithmetic sequences
+			\item Find $n$th partial sums of arithmetic sequences
+			\item Recognize, write and find the $n$th terms of geometric sequences
+			\item Find the sums of finite and infinite geometric sequences
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Arithmetic Sequences}
+		An \textit{arithmetic sequence} is a sequence in which consecutive terms have a common difference.
+		
+		Example: $7, 11, 15, 19, 23, 27, \dots$ is an arithmetic sequence with a common difference of $4$. \pause
+		
+		Determine whether each sequence is arithmetic. If it is, state the common difference. \begin{enumerate}[a)]
+			\item $2, -3, -8, -13, \dots$ \pause \tabto{0.33\textwidth} Yes; the common difference is $-5$ \pause
+			\item $1, 4, 9, 16, \dots$ \pause \tabto{0.33\textwidth} Not an arithmetic sequence \pause
+			\item $1, \frac54, \frac32, \frac74, \dots$ \pause \tabto{0.33\textwidth} Yes; the common difference is $\frac14$
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Arithmetic Sequences}
+		\begin{block}{The $n$th Term of an Arithmetic Sequence}
+			The $n$th term of an arithmetic sequence has the form $$a_n = a_1 + d(n - 1)$$ where $a_1$ is the first term and $d$ is the common difference.
+		\end{block} \pause
+	
+		Find a formula for the $n$th term of the arithmetic sequence $-5, 8, 21, 34, 47, \dots$ \pause
+		
+		The first term is $-5$ and the common difference is $13$. \pause 
+		
+		So the $n$th term can be found using the formula $a_n = -5 + 13(n-1)$
+	\end{frame}
+
+	\begin{frame}{Arithmetic Sequences}
+		Find the $53$rd term of the sequence $1, 7, 13, 19, 25, \dots$ \pause
+		
+		First, we write a formula for the $n$th term of the sequence: $a_n = 1 + 6(n - 1)$ \pause
+		
+		Next, we substitute $53$ for $n$: $a_{53} = 1 + 6(52) = 313$ \pause \vspace{8pt}
+		
+		The $8$th term of an arithmetic sequence is $25$, and the $12$th term is $41$. Write the first $11$ terms of this sequence. \pause
+		
+		We know that in order to get from the $8$th term to the $12$th term, the common difference will have to be applied $4$ times. \pause
+		
+		$a_{12} = a_8 + 4d \then 41 = 25 + 4d \then d = 4$. \pause
+		
+		Now, we can use the common difference to find the first $11$ terms: $-3, 1, 5, 9, 13, 17, 21, 25, 29, 33, 37$ 
+	\end{frame}
+
+	\begin{frame}{Arithmetic Sequences}
+		\begin{block}{Sum of a Finite Arithmetic Sequence}
+			The sum of a finite arithmetic sequence with $n$ terms is given by $S_n = \dfrac{n}{2}\fp{a_1 + a_n}$.
+		\end{block} \pause
+	
+		Here's an illustration of why this is so:
+	\end{frame}
+
+	\begin{frame}{Arithmetic Sequences}
+		Find the sum: $40 + 37 + 34 + 31 + 28 + 25 + 22 + 19 + 16 + 13$ \pause
+		
+		In this case, $n = 10$, $a_1 = 40$, and $a_{10} = 13$. \pause
+		
+		The sum is $\dfrac{10}{2}\fp{40 + 13} = 5(53) = 265$. \vspace{12pt} \pause
+		
+		Find the sum of the first $100$ positive integers. \pause
+		
+		Here, $n = 100$, $a_1 = 1$, and $a_{100} = 100$. \pause
+		
+		The sum is $\dfrac{100}{2}\fp{1 + 100} = 50(101) = 5050$
+	\end{frame}
+
+	\begin{frame}{Arithmetic Sequences}
+		Find the $120$th partial sum of the arithmetic sequence \\ $6, 12, 18, 24, 30$. \pause
+		
+		First, we need to find $a_{120}$ - this requires us to write a formula for the $n$th term. \pause
+		
+		We have that $a_1 = 6$ and $d = 6$, so $a_n = 6 + 6(n - 1)$. \pause
+		
+		Hence, $a_{120} = 6 + 6(120 - 1) = 720$. \pause
+		
+		Now, using the sum formula with $n = 120$, $a_1 = 6$, and $a_{120} = 720$: $S_{120} = \dfrac{120}{2}\fp{1 + 720} = 43260$.
+	\end{frame}
+
+
+	\begin{frame}{Geometric Sequences}
+		In an arithmetic sequence, we could always find the next term by \textit{adding} the same number. \pause
+		
+		A \textit{geometric sequence} is a sequence in which you can always find the next term by multiply by the same number. \pause
+		
+		\begin{block}{Definition}
+			A sequence is \textit{geometric} when the ratios of consecutive terms are the same. So, the sequence $a_1, a_2, a_3, a_4, \dots, a_n, \dots$ is geometric when there is a number $r$ such that $$\dfrac{a_2}{a_1} = \dfrac{a_3}{a_2} = \dfrac{a_4}{a_3} = \cdots = r, r \neq 0$$ The number $r$ is the \textit{common ratio}.
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		Write the first five terms of the geometric sequence whose first term is $7$ and whose common ratio is $3$. \pause
+		
+		$a_1 = 7$ \pause \\
+		$a_2 = 7\cdot 3 = 21$ \\ \pause
+		$a_3 = 21\cdot 3 = 63$ \\ \pause
+		$a_4 = 63\cdot 3 = 189$ \\ \pause
+		$a_5 = 189\cdot 3 = 567$ \pause
+		
+		Write the first four terms of the sequence $a_n = 6(-2)^n$. Then find the common ratio. \pause
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				$a_1 = 6(-2)^1 = -12$ \\ \pause
+				$a_2 = 6(-2)^2 = 24$ \pause
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				$a_3 = 6(-2)^3 = -48$ \\ \pause
+				$a_4 = 6(-2)^4 = 96$ \pause
+			\end{column}
+		\end{columns}
+	The common ratio is $r = \dfrac{24}{-12} = \dfrac{-48}{24} = \dfrac{96}{-48} = -2$.
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		\begin{block}{The $n$th Term of a Geometric Sequence}
+			The $n$th term of a geometric sequence has the form $$a_n = a_1 r^{n-1}$$ where $r$ is the common ratio.
+		\end{block} \pause
+	
+		Write a formula for the geometric sequence whose first term is $a_1 = 2$ and whose common ratio is $r = 4$. Use the formula to find the first four terms of the sequence. \pause
+		
+		The formula is $a_n = 2(4)^n$. \pause
+		
+		$a_ 1 = 2$; $a_2 = 2(4)^1 = 8$; $a_3 = 2(4)^2 = 32$; $a_4 = 2(4)^3 = 128$
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		Find a formula for the $n$th term of the geometric sequence $5, -15, 45, -135, \dots$. \pause
+		
+		The first term is $5$ and the common ratio is $-3$. \pause
+		
+		The formula is $a_n = 5(-3)^{n-1}$. \vspace{12pt} \pause
+		
+		The second term of a geometric sequence is $6$ and the fifth term is $81/4$. Find the $8$th term. (Assume that the terms of the sequence are positive.) \pause
+		
+		First, we need to find $r$. We know that $a_5 = a_2\cdot r^3$. \pause
+		
+		So $\dfrac{81}{4} = 6r^3 \then r^3 = \dfrac{81}{24} \then r = \dfrac32$. \pause
+		
+		To find $a_8$, multiply $a_5$ by $r^3$: $a_8 = \dfrac{81}{4}\fp{\dfrac32}^{3} = \dfrac{2187}{32}$
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		\begin{block}{Sum of a Finite Geometric Sequence}
+			The sum of the finite geometric sequence $$a_1, a_1r, a_1r^2, a_1r^3, \dots, a_r^{n-1}$$ with common ratio $r \neq 1$ is given by $S_n = \displaystyle{\sum_{i=1}^{n} a_1r^{i - 1} = a_1\fp{\dfrac{1 - r^n}{1 - r}}}$
+		\end{block} \pause
+		
+		\begin{block}{Sum of an Infinite Geometric Series}
+			If $\av{r} < 1$, then the sum of the infinite geometric series is $$S = \sum_{i=1}^{\infty} a_ir^i = \dfrac{a_1}{1 - r}$$
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		Find the sum $\displaystyle{\sum_{i=1}^{12} 2(0.25)^{i - 1}}$.
+		
+		\onslide<2->{Using the formula for the sum of a finite geometric sequence:}
+		\begin{flalign*}
+		\onslide<3->{\sum_{i=1}^{12} 2(0.25)^{i - 1} &= 2\fp{\dfrac{1 - 0.25^{12}}{1 - 0.25}} & \\}
+		\onslide<4->{&= 2\fp{\dfrac{0.9999999404}{0.75}} & \\}
+		\onslide<5->{&\approx 2.67}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		Find the sum $\displaystyle{\sum_{i=1}^8 4(0.4)^i}$. \pause
+		
+		Be careful! If the power is not $i - 1$, then we need to rewrite the summation so that it is. \pause
+		
+		In this case, we notice that $0.4^i = (0.4)(0.4)^{i-1}$ and rewrite the sum: \pause
+		
+		$\displaystyle{\sum_{i=1}^8 4(0.4)(0.4)^{i-1} \then \sum_{i=1}^8 1.6(0.4)^{i-1}}$ \pause
+		
+		So the sum is \begin{flalign*}
+		\sum_{i=1}^8 1.6(0.4)^{i-1} &= 1.6\fp{\dfrac{1 - 0.4^8}{1 - 0.4}} & \\
+		&= 1.6\fp{\dfrac{0.99934464}{0.6}} & \\
+		&\approx 2.66
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		Find the sum $\displaystyle{\sum_{i=0}^\infty 5(0.5)^i}$.
+		
+		\onslide<2->{Since $r = 0.5 \then \av{r} < 1$, we can compute this sum.}
+		\begin{flalign*}
+		\onslide<3->{\sum_{i=0}^\infty 5(0.5)^n &= \dfrac{5}{1 - 0.5} & \\}
+		\onslide<4->{&= 10}
+		\end{flalign*}
+		
+		Find $\displaystyle{\sum_{i=0}^\infty 3(2)^n}$.
+		
+		\onslide<5>{Since $r = 2 \then \av{r} > 1$, it is not possible to compute this sum. In this case, we say that the series \textit{diverges}.}
+	\end{frame}
+
+	\begin{frame}{Geometric Sequences}
+		Find the sum: $5 + (-1) + 0.2 + (-0.04) + \cdots$.
+		
+		\onslide<2->{We know that $a_1 = 5$. Looking at the terms, we know that $r < 0$ because the signs are flipping. In particular, $r = -0.2$.}
+		
+		\onslide<3->{Since $\av{r} < 1$, we can compute the sum.}
+		\begin{flalign*}
+		\onslide<4->{\sum_{i=0}^\infty 5(-0.2)^i &= \dfrac{5}{1 - (-0.2)} & \\}
+		\onslide<5->{&\approx 4.17}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Post questions in Lesson 29 Forum, if you have any
+			\item Prepare for and take Final Exam
+			\begin{itemize}
+				\item Work on problems from study guide
+				\item Attend final conference
+			\end{itemize}
+			\item Final grade will be posted once your exam has been submitted
+			\item Take a break - you've earned it!
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching and for all of your hard work this semester!!!
+	\end{frame}
+	
+\end{document}

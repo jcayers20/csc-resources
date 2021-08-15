@@ -1,0 +1,357 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Matrix Fundamentals}
+\subtitle{Section 10.1}
+\author{Jacob Ayers}
+\institute{Lesson \#24}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Write matrices and determine their dimensions
+			\item Write systems of equations using augmented matrices
+			\item Perform elementary row operations on matrices
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Matrix Definition}
+		\begin{block}{Definition}
+			If $m$ and $n$ are positive integers, then an $m \times n$ (read ``$m$ by $n$") matrix is a rectangular array $$\begin{bmatrix}
+			a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+			a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
+			a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn}
+			\end{bmatrix}$$ in which each \textit{entry} $a_{ij}$ of the matrix is a number. A matrix whose \textit{dimension} is $m\times n$ has $m$ rows and $n$ columns.
+		\end{block}
+	\end{frame}
+	\begin{frame}{Dimension of a Matrix}
+		As stated on the previous slide, the \textit{dimension} of a matrix is written as $m \times n$ where $m$ is the number of rows and $n$ is the number of columns. \pause
+		
+		Find the dimension of each matrix: \begin{enumerate}[(a)]
+			\item $\begin{bmatrix}
+			14 & 7 & 10 \\ -2 & -3 & -8
+			\end{bmatrix}$
+			\item $\begin{bmatrix}
+			6 & -5 \\ -3 & 4 \\ 0 & 1 \\ 1 & 0 \\ -3\pi & 2e
+			\end{bmatrix}$
+		\end{enumerate} \pause
+	
+		The correct answers are: (a) $2 \times 3$ and (b) $5 \times 2$
+	\end{frame}
+
+	\begin{frame}{Augmented Matrices}
+		In this lesson, we will focus on using matrices to solve systems of linear equations. \pause
+		
+		A matrix that is derived from a system of linear equations is called an \textit{augmented matrix}. A couple notes about augmented matrices: \pause \begin{enumerate}[1)]
+			\item Before writing an augmented matrix, be sure that each is written in standard form.
+			\item If any variables are missing from an equation, they must be represented as zeros in the matrix.
+			\item There should be a vertical line separating the two sides of each equation. (The book uses vertical dots, but lines are the convention.)
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Augmented Matrices}
+		Write the system as an augmented matrix: $\begin{cases}
+		x + y + z &= 2 \\ 2x - y + 3z &= -1 \\ -x + 2y - z &= 4
+		\end{cases}$ \pause \vspace{24pt}
+		
+		Matrix: $\begin{amatrix}{3}
+		1 & 1 & 1 & 2 \\ 2 & -1 & 3 & -1 \\ -1 & 2 & -1 & 4
+		\end{amatrix}$
+	\end{frame}
+
+	\begin{frame}{Augmented Matrices}
+		Write the system as an augmented matrix: $\begin{cases}
+		x + 3y - w &= 9 \\ -y + 4z + 2w &= -2 \\ x - 5z - 6w &= 0 \\ 2x + 4y - 3z &= 4
+		\end{cases}$ \pause \vspace{24pt}
+		
+		Matrix: $\begin{amatrix}{4}
+		1 & 3 & 0 & -1 & 9 \\ 0 & -1 & 4 & 2 & -2 \\ 1 & 0 & -5 & -6 & 0 \\ 2 & 4 & -3 & 0 & 4
+		\end{amatrix}$
+	\end{frame}
+
+	\begin{frame}{Augmented Matrices}
+		Write the augmented matrix as a system of equations using the variables $a, b,$ and $c$: $\begin{amatrix}{3}
+		2 & 0 & 5 & -12 \\ 0 & 1 & -2 & 7 \\ 6 & 3 & 0 & 2
+		\end{amatrix}$ \pause \vspace{24pt}
+		
+		System: $\begin{cases}
+		2a + c &= -12 \\ b - 2c &= 7 \\ 6a + 3b &= 2
+		\end{cases}$
+	\end{frame}
+
+	\begin{frame}{Augmented Matrices}
+		Write the augmented matrix as a system of equations using the variables $x, y, z$, and $w$.
+		
+		$\begin{amatrix}{4}
+		9 & 12 & 3 & 0 & 0 \\ -2 & 18 & 5 & 2 & 10 \\ 1 & 7 & -8 & 0 & -4 \\ 3 & 0 & 2 & 0 & -10
+		\end{amatrix}$ \pause \vspace{24pt}
+		
+		System: $\begin{cases}
+		9x + 12y + 3z &= 0 \\ -2x + 18y + 5z + 2w &= 10 \\ x + 7y - 8z &= -4 \\ 3x + 2z &= -10
+		\end{cases}$
+	\end{frame}
+	
+	\begin{frame}{Elementary Row Operations}
+		Just as there were three operations we could do on equations and preserve equality in the last lesson, there are three elementary row operations we can use on rows of matrices that preserve row equality: \pause
+		
+		\begin{block}{Elementary Row Operations}
+			\begin{enumerate}[1)]
+				\item Interchange two rows. (Notation: $R_a \leftrightarrow R_b$)
+				\item Multiply a row by a nonzero constant. (Notation: $cR_a$)
+				\item Add/subtract one row to/from another row to replace the latter. (Notation: $R_a \pm R_b$)
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Elementary Row Operations}
+		Given the augmented matrix below, perform the following row operations: \begin{enumerate}[(i)]
+			\item $R_2 + R_1$
+			\item $-2R_1$
+			\item $R_1 + R_2$
+			\item $-\frac16 R_1$
+			\item $-\frac14 R_2$
+		\end{enumerate}
+	
+		\only<1>{$\begin{amatrix}{2}
+			-3 & 4 & 22 \\ 6 & -4 & -28
+			\end{amatrix}$
+		}
+		
+	
+		\only<2>{$\begin{amatrix}{2}
+			3 & 0 & -6 \\ 6 & -4 & -28
+			\end{amatrix}$
+		}
+	
+		\only<3>{$\begin{amatrix}{2}
+			-6 & 0 & 12 \\ 6 & -4 & -28
+			\end{amatrix}$
+		}
+	
+		\only<4>{$\begin{amatrix}{2}
+			-6 & 0 & 12 \\ 0 & -4 & -16
+			\end{amatrix}$
+		}
+	
+		\only<5>{$\begin{amatrix}{2}
+			1 & 0 & -2 \\ 0 & 1 & 4
+			\end{amatrix}$
+		}
+	\end{frame}
+
+	\begin{frame}{Elementary Row Operations}
+		Use elementary operations to show that the matrices below are row-equivalent: \vspace{8pt}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				$\begin{amatrix}{3}
+				1 & 1 & 0 & 5 \\ -2 & -1 & 2 & -10 \\ 3 & 6 & 7 & 14
+				\end{amatrix}$ \vspace{12pt}
+				
+				\only<2>{$\begin{amatrix}{3}
+					2 & 2 & 0 & 10 \\ -2 & -1 & 2 & -10 \\ 3 & 6 & 7 & 14
+					\end{amatrix}$
+				}
+			
+				\only<3>{$\begin{amatrix}{3}
+					1 & 1 & 0 & 5 \\ 0 & 1 & 2 & 0 \\ 3 & 6 & 7 & 14
+					\end{amatrix}$
+				}
+			
+				\only<4>{$\begin{amatrix}{3}
+					-3 & -3 & 0 & -15 \\ 0 & 1 & 2 & 0 \\ 3 & 6 & 7 & 14
+					\end{amatrix}$
+				}
+			
+				\only<5>{$\begin{amatrix}{3}
+					1 & 1 & 0 & 5 \\ 0 & 1 & 2 & 0 \\ 0 & 3 & 7 & -1
+					\end{amatrix}$
+				}
+			
+				\only<6>{$\begin{amatrix}{3}
+					1 & 1 & 0 & 5 \\ 0 & -3 & -6 & 0 \\ 0 & 3 & 7 & -1
+					\end{amatrix}$
+				}
+			
+				\only<7->{$\begin{amatrix}{3}
+					1 & 1 & 0 & 5 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 1 & -1
+					\end{amatrix}$
+				}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				$\begin{amatrix}{3}
+				1 & 1 & 0 & 5 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 1 & -1 
+				\end{amatrix}$ \vspace{32pt}
+				
+				\only<2>{$2R_1$}
+				
+				\only<3>{$R_1 + R_2$; $\frac12 R_1$}
+				
+				\only<4>{$-3R_1$}
+				
+				\only<5>{$R_1 + R_3$; $-\frac13 R_1$}
+				
+				\only<6>{$-3R_2$}
+				
+				\only<7->{$R_2 + R_3$; $-\frac13 R_2$}
+			\end{column}
+		\end{columns} \vspace{8pt}
+	
+		\only<8>{Since we only used elementary row operations to make the transformation, we know that the two matrices are row-equivalent.}
+	\end{frame}
+
+	\begin{frame}{Elementary Row Operations}
+		Use elementary operations to show that the matrices below are row-equivalent: \vspace{8pt}
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				$\begin{amatrix}{3}
+				1 & -1 & -1 & 1 \\ 5 & -4 & 1 & 8 \\ -6 & 8 & 18 & 0
+				\end{amatrix}$ \vspace{12pt}
+				
+				\only<2>{$\begin{amatrix}{3}
+					-5 & 5 & 5 & -5 \\ 5 & -4 & 1 & 8 \\ -6 & 8 & 18 & 0
+					\end{amatrix}$
+				}
+			
+				\only<3>{$\begin{amatrix}{3}
+					1 & -1 & -1 & 1 \\ 0 & 1 & 6 & 3 \\ -6 & 8 & 18 & 0
+					\end{amatrix}$
+				}
+			
+				\only<4>{$\begin{amatrix}{3}
+					6 & -6 & -6 & 6 \\ 0 & 1 & 6 & 3 \\ -6 & 8 & 18 & 0
+					\end{amatrix}$
+				}
+			
+				\only<5>{$\begin{amatrix}{3}
+					1 & -1 & -1 & 1 \\ 0 & 1 & 6 & 3 \\ 0 & 2 & 12 & 6
+					\end{amatrix}$
+				}
+			
+				\only<6>{$\begin{amatrix}{3}
+					1 & 0 & 5 & 4 \\ 0 & 1 & 6 & 3 \\ 0 & 1 & 6 & 3
+					\end{amatrix}$
+				}
+			
+				\only<7->{$\begin{amatrix}{3}
+					1 & 0 & 5 & 4 \\ 0 & 1 & 6 & 3 \\ 0 & 0 & 0 & 0
+					\end{amatrix}$
+				}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				$\begin{amatrix}{3}
+				1 & 0 & 5 & 4 \\ 0 & 1 & 6 & 3 \\ 0 & 0 & 0 & 0
+				\end{amatrix}$ \vspace{32pt}
+				
+				\only<2>{$-5R_1$}
+				\only<3>{$R_1 + R_2$; $-\frac13 R_1$}
+				\only<4>{$6R_1$}
+				\only<5>{$R_1 + R_3$; $\frac16 R_1$}
+				\only<6>{$R_2 + R_1$; $\frac12 R_3$}
+				\only<7->{$R_3 - R_2$}
+			\end{column}
+		\end{columns} \vspace{8pt}
+	
+		\only<8>{Since we only used elementary row operations to make the transformation, we know that the two matrices are row-equivalent.}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Post questions in the Lesson 24 Forum, if you have any
+			\item Reread pp. 703-708 of the text
+			\item Watch Video Lesson \#25
+			\item Complete Assignment \#12
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

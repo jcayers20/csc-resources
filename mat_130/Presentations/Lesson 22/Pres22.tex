@@ -1,0 +1,366 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[9.1 and 9.2]{Systems of Two Equations}
+\subtitle{Sections 9.1 and 9.2}
+\author{Jacob Ayers}
+\institute{Lesson \#22}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Solve systems of equations by graphing
+			\item Solve systems of equations using substitution
+			\item Solve systems of equations using elimination
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Definitions}
+		A \textit{system of equations} is a set of two or more equations in two or more variables. \pause
+		
+		In this lesson, we'll focus on systems of two equations. \pause
+		
+		A \textit{solution} to a system of equations is a point that satisfies all of the equations.
+	\end{frame}
+
+	\begin{frame}{Solutions to Systems of Equations}
+		Determine whether each point is a solution to the system $\begin{cases}
+			2x + y &= 5 \\
+			4x - 3y &= 5
+		\end{cases}$
+		
+		a) $(3, -1)$ \\
+		b) $(2,1)$ \\
+		c) $(1,2)$ \pause
+		
+		a) $2(3) + (-1) = 5$ is true, but $4(3) - 3(-1) = 5$ is false. $(3, -1)$ is not a solution. \pause
+		
+		b) $2(2) + 1 = 5$ and $4(2) - 3(1) = 5$ are both true, so $(2, 1)$ is a solution. \pause
+		
+		c) $4(1) + 2 = 5$ is false, so $(1, 2)$ is not a solution.
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Graphing}
+		The first method we can use to solve a system of equations in two variables is by graphing. \pause
+		
+		In this method, we graph both equations and then see where they intersect. \pause
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Graphing}
+		Solve the system of equations by graphing.
+		
+		$\begin{cases}
+			y = 2x + 1 \\
+			y = -4x + 7
+		\end{cases}$
+		
+		\pause You can graph these equations using your graphing calculator or online tools. Then it's just a matter of using the intersect tool to determine the exact point of intersection.
+		
+		\pause In this case, the two lines intersect at the point $(1, 3)$.
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Graphing}
+		Solve the system of equations by graphing:
+		
+		$\begin{cases}
+		x - 2y = -4 \\
+		y = x^2 - 4x + 3
+		\end{cases}$ \pause
+		
+		This time, we'll notice that there are two points of intersection.
+		
+		\pause Those points are approximately $(4.27, 4.13)$ and $(0.23, 2.12)$.
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Substitution}
+		Graphing can work, but it is not perfect - especially if you don't use technology to do the graphing. \pause
+		
+		We also have two algebraic methods of solving systems of equations. The first is substitution. \pause
+		
+		\begin{block}{Method of Substitution}
+			\begin{enumerate}[1)]
+				\item Solve one of the equations for one variable in terms of the other.
+				\item Substitute the expression found in Step 1 into the other equation to obtain an equation in one variable.
+				\item Solve the equation.
+				\item Back-substitute the value(s) obtained to find the other variable's value.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Substitution}
+		Solve the system of equations using substitution:
+		
+		$\begin{cases}
+		2x + y = 9 \\
+		3x - 2y = 17
+		\end{cases}$ \pause
+		
+		It looks like the easiest way to implement substitution is to get $y$ by itself in the top equation: $y = -2x + 9$. Now we substitute $-2x + 9$ in for $y$ in the bottom equation and solve for $x$: \pause \begin{flalign*}
+		3x - 2(-2x + 9) &= 17 & \\
+		7x - 18 &= 17 & \\
+		7x &= 35 & \\
+		x & = 5
+		\end{flalign*} \pause
+		So $y = -2(5) + 9 = -1$ and our solution is $(5, -1)$.
+	\end{frame} 
+
+	\begin{frame}{Systems of Equations - Substitution}
+		Solve the system of equations using substitution:
+		
+		$\begin{cases}
+		3x^2 + 4x - y = 7 \\
+		2x - y = -1
+		\end{cases}$ 
+		
+		\onslide<2->{We can isolate $y$ in the bottom equation: $y = 2x + 1$. Now, using substitution into the top equation:} \begin{flalign*}
+		\onslide<3->{3x^2 + 4x - (2x + 1) &= 7 & \\}
+		\onslide<4->{3x^2 + 2x - 1 &= 7 & \\}
+		\onslide<5->{3x^2 + 2x - 8 &= 0 & \\}
+		\onslide<6->{(3x - 4)(x+2) &= 0 & \\}
+		\onslide<7->{x &= \set{-2, \dfrac{4}{3}}}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Substitution}
+		So there are two solutions to this equation: \pause
+		
+		$x = -2 \then y = 2(-2) + 1 = -3$ \pause
+		
+		$x = \dfrac{4}{3} \then y = 2\fp{\dfrac43} + 1 = \dfrac{11}{3}$
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Substitution}
+		Solve the system of equations using substitution:
+		
+		$\begin{cases}
+		2x - y = -3 \\
+		2x^2 + 4x - y^2 = 0
+		\end{cases}$
+		
+		\onslide<2->{We can isolate $y$ in the top equation: $y = 2x + 3$. Using substitution:} \begin{flalign*}
+		\onslide<3->{2x^2 + 4x - (2x+3)^2 &= 0 & \\}
+		\onslide<4->{2x^2 + 4x - (4x^2 + 12x + 9) &= 0 & \\}
+		\onslide<5->{-2x^2 - 8x - 9 &= 0 & \\}
+		\onslide<6->{x &= \dfrac{8 \pm \sqrt{-8}}{-4}}
+		\end{flalign*}
+		\onslide<7>{There are no real solutions to this system.}
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Elimination}
+		Not every system we come across is going to have an equation that it's easy for us to isolate a variable in. \pause
+		
+		In this case, we can use elimination. Note that elimination only works when both equations are linear, though. \pause
+		
+		\begin{block}{Method of Elimination}
+			\begin{enumerate}[1)]
+				\item Multiply one (or both) of the equations so that when you add the two equations together one of the variables is cancelled out.
+				\item Solve the resulting equation.
+				\item Back-substitute the value into either of the original equations and find the value of the other variable.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Elimination}
+		Solve the system of equations using elimination:
+		
+		$\begin{cases}
+		2x - 4y = -7 \\
+		5x + y = -1
+		\end{cases}$ \pause
+		
+		Multiply the bottom equation by $4$ so that we can eliminate $y$. \pause
+		
+		$\begin{cases}
+		2x - 4y = -7 \\
+		20x + 4y = -4
+		\end{cases}$ \pause
+		
+		Adding the equations together: $22x = -11 \then x = \dfrac12$ \pause
+		
+		Back substitute into the top equation to solve for $x$: $2\fp{-\dfrac12} - 4y = -7 \then y = \dfrac32$ \pause
+		
+		Our solution is $\fp{-\dfrac12, \dfrac32}$.
+	\end{frame}
+
+	\begin{frame}{Systems of Linear Equations - Elimination}
+		Solve the system of equations using elimination:
+		
+		$\begin{cases}
+		3x + 2y = 7 \\
+		2x + 5y = 1
+		\end{cases}$ \pause
+		
+		This time, we'll multiply both equations. Multiply the top equation by $2$ and the bottom equation by $-3$ to eliminate $x$: \pause
+		
+		$\begin{cases}
+		6x + 4y = 14 \\
+		-6x - 15y = -3
+		\end{cases}$ \pause
+		
+		Adding the equations together: $-11y = 11 \then y = -1$ \pause
+		
+		Back-substituting into the original bottom equation: $2x + 5(-1) = 1 \then x = 3$ \pause
+		
+		Our solution is $(3, -1)$.
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Elimination}
+		Solve the system of equations using elimination:
+		
+		$\begin{cases}
+		0.03x + 0.04y = 0.75 \\
+		0.02x + 0.06y = 0.90
+		\end{cases}$ \pause
+		
+		First, we can multiply both equations by $100$ to get rid of decimals: \pause
+		
+		$\begin{cases}
+		3x + 4y = 75 \\
+		2x + 6y = 90
+		\end{cases}$ \pause
+		
+		Multiply the top equation by $3$ and the bottom equation by $-2$: \pause
+		
+		$\begin{cases}
+		9x + 12y = 225 \\
+		-4x - 12y = -180
+		\end{cases}$
+	\end{frame}
+
+	\begin{frame}{Systems of Equations - Elimination}
+		$\begin{cases}
+		9x + 12y = 225 \\
+		-4x - 12y = -180
+		\end{cases}$
+		
+		Add the two equations together and solve for $x$: $5x = 45 \then x = 9$ \pause
+		
+		Back-substitute into the equation $3x + 4y = 75$: $3(9) + 4y = 75 \then y = 12$ \pause
+		
+		Our solution is $(9, 12)$.
+	\end{frame}
+
+	\begin{frame}{An Application}
+		An airplane flying into a headwind travels the 2000-mile flying distance between Tallahassee, FL and Los Angeles, CA in 4 hours and 24 minutes. On the return flight, the airplane travels the same distance in 4 hours and 6 minutes. Find the airspeed of the plane, and the speed of the wind, assuming both remain constant. \pause
+		
+		Let $p$ be the airspeed of the plane and $w$ be the speed of the wind. \pause
+		
+		When traveling against the wind, the plane travels $p - w$ mph. \\
+		When traveling with the wind, the plane travels $p + w$ mph. \pause
+		
+		Using the equation $d = rt$ we can write a system of equations to solve.
+	\end{frame}
+
+	\begin{frame}{An Application}
+		$\begin{cases}
+		2000 = \fp{4 + \dfrac{24}{60}}\fp{p - w} \\
+		2000 = \fp{4 + \dfrac{6}{60}}\fp{p + w}
+		\end{cases}$ \pause
+		
+		Simplifying: $\begin{cases}
+		2000 &= 4.4(p-w) \\
+		2000 &= 4.1(p+w)
+		\end{cases} \then \begin{cases}
+			454.545454 = p - w \\
+			487.804878 = p + w
+		\end{cases} \pause$
+		
+		$\begin{cases}
+		454.545454 = p - w \\
+		487.804878 = p + w
+		\end{cases}$ \pause
+		
+		Adding the equations together: $2p = 942.3503 \then p \approx 471.18$ mph \pause
+		
+		Back-substituting: $487.804878 = 471.175166 + w \then w \approx 16.63$ mph
+	\end{frame}
+
+	\begin{frame}{Next Steps:}
+		\begin{itemize}
+			\item Ask questions in Lesson 22 Forum, if you have any
+			\item Watch Video Lesson \#23
+			\item Complete Assignment \#11
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

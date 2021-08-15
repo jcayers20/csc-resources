@@ -1,0 +1,440 @@
+\documentclass[12pt]{letter}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb,graphicx, multicol,fancyhdr,lastpage,fullpage,framed,fancybox,enumerate,tikz,color,mathrsfs, polynom, pifont}
+\usepackage[margin=0.6in,headsep=3pt, headheight=15pt]{geometry}
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\lhoi}[1]{\left({#1}\right]} % Left half-open interval
+\newcommand{\rhoi}[1]{\left[{#1}\right)} % Right half-open interval
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+\newcommand{\?}{\stackrel{?}{=}}
+\newcommand{\cmark}{\text{ \ding{51}}}
+\newcommand{\xmark}{\text{ \ding{55}}}
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Counters
+\newcounter{exercise}
+
+% Exercise environment (auto-numbered)
+\newenvironment{exercise}[1][]{\begin{framed}\refstepcounter{exercise}\textbf{Exercise~\theexercise:} #1}{\end{framed}}
+
+% Book exercise environment
+\newenvironment{bex}[2][] {
+	\begin{framed}
+		\textbf{Book Exercise {#2}}#1
+	\end{framed}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Header and Footer Information
+% \pagestyle{fancy}
+% \fancyhf{}
+% \renewcommand{\headrulewidth}{0pt}
+% \rhead{Name: \blank{2in}}
+% \lhead{@}
+% \rfoot{Page \thepage \, of \,\pageref{LastPage}}
+% ----------------------------------------------------------
+\author{Jacob Ayers}
+
+\begin{document}
+	\begin{bex}{10.1.10}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	The matrix has three rows and four columns, so its dimension is $3 \times 4$.
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.14}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	The matrix has three rows and two columns, so its dimension is $3 \times 2$.
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.18}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	The augmented matrix is $\begin{amatrix}{3}
+	-2 & -4 & 1 & 13 \\ 6 & 0 & -7 & 22 \\ 3 & -1 & 1 & 9
+	\end{amatrix}$
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.24}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	The system of equations is $\begin{cases}
+	4x - 5y - z &= 18 \\ -11x + 6z &= 25 \\ 3x + 8y &= -29
+	\end{cases}$
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.46}
+		{
+			
+		}
+	\end{bex} \vspace{-32pt}
+	
+	% My answer here
+	\begin{flalign*}
+	\begin{bmatrix}
+	1 & 2 & -1 & 3 \\ 3 & 7 & -5 & 14 \\ -2 & -1 & -3 & 8
+	\end{bmatrix} &= \begin{bmatrix}
+	6 & 12 & -6 & 18 \\ -6 & -14 & 10 & -28 \\ -6 & -3 & -9 & 24
+	\end{bmatrix} & 6R_1 & \\
+	&= \begin{bmatrix}
+	1 & 2 & -1 & 3 \\ 0 & -2 & 4 & -10 \\ 0 & 9 & -15 & 42
+	\end{bmatrix} &  R_1 + R_2; R_1 + R_3\\
+	&= \begin{bmatrix}
+	1 & 2 & -1 & 3 \\ 0 & -9 & 18 & -45 \\ 0 & 9 & -15 & 42
+	\end{bmatrix} &  \dfrac92 R_2 & \\
+	&= \begin{bmatrix}
+	1 & 2 & -1 & 3 \\ 0 & 1 & -2 & 5 \\ 0 & 0 & 3 & 3
+	\end{bmatrix} & R_2 + R_3; -\dfrac19 R_2 & \\
+	&= \begin{bmatrix}
+	1 & 2 & -1 & 3 \\ 0 & 1 & -2 & 5 \\ 0 & 0 & 1 & 1
+	\end{bmatrix} & \dfrac13 R_3
+	\end{flalign*}
+	
+	\vfill \newpage
+	
+	\begin{bex}{10.1.48}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	Using the ref() command on a TI-84: $\begin{bmatrix}
+	1 & -\dfrac52 & \dfrac12 & -6 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 0
+	\end{bmatrix}$
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.64}
+		{
+			
+		}
+	\end{bex} \vspace{-32pt}
+	
+	% My answer here
+	\begin{flalign*}
+	\begin{bmatrix}
+	3 & -2 & 1 & 15 \\ -1 & 1 & 2 & -10 \\ 1 & -1 & -4 & 14
+	\end{bmatrix} &= \begin{bmatrix}
+	3 & -2 & 1 & 15 \\ -3 & 3 & 6 & -30 \\ -3 & 3 & 12 & -42
+	\end{bmatrix} & 3R_2; -3R_3 & \\
+	&= \begin{bmatrix}
+	3 & -2 & 1 & 15 \\ 0 & 1 & 7 & -15 \\ 0 & 1 & 13 & -27
+	\end{bmatrix} & R_1 + R_2; R_2 + R_3 & \\
+	&= \begin{bmatrix}
+	3 & -2 & 1 & 15 \\ 0 & 1 & 7 & -15 \\ 0 & -1 & -13 & 27
+	\end{bmatrix} & -R_3 & \\
+	&= \begin{bmatrix}
+	3 & -2 & 1 & 15 \\ 0 & 1 & 7 & -15 \\ 0 & 0 & -6 & 12
+	\end{bmatrix} & R_2 + R_3 & \\
+	&= \begin{bmatrix}
+	3 & -2 & 1 & 15 \\ 0 & 1 & 7 & -15 \\ 0 & 0 & 1 & -2
+	\end{bmatrix} & -\dfrac16 R_3
+	\end{flalign*}
+	The system equivalent of this reduced matrix is $\begin{cases}
+	3x - 2y + z &= 15 \\ y + 7z &= -15 \\ z &= -2
+	\end{cases}$.
+	
+	We can use back-substitution to find the values of $y$ and $x$:
+	
+	$y + 7(-2) = -15 \then y = -1$ \\
+	$3x - 2(-1) + (-2) = 15 \then 3x = 15 \then x = 5$
+	
+	The solution is $(5, -1, -2)$.
+	
+	\vfill \newpage
+	
+	\begin{bex}{10.1.66}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	Since we are asked to use Gaussian elimination with back-substitution, we will use the ref() command on a TI-84 to find the row-echelon form of the matrix, then use back-substitution to solve.
+	
+	$ref\fp{\begin{bmatrix}
+		1 & 2 & 0 \\ 1 & 1 & 6 \\ 3 & -2 & 8
+	\end{bmatrix}} = \begin{bmatrix}
+	1 & -\dfrac23 & \dfrac83 \\ 0 & 1 & -1 \\ 0 & 0 & 1
+	\end{bmatrix}$
+	
+	Since the bottom equation is $0 = 1$, which is false, this system of equations has no solution.
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.68}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	Since we are asked to use Gaussian elimination with back-substitution, we will use the ref() command on a TI-84 to find the row-echelon form of the matrix, then use back-substitution to solve.
+	
+	$ref\fp{\begin{bmatrix}
+		1 & -4 & 3 & -2 & 9 \\ 3 & -2 & 1 & -4 & -13 \\ -4 & 3 & -2 & 1 & -4 \\ -2 & 1 & -4 & 3 & -10
+		\end{bmatrix}} = \begin{bmatrix}
+	1 & -\frac34 & \frac12 & -\frac14 & 1 \\ 0 & 1 & -\frac{10}{13} & \frac{7}{13} & -\frac{32}{13} \\ 0 & 0 & 1 & -\frac{9}{11} & \frac{30}{11} \\ 0 & 0 & 0 & 1 & 4
+\end{bmatrix}$
+
+	Written as a system of equations, this is $\begin{cases}
+	x - \frac34 y + \frac12 z - \frac14 w &= 1 \\ y - \frac{10}{13}z + \frac{7}{13}w &= -\frac{32}{13} \\ z - \frac{9}{11}w &= \frac{30}{11} \\ w &= 4
+	\end{cases}$
+	
+	It would be easier to back-substitute if there were no fractions. Multiply the top equation by $4$, the second equation by $13$, and the third equation by $11$.
+	
+	$\begin{cases}
+	4x - 3y + 2z - w &= 4 \\ 13y - 10z + 7w &= -32 \\ 11z - 9w &= 30 \\ w &= 4
+	\end{cases}$
+	
+	Now we can back-substitute: \\
+	$11z - 9(4) = 30 \then 11z = 66 \then z = 6$ \\
+	$13y - 10(6) + 7(4) = -32 \then 13y - 32 = -32 \then y = 0$ \\
+	$4x - 3(0) + 2(6) - 4 = 4 \then 4x + 8 = 4 \then x = -1$
+	
+	The solution is $(-1, 0, 6, 4)$.
+	
+	\vfill \newpage
+	
+	\begin{bex}{10.1.76}
+		{
+			
+		}
+	\end{bex} \vspace{-32pt}
+	
+	% My answer here
+	\begin{flalign*}
+	\begin{bmatrix}
+	2 & -1 & 3 & 24 \\ 0 & 2 & -1 & 14 \\ 7 & -5 & 0 & 6
+	\end{bmatrix} &= \begin{bmatrix}
+	14 & -7 & 21 & 168 \\ 0 & 2 & -1 & 14 \\ -14 & 10 & 0 & -12
+	\end{bmatrix} & 7R_1; -2R_3 & \\
+	&= \begin{bmatrix}
+	2 & -1 & 3 & 24 \\ 0 & 2 & -1 & 14 \\ 0 & 3 & 21 & 156
+	\end{bmatrix} & R_1 + R_3; \dfrac17 R_1 & \\
+	&= \begin{bmatrix}
+	12 & -6 & 18 & 144 \\ 0 & 6 & -3 & 42 \\ 0 & -6 & -42 & -312
+	\end{bmatrix} & 6R_1; 3R_2; -2R_3 & \\
+	&= \begin{bmatrix}
+	12 & 0 & 15 & 186 \\ 0 & 2 & -1 & 14 \\ 0 & 0 & -45 & -270
+	\end{bmatrix} & R_2 + R_1; R_2 + R_3; \dfrac13 R_2 & \\
+	&= \begin{bmatrix}
+	36 & 0 & 45 & 558 \\ 0 & -90 & 45 & -630 \\ 0 & 0 & -45 & -270
+	\end{bmatrix} & 3R_1; -45R_2 & \\
+	&= \begin{bmatrix}
+	36 & 0 & 0 & 288 \\ 0 & -90 & 0 & -900 \\ 0 & 0 & -45 & -270
+	\end{bmatrix} & R_3 + R_1; R_3 + R_2 & \\
+	&= \begin{bmatrix}
+	1 & 0 & 0 & 8 \\ 0 & 1 & 0 & 10 \\ 0 & 0 & 1 & 6
+	\end{bmatrix}
+	\end{flalign*}
+	The solution is $(8, 10, 6)$.
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.78}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	Since we are asked to use Gauss-Jordan elimination, we will use the rref() command on a TI-84 to find the reduced row-echelon form of the matrix.
+	
+	$rref\fp{\begin{bmatrix}
+		2 & 2 & -1 & 2 \\ 1 & -3 & 1 & -28 \\ -1 & 1 & 0 & 14
+		\end{bmatrix}} = \begin{bmatrix}
+		1 & 0 & 0 & -6 \\ 0 & 1 & 0 & 8 \\ 0 & 0 & 1 & 2
+	\end{bmatrix}$
+
+	The solution is $(-6, 8, 2)$.	
+	
+	\vfill \newpage
+	
+	\begin{bex}{10.1.80}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	$rref\fp{\begin{bmatrix}
+		2 & 10 & 2 & 6 \\ 1 & 5 & 2 & 6 \\1 & 5 & 1 & 3 \\ -3 & -15 & -3 & -9
+		\end{bmatrix}} = \begin{bmatrix}
+	1 & 5 & 0 & 0 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0
+\end{bmatrix}$
+
+	So we have the system of equations $\begin{cases}
+	x + 5y = 0 \\ z = 3
+	\end{cases}$
+	
+	This tells us that there are infinitely many solutions. In all solutions, $z = 3$. If we isolate $x$ in the top equation, then $x = -5y$. So if $y \in \R$, then the solutions to the system are $(-5y, y, 3)$.
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.82}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	$rref\fp{\begin{bmatrix}
+		1 & 2 & 2 & 4 & 11 \\ 3 & 6 & 5 & 12 & 30 \\ 1 & 3 & -3 & 2 & -5 \\ 6 & -1 & -1 & 1 & -9
+		\end{bmatrix}} = \begin{bmatrix}
+	1 & 0 & 0 & 0 & -1 \\ 0 & 1 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 & 3 \\ 0 & 0 & 0 & 1 & 1
+	\end{bmatrix}$
+
+	The solution is $(-1, 1, 3, 1)$.
+	
+	\vfill % \newpage
+	
+	\begin{bex}{10.1.84}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	$rref\fp{\begin{bmatrix}
+		1 & 2 & 1 & 3 & 0 \\ 1 & -1 & 0 & 1 & 0 \\ 0 & 1 & -1 & 2 & 0
+		\end{bmatrix}} = \begin{bmatrix}
+	1 & 0 & 0 & 2 & 0 \\ 0 & 1 & 0 & 1 & 0 \\ 0 & 0 & 1 & -1 & 0
+	\end{bmatrix}$
+	
+	Written as a system: $\begin{cases}
+	x + 2w = 0 \\ y + w = 0 \\ z - w = 0
+	\end{cases}$
+	
+	We can solve for $x$, $y$, and $z$ in terms of $w$. So there are infinitely many solutions.
+	
+	$x + 2w = 0 \then x = -2w$ \\ $y + w = 0 \then y = -w$ \\ $z - w = 0 \then z = w$
+	
+	So our solution is $(-2w, -w, w, w)$ for all $w \in \R$.
+	
+	\vfill \newpage
+	
+	\begin{bex}{10.1.96}
+		{
+			
+		}
+	\end{bex} \vspace{-8pt}
+	
+	% My answer here
+	(a) We have the following three equations:
+	
+	$a(0)^2 + b(0) + c = 5.0 \then c = 5.0$ \\
+	$a(15)^2 + b(15) + c = 9.6 \then 225a + 15b + c = 9.6$ \\
+	$a(30)^2 + b(30) + c = 12.4 \then 900a + 30b + c = 12.4$
+	
+	Written as a matrix: $\begin{bmatrix}
+	0 & 0 & 1 & 5 \\ 225 & 15 & 1 & 9.6 \\ 900 & 30 & 1 & 12.4
+	\end{bmatrix}$
+	
+	$rref\fp{\begin{bmatrix}
+		0 & 0 & 1 & 5 \\ 225 & 15 & 1 & 9.6 \\ 900 & 30 & 1 & 12.4
+		\end{bmatrix}} = \begin{bmatrix}
+	1 & 0 & 0 & -0.004 \\ 0 & 1 & 0 & 0.366666 \\ 0 & 0 & 1 & 5
+	\end{bmatrix}$
+	
+	So $a = -0.004$, $b \approx 0.3667$, and $c = 5$. Our model is $y = -0.004x^2 + 0.3667x + 5$.
+	
+	(c) Looking at your graph, you should recognize that the maximum height is between $13$ and $14$. My estimate was $13.4$ feet, since it was little under halfway between $13$ and $14$. The ball struck the ground fairly close to $x = 105$; my estimate was $104$ feet.
+	
+	(d) $x = -\dfrac{0.3667}{2(-0.004)} \approx 45.8333$
+	
+	$y = -0.004(45.8333)^2 + 0.3667(45.8333) + 5 \approx 13.4028$ 
+	
+	The maximum height of the ball is about $13.4028$ feet.
+	\begin{flalign*}
+	0 &= -0.004x^2 + 0.3667x + 5 & \\
+	x &= \dfrac{-0.3667 \pm \sqrt{(0.3667)^2 - 4(-0.004)(5)}}{2(-0.004)} & \\
+	&= \dfrac{-0.3667 \pm \sqrt{0.2144}}{-0.008} & \\
+	&= \dfrac{-0.3667 - 0.4631}{-0.008} & \\
+	&\approx -12.0518, 103.7185
+	\end{flalign*}
+	The negative answer doesn't make sense. The ball struck the ground about $103.7185$ feet from where it was thrown.
+	
+	\vfill % \newpage
+	
+	
+	
+\end{document}

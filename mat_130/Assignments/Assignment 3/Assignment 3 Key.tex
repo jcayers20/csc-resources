@@ -1,0 +1,731 @@
+\documentclass[12pt]{letter}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb,graphicx, multicol,fancyhdr,lastpage,fullpage,framed,fancybox,enumerate,tikz,color,mathrsfs, polynom}
+\usepackage[margin=0.6in,headsep=3pt, headheight=15pt]{geometry}
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+\def\to{\rightarrow}
+\def\d{^{\circ}}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Counters
+\newcounter{exercise}
+
+% Exercise environment (auto-numbered)
+\newenvironment{exercise}[1][]{\begin{framed}\refstepcounter{exercise}\textbf{Exercise~\theexercise:} #1}{\end{framed}}
+
+% Book exercise environment
+\newenvironment{bex}[2][] {
+	\begin{framed}
+		\textbf{Book Exercise {#2}}#1
+	\end{framed}
+}
+% ----------------------------------------------------------
+
+\begin{document}
+\textbf{Assignment 3 Key \\ MAT 130}
+
+\begin{bex}{1.3.32}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Verbal Model: First $+$ Second $+$ Third $=$ 804 
+Let $x =$ the first natural number \\
+$x + 1 = $ the second natural number \\
+$x + 2 = $ the third natrual number
+\begin{flalign*}
+x + (x+1) + (x+2) &= 804 & \\
+3x + 3 &= 804 & \\
+3x &= 801 & \\
+x &= 267
+\end{flalign*}
+The three numbers are $267$, $268$, and $269$.
+
+% \vspace{}
+\vfill % \newpage
+
+
+\begin{bex}{1.3.38}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Verbal Model: List Price $-$ Discount $=$ Discounted Price \\
+Let $x =$ List Price
+\begin{flalign*}
+x - 0.165x &= 1210.75 & \\
+0.835x &= 1210.75 & \\
+x &= 1450
+\end{flalign*}
+The original list price of the pool was \$1,450.
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.3.44}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Verbal Model: Course Grade = $\dfrac{\text{Sum of Scores}}{\text{Sum of Possible Points}} \times 100$ \\
+Let $x = $ your score on the fourth test
+\begin{flalign*}
+90 &= \dfrac{87 + 92 + 84 + x}{100 + 100 + 100 + 200}\times 100 & \\
+0.90 &= \dfrac{x + 263}{500} & \\
+450 &= x + 263 & \\
+x &= 187
+\end{flalign*}
+In order to earn an A in the class, you must earn a score of 187 or higher on the fourth test.
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.3.46}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Verbal Model: Distance $=$ Rate $\times$ Time $\then$ Rate $ = \dfrac{\text{Distance}}{Time}$ \\
+Let $s =$ the average speed for the entire trip
+
+We know that the total distance will be 400 miles (200 miles each way); we need to find out how long it will take the driver to make each trip. We can use the formula $d = rt$ to help us with this.
+
+\underline{Picking Up:} \\
+$200 = 55t \then t = 3.\overline{63}$ (store this value in your calculator for accuracy)
+
+\underline{Return Trip:} \\
+$200 = 40t \then t = 5$
+
+So the total time is $3.\overline{63} + 5 = 8.\overline{63}$.
+
+$s = \dfrac{400}{8.\overline{63}} \approx 46.32$
+
+The average speed for the entire trip was about 46.32 miles per hour.
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.3.50}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Verbal Model: $\dfrac{\text{Height of Tree (cm)}}{\text{Height of Lamppost (cm)}} = \dfrac{\text{Tree Shadow (cm)}}{\text{Lamp Shadow (cm)}}$
+
+Let $h =$ the height of the tree in centimeters (we'll convert this to meters once we're done).
+
+We need to have consistency in units, so we will need to convert all meter measurements to centimeter measurements. There are 100 centimeters in one meter, so the length of the tree's shadow is 800 cm, and the height of the lamppost is 200 cm.
+\begin{flalign*}
+\dfrac{h}{200} &= \dfrac{800}{75} & \\
+75h &= 160000 & \\
+h &\approx 2133.33
+\end{flalign*}
+The tree's height is about 2133.33 cm, or about 21.33 m.
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.3.62}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+S &= L - RL & \\
+S &= L(1 - R) & \\
+L &= \dfrac{S}{1 - R}
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.3.68}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+F &= \dfrac95 C + 32 & \\
+&= \dfrac95 \fp{58.8} + 32 & \\
+&= 137.84
+\end{flalign*}
+The boiling point of bromine is $137.84\d$ F.
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.3.70}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+V &= \pi r^2 h & \\
+603.2 &= \pi(2)^2 h & \\
+603.2 &= 4\pi h & \\
+h &= \dfrac{603.2}{4\pi} & \\
+&\approx 48 
+\end{flalign*}
+The length of the tank is about 48 feet.
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.4.10}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+4x^2 + 12x + 9 &= 0 & \\
+(2x + 3)^2 &= 0 & \\
+2x + 3 &= 0 & \\
+x &= \set{-\dfrac32}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.4.14}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+x^2 - 2x - 8 &= 0 & \\
+(x - 4)(x + 2) &= 0 & \\
+x - 4 &= 0 \then x = 4 & \\
+x + 2 &= 0 \then x = -2 & \\
+&\therefore x = \set{-2, 4}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.4.24}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+9x^2 &= 36 & \\
+x^2 &= 4 & \\
+x &= \pm 2
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.4.30}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+(4x + 7)^2 &= 44 & \\
+4x + 7 &= \pm\sqrt{44} & \\
+4x + 7 &= \pm 2\sqrt{11} & \\
+4x &= -7 \pm 2\sqrt{11} & \\
+x &= \dfrac{-7 \pm 2\sqrt{11}}{4}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.4.78}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+x^2 + 8x + 10 &= 0 & \\
+x &= \dfrac{-8 \pm \sqrt{8^2 - 4(1)(10)}}{2(1)} & \\
+x &= \dfrac{-8\pm \sqrt{24}}{2} & \\
+x &= \dfrac{-8\pm 2\sqrt{6}}{2} & \\
+x &= -4 \pm \sqrt{6}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.4.92}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+2x^2 - 2.50x - 0.42 &= 0 & \\
+200x^2 - 250x - 42 &= 0 & \\
+100x^2 - 125x - 21 &= 0 & \\
+x &= \dfrac{125\pm\sqrt{(-125)^2 - 4(100)(-21)}}{2(100)} & \\
+x &= \dfrac{125\pm\sqrt{24025}}{200} & \\
+x &= \dfrac{125\pm 155}{200} & \\
+x &= \dfrac{280}{200} = 1.400 & \\
+x &= -\dfrac{30}{200} = -0.150 & \\
+x &= \set{-0.150, 1.400}
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.4.96}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+-3.22x^2 - 0.08x + 28.561 &= 0 & \\
+x &= \dfrac{0.08\pm\sqrt{(-0.08)^2 - 4(-3.22)(28.561)}}{2(-3.22)} & \\
+x &= \dfrac{0.08\pm\sqrt{367.87208}}{-6.44} & \\
+x &= \dfrac{0.08\pm 19.17999166}{-6.44} & \\
+x &= \dfrac{19.25999166}{-6.44} \approx -2.991 & \\
+x &= \dfrac{-19.09999166}{-6.44} \approx 2.966
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.4.102}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+x^2 + 3x - \dfrac34 &= 0 & \\
+4x^2 + 12x - 3 &= 0 & \\
+x &= \dfrac{-12\pm\sqrt{12^2 - 4(4)(-3)}}{2(4)} & \\
+x &= \dfrac{-12 \pm \sqrt{192}}{8} & \\
+x &= \dfrac{-12 \pm 8\sqrt{3}}{8} & \\
+x &= \dfrac{-3\pm 2\sqrt{3}}{2}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.14}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+2 - \sqrt{-18} &= 2 - i\sqrt{18} & \\
+&= 2 - 3i\sqrt{2}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.24}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+$8 + 4i$
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.5.28}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+(8 + \sqrt{-18}) - (4 + 3\sqrt{2}i) &= 8 + 3i\sqrt{2} - 4 - 3i\sqrt{2} & \\
+&= 4
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.32}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+(7 - 2i)(3 - 5i) &= 21 - 35i - 6i + 10i^2 & \\
+&= 21 - 41i - 10 & \\
+&= 11 - 41i
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.34}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+-8i(9 + 4i) &= -72i - 32i^2 & \\
+&= 32 - 72i
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.48}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+\dfrac{13}{1 - i}\fp{\dfrac{1+i}{1+i}} &= \dfrac{13\fp{1 + i}}{1 - i^2} & \\
+&= \dfrac{13 + 13i}{2} & \\
+&= \dfrac{13}{2} + \dfrac{13}{2}i
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.50}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+\dfrac{6 - 7i}{1 - 2i}\fp{\dfrac{1 + 2i}{1 + 2i}} &= \dfrac{(6-7i)(1+2i)}{1 - 4i^2} & \\
+&= \dfrac{6 + 5i - 14i^2}{5} & \\
+&= \dfrac{20 + 5i}{5} & \\
+&= 4 + i
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.5.70}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+9x^2 - 6x + 37 &= 0 & \\
+x &= \dfrac{6\pm\sqrt{(-6)^2 - 4(9)(37)}}{2(9)} & \\
+x &= \dfrac{6\pm\sqrt{-1296}}{18} & \\
+x &= \dfrac{6\pm 36i}{18} & \\
+x &= \dfrac{1}{3} \pm 2i
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.5.76}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+4.5x^2 - 3x + 12 &= 0 & \\
+45x^2 - 30x + 120 &= 0 & \\
+3x^2 - 2x + 8 &= 0 & \\
+x &= \dfrac{2\pm\sqrt{(-2)^2 - 4(3)(8)}}{2(3)} & \\
+x &= \dfrac{2\pm\sqrt{-92}}{6} & \\
+x &= \dfrac{2\pm 2i\sqrt{23}}{6} & \\
+x &= \dfrac13 \pm \dfrac{\sqrt{23}}{3}i
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.6.6}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+4x(9x^2 - 25) &= 0 & \\
+4x(3x +5)(3x - 5) &= 0 & \\
+4x &= 0 \then x = 0 & \\
+3x + 5 &= 0 \then x = -\dfrac53 & \\
+3x - 5 &= 0 \then x = \dfrac53 & \\
+&\therefore x = \set{-\dfrac53, 0, \dfrac53}
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.6.14}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+x^3 + 2x^2 + 3x + 6 &= 0 & \\
+x^2(x + 2) + 3(x + 2) &= 0 & \\
+\fp{x^2 + 3}(x + 2 &= 0) & \\
+x^2 + 3 &= 0 \then x = \pm i\sqrt{3} & \\
+x + 2 &= 0 \then x = -2 & \\
+&\therefore x = \set{-2, -i\sqrt{3}, i\sqrt{3}}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.6.18}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Let $u = x^2$
+\begin{flalign*}
+u^2 - 13u + 36 &= 0 & \\
+(u - 9)(u - 4) &= 0 & \\
+(x^2 - 9)(x^2 - 4) &= 0 & \\
+(x +3)(x-3)(x+2)(x-2) &= 0 &\\
+x &= \set{-3, -2, 2, 3}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.6.20}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+Let $u = t^2$ \begin{flalign*}
+36u^2 + 29u - 7 &= 0 & \\
+36u^2 + 36u - 7u - 7 &= 0 & \\
+36u(u + 1) - 7(u + 1) &= 0 & \\
+(36u - 7)(u + 1) &= 0 & \\
+\fp{36t^2 - 7}\fp{t^2 + 1} &= 0 & \\
+36t^2 - 7 &= 0 \then t = \pm\dfrac{\sqrt{7}}{6} & \\
+t^2 + 1 &= 0 \then t = \pm i & \\
+&\therefore t = \set{-\dfrac{\sqrt{7}}{6}, \dfrac{\sqrt{7}}{6}, -i, i}
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.6.38}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+2x &= \sqrt{-5x + 24} - 3 & \\
+2x &= \sqrt{-5x + 24} & \\
+\fp{2x + 3}^2 &= -5x + 24 & \\
+4x^2 + 12x + 9 &= -5x + 24 & \\
+4x^2 + 17x - 15 &= 0 & \\
+4x^2 + 20x - 3x - 15 &= 0 & \\
+4x(x + 5) - 3(x + 5) &= 0 & \\
+(4x - 3)(x+5) &= 0 & \\
+x &= \set{-5, \dfrac34}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \e
+
+	{
+		
+% 	} % \newpage
+\begin{bex}{1.6.48} \end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+\fp{x^2 - x - 22}^{3/2} &= 27 & \\
+\fp{\sqrt{x^2 - x - 22}}^3 &= 27 & \\
+\sqrt{x^2 - x - 22} &= 3 & \\
+x^2 - x - 22 &= 9 & \\
+x^2 - x - 31 &= 0 & \\
+x &= \dfrac{1\pm\sqrt{(-1)^2 - 4(1)(-31)}}{2(1)} & \\
+x &= \dfrac{1\pm\sqrt{125}}{2} & \\
+x &= \dfrac{1\pm 5\sqrt{5}}{2}
+\end{flalign*}
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.6.58}
+	{
+		
+	}
+\end{bex} \vspace{-32pt}
+
+% My answer here
+\begin{flalign*}
+\dfrac{x+1}{3}\fp{\dfrac{x + 2}{x + 2}} - \dfrac{x + 1}{x+2}\fp{\dfrac{3}{3}} &= 0 & \\
+\dfrac{(x+1)(x+2)}{3(x+2)} - \dfrac{3(x+1)}{3(x+2)} &= 0 & \\
+(x+1)(x+2) - 3(x + 1) &= 0 & \\
+x^2 + 3x + 2 - 3x - 3 &= 0 & \\
+x^2 - 1 &= 0 & \\
+x^2 &= 1 & \\
+x &= \pm 1
+\end{flalign*}
+
+% \vspace{}
+\vfill \newpage
+
+\begin{bex}{1.6.100}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+(a) We would like to know the value of $t$ at which $N = 135$ (since $N$ is measured in thousands). \begin{flalign*}
+135 &= \sqrt{735.024 + 1839.666t} & \\
+18225 &= 735.024 + 1839.666t & \\
+17489.976 &= 1839.666t & \\
+t &\approx 9.51
+\end{flalign*}
+The number of registered nursing graduates reached 135,000 in 2009.
+
+(b) We would like to know the value of $t$ at which $N = 200$.
+\begin{flalign*}
+200 &= \sqrt{735.024 + 1839.666t} & \\
+40000 &= 735.1839.666t & \\
+39264.976 &= 1839.666t & \\
+t &\approx 21.35
+\end{flalign*}
+The model predicts that the number of RN graduates will reach 200,000 in 2021.
+
+% \vspace{}
+\vfill % \newpage
+
+\begin{bex}{1.6.102}
+	{
+		
+	}
+\end{bex} \vspace{-8pt}
+
+% My answer here
+(a) We would like to know the value of $t$ at which $P = 210$ (since $P$ is measured in millions).
+\begin{flalign*}
+210 &= \dfrac{184.64 + 0.7524t^2}{1 + 0.0028t^2} & \\
+210\fp{1 + 0.0028t^2} &= 184.64 + 0.7524t^2 & \\
+210 + 0.588t^2 &= 184.64 + 0.7524t^2 & \\
+-0.1644t^2 &= -25.36 & \\
+t^2 &= 154.2579 & \\
+t &\approx \pm 12.42
+\end{flalign*}
+The negative root is not reasonable. The voting-age population reached 210 million in 2002.
+
+(b) We would like to know the value of $t$ at which $P = 260$.
+\begin{flalign*}
+260 &= \dfrac{184.64 + 0.7524t^2}{1 + 0.0028t^2} & \\
+260\fp{1 + 0.0028t^2} &= 184.64 + 0.7524t^2 & \\
+260 + 0.728t^2 &= 184.64 + 0.7524t^2 & \\
+-0.0244t^2 &= -75.36 & \\
+t^2 &= 3088.52459 & \\
+t &\approx 55.57
+\end{flalign*}
+
+% \vspace{}
+\vfill
+
+\end{document}

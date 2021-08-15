@@ -1,0 +1,500 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Using Matrices to Solve Systems of Linear Equations}
+\subtitle{Section 10.1}
+\author{Jacob Ayers}
+\institute{Lesson \#25}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use Gaussian elimination with back-substitution to solve systems of linear equations
+			\item Use Gauss-Jordan elimination to solve systems of linear equations
+			\item Use a graphing utility as an aid in solving systems of linear equations
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Review - Elementary Row Operations}
+		Recall that there are three elementary row operations that preserve row equality in matrices:
+		
+		\begin{block}{Elementary Row Operations}
+			\begin{enumerate}[1)]
+				\item Interchange two rows.
+				\item Multiply a row by a nonzero constant.
+				\item Add one row to another row to replace the latter.
+			\end{enumerate}
+		\end{block} \pause
+	
+		These elementary row operations are analogous to the row operations we looked at when solving systems of equations.
+	\end{frame}
+
+	\begin{frame}{Linear Systems and Matrix Operations}
+		Compare solving the linear system  to using its associated augmented matrix.
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\only<2-3>{$\begin{cases}
+					2x + y - z &= -3 \\ 4x - 2y + 2z &= -2 \\ -6x + 5y + 4z &= 10
+					\end{cases}$
+				}
+				
+				\only<3-4>{$\begin{cases}
+					-4x - 2y + 2z &= 6 \\ 4x - 2y + 2z &= -2 \\ -6x + 5y + 4z &= 10
+					\end{cases}$
+				}
+				
+				\only<4-5>{$\begin{cases}
+					2x + y - z &= -3 \\ -4y + 4z &= 4 \\ -6x + 5y + 4z &= 10
+					\end{cases}$
+				}
+				
+				\only<5-6>{$\begin{cases}
+					6x + 3y - 3z &= -9 \\ y - z &= -1 \\ -6x + 5y + 4z &= 10
+					\end{cases}$
+				}
+				
+				\only<6-7>{$\begin{cases}
+					2x + y - z &= -3 \\ y - z &= -1 \\ 8y + z &= 1
+					\end{cases}$
+				}
+				
+				\only<7-8>{$\begin{cases}
+					2x + y - z &= -3 \\ -8y + 8z &= 8 \\ 8y + z &= 1
+					\end{cases}$
+				}
+				
+				\only<8-9>{$\begin{cases}
+					2x + y - z &= -3 \\ y - z &= -1 \\ 9z &= 9
+					\end{cases}$
+				}
+				
+				\only<9->{$\begin{cases}
+					x + \frac12 y - \frac12 z &= -\frac32 \\ y - z &= -1 \\ z &= 1
+					\end{cases}$
+				} \vspace{24pt}
+				
+				\only<10->{$y - 1 = -1 \then y = 0$} \vspace{24pt}
+				
+				\only<11>{The solution is $(-1, 0, 1)$.}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\only<2-3>{$\begin{amatrix}{3}
+					2 & 1 & -1 & -3 \\ 4 & -2 & 2 & -2 \\ -6 & 5 & 4 & 10
+					\end{amatrix}$ \vspace{12pt}
+				} 
+				
+				\only<3-4>{$\begin{amatrix}{3}
+					-4 & -2 & 2 & 6 \\ 4 & -2 & 2 & -2 \\ -6 & 5 & 4 & 10
+					\end{amatrix}$ \vspace{12pt}
+				}
+				
+				\only<4-5>{$\begin{amatrix}{3}
+					2 & 1 & -1 & -3 \\ 0 & -4 & 4 & 4 \\ -6 & 5 & 4 & 10
+					\end{amatrix}$ \vspace{12pt}
+				}
+				
+				\only<5-6>{$\begin{amatrix}{3}
+					6 & 3 & -3 & -9 \\ 0 & 1 & -1 & -1 \\ -6 & 5 & 4 & 10
+					\end{amatrix}$ \vspace{12pt}
+				}
+				
+				\only<6-7>{$\begin{amatrix}{3}
+					2 & 1 & -1 & -3 \\ 0 & 1 & -1 & -1 \\ 0 & 8 & 1 & 1
+					\end{amatrix}$
+				}
+				
+				\only<7-8>{$\begin{amatrix}{3}
+					2 & 1 & -1 & -3 \\ 0 & -8 & 8 & 8 \\ 0 & 8 & 1 & 1
+					\end{amatrix}$ \vspace{12pt}
+				}
+				
+				\only<8-9>{$\begin{amatrix}{3}
+					2 & 1 & -1 & -3 \\ 0 & 1 & -1 & -1 \\ 0 & 0 & 9 & 9
+					\end{amatrix}$ \vspace{12pt}
+				}
+				
+				\only<9->{$\begin{amatrix}{3}
+					1 & \frac12 & -\frac12 & -\frac32 \\ 0 & 1 & -1 & -1 \\ 0 & 0 & 1 & 1
+					\end{amatrix}$
+				} \vspace{32pt}
+				
+				\only<10->{$x + \frac12 (0) - \frac12 (1) = -\frac32 \then x = -1$}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Linear Systems and Matrix Operations}
+		The takeaway from the last problem: We can use matrix operations just like we used row operations before to write a system of linear equations in row-echelon form.
+		
+		\begin{block}{Row-Echelon Form and Reduced Row-Echelon Form}
+			A matrix in \textit{row-echelon form} has the following properties. \begin{enumerate}[1)]
+				\item Any rows consisting entirely of zeros are at the bottom.
+				\item For each row that doesn't consist entirely of zeros, the first nonzero entry is $1$ (called a \textit{leading $1$}).
+				\item As you move up the matrix, the leading $1$ moves left.
+			\end{enumerate}
+			
+			A matrix in row-echelon form is in \textit{reduced row-echelon form} when every column that has a leading $1$ has zeros in every position above and below its leading $1$.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Linear Systems and Matrix Operations}
+		There are two methods for solving systems of linear equations using matrices: Gaussian elimination with back-substitution and Gauss-Jordan elimination. \pause
+		
+		\begin{block}{Gaussian Elimination with Back-Substitution}
+			To solve a system of linear equations using Gaussian elimination with back-substitution: \begin{enumerate}[1)]
+				\item Write the system as an augmented matrix.
+				\item Use elementary row operations to write the matrix in row-echelon form.
+				\item Convert this matrix back to a system of linear equations.
+				\item Back-substitute to find solution; write it as a point.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Gaussian Elimination with Back-Substitution}
+		Solve using Gaussian elimination: $\begin{cases}
+		-3x + 5y + 3z &= -19 \\ 3x + 4y + 4z &= 8 \\ 4x - 8y - 6z &= 26
+		\end{cases}$
+		
+		\only<2-3>{$\begin{amatrix}{3}
+			-3 & 5 & 3 & -19 \\ 3 & 4 & 4 & 8 \\ 4 & -8 & -6 & 26
+			\end{amatrix}$
+		}
+		
+		\only<3-4>{$\begin{amatrix}{3}
+			-3 & 5 & 3 & -19 \\ 0 & 9 & 7 & -11 \\ 4 & -8 & -6 & 26
+			\end{amatrix}$
+		}
+		
+		\only<4-5>{$\begin{amatrix}{3}
+			-12 & 20 & 12 & -76 \\ 0 & 9 & 7 & 11 \\ 12 & -24 & -18 & 78
+			\end{amatrix}$
+		}
+		
+		\only<5-6>{$\begin{amatrix}{3}
+			-3 & 5 & 3 & -19 \\ 0 & 9 & 7 & -11 \\ 0 & -4 & -6 & 2
+			\end{amatrix}$
+		}
+		
+		\only<6-7>{$\begin{amatrix}{3}
+			-3 & 5 & 3 & -19 \\ 0 & 36 & 28 & -44 \\ 0 & -36 & -54 & 18
+			\end{amatrix}$
+		}
+		
+		\only<7-8>{$\begin{amatrix}{3}
+			-3 & 5 & 3 & -19 \\ 0 & 9 & 7 & -11 \\ 0 & 0 & -26 & -26
+			\end{amatrix}$
+		}
+		
+		\only<8-9>{$\begin{amatrix}{3}
+			1 & -\frac53 & -1 & \frac{19}{3} \\ 0 & 1 & \frac79 & -\frac{11}{9} \\ 0 & 0 & 1 & 1
+			\end{amatrix}$
+		}
+		
+		\only<9->{Written as a system in row-echelon form: $\begin{cases}
+			x - \frac53 y - z &= \frac{19}{3} \\ y + \frac79 z &= -\frac{11}{9} \\ z &= 1
+			\end{cases}$
+		}
+		
+		\only<10->{Back-substituting to find $x$ and $y$: \\
+			$y + \frac79 (1) = -\frac{11}{9} \then y = -\frac{18}{9} = -2$ \\
+			$x - \frac53 (-2) - \frac33 = \frac{19}{3} \then x + \frac73 = \frac{19}{3} \then x = \frac{12}{3} = 4$
+		}
+		
+		\only<11>{The solution is $(4, -2, 1)$.}
+	\end{frame}
+	
+	\begin{frame}{Gaussian Elimination with Back-Substitution}
+		Solve using Gaussian elimination: $\begin{cases}
+		x + y + z &= 1 \\ x + 2y + 2z &= 2 \\ x - y - z &= 1
+		\end{cases}$
+		
+		\only<2-3>{$\begin{amatrix}{3}
+			1 & 1 & 1 & 1 \\ 1 & 2 & 2 & 2 \\ 1 & -1 & -1 & 1
+			\end{amatrix}$
+		}
+		
+		\only<3-4>{$\begin{amatrix}{3}
+			-1 & -1 & -1 & -1 \\ 1 & 2 & 2 & 2 \\ 1 & -1 & -1 & 1
+			\end{amatrix}$
+		}
+		
+		\only<4-5>{$\begin{amatrix}{3}
+			1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & -2 & -2 & 0
+			\end{amatrix}$
+		}
+		
+		\only<5-6>{$\begin{amatrix}{3}
+			1 & 1 & 1 & 1 \\ 0 & -1 & -1 & -1 \\ 0 & 1 & 1 & 0
+			\end{amatrix}$
+		}
+		
+		\only<6->{$\begin{amatrix}{3}
+			1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & -1
+			\end{amatrix}$
+		}
+		
+		\only<7->{Written as a system in row-echelon form: $\begin{cases}
+			x + y + z &= 1 \\ y + z &= 1 \\ 0 &= -1
+			\end{cases}$
+		}
+		
+		\only<8>{The bottom equation is a false statement; there is no solution to this system.}
+	\end{frame}
+	
+	\begin{frame}{Gauss-Jordan Elimination}
+		Gaussian elimination requires the use of back-substitution in order to find the values of the variables. If we do more work with the matrices, we can avoid back-substitution. \pause
+		
+		\begin{block}{Gauss-Jordan Elimination}
+			To solve a system of linear equations using Gauss-Jordan elimination: \begin{enumerate}[1)]
+				\item Write the system as an augmented matrix. 
+				\item Use elementary row operations to write the matrix in \textit{reduced} row-echelon form.
+				\item Write the solution as a point.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Gauss-Jordan Elimination}
+		Solve using Gauss-Jordan elimination: $\begin{cases}
+		2x - 5y + 5z &= 17 \\ 3x - 2y + 3z &= 11 \\ -3x + 3y &= -6
+		\end{cases}$
+		
+		\only<2-3>{$\begin{amatrix}{3}
+			2 & -5 & 5 & 17 \\ 3 & -2 & 3 & 11 \\ -3 & 3 & 0 & -6
+			\end{amatrix}$
+		}
+		
+		\only<3-4>{$\begin{amatrix}{3}
+			2 & -5 & 5 & 17 \\ 3 & -2 & 3 & 11 \\ 0 & 1 & 3 & 5
+			\end{amatrix}$
+		}
+		
+		\only<4-5>{$\begin{amatrix}{3}
+			-6 & 15 & -15 & -51 \\ 6 & -4 & 6 & 22 \\ 0 & 1 & 3 & 5
+			\end{amatrix}$
+		}
+		
+		\only<5-6>{$\begin{amatrix}{3}
+			2 & -5 & 5 & 17 \\ 0 & 11 & -9 & -29 \\ 0 & 1 & 3 & 5
+			\end{amatrix}$
+		}
+		
+		\only<6-7>{$\begin{amatrix}{3}
+			22 & -55 & 55 & 187 \\ 0 & 55 & -45 & -145 \\ 0 & -55 & -165 & -275
+			\end{amatrix}$
+		}
+		
+		\only<7-8>{$\begin{amatrix}{3}
+			22 & 0 & 10 & 42 \\ 0 & 11 & -9 & -29 \\ 0 & 0 & -210 & -420
+			\end{amatrix}$
+		}
+		
+		\only<8-9>{$\begin{amatrix}{3}
+			22 & 0 & 10 & 42 \\ 0 & 11 & -9 & -29 \\ 0 & 0 & 1 & 2
+			\end{amatrix}$
+		}
+		
+		\only<9-10>{$\begin{amatrix}{3}
+			-198 & 0 & -90 & -378 \\ 0 & 110 & -90 & -290 \\ 0 & 0 & 90 & 180
+			\end{amatrix}$
+		}
+		
+		\only<10-11>{$\begin{amatrix}{3}
+			-198 & 0 & 0 & -198 \\ 0 & 110 & 0 & -110 \\ 0 & 0 & 1 & 2
+			\end{amatrix}$
+		}
+		
+		\only<11->{$\begin{amatrix}{3}
+			1 & 0 & 0 & 1 \\ 0 & 1 & 0 & -1 \\ 0 & 0 & 1 & 2
+			\end{amatrix}$
+		}
+		
+		\only<12->{Written as a system in reduced row-echelon form: $\begin{cases}
+			x &= 1 \\ y &= -1 \\ z &= 2
+			\end{cases}$}
+		
+		\only<13>{The solution is $(1, -1, 2)$.}
+	\end{frame}
+	
+	\begin{frame}{Gauss-Jordan Elimination}
+		Solve using Gauss-Jordan elimination: $\begin{cases}
+		x + 2y - 3z &= -28 \\ 4y + 2z &= 0 \\ -x + y - z &= -5
+		\end{cases}$
+		
+		\only<2-3>{$\begin{amatrix}{3}
+			1 & 2 & -3 & -28 \\ 0 & 4 & 2 & 0 \\ -1 & 1 & -1 & -5
+			\end{amatrix}$
+		}
+		
+		\only<3-4>{$\begin{amatrix}{3}
+			1 & 2 & -3 & -28 \\ 0 & 4 & 2 & 0 \\ 0 & 3 & -4 & -33
+			\end{amatrix}$
+		}
+		
+		\only<4-5>{$\begin{amatrix}{3}
+			-6 & -12 & 18 & 168 \\ 0 & 12 & 6 & 0 \\ 0 & -12 & 16 & 132
+			\end{amatrix}$
+		}
+		
+		\only<5-6>{$\begin{amatrix}{3}
+			-6 & 0 & 24 & 168 \\ 0 & 2 & 1 & 0 \\ 0 & 0 & 22 & 132
+			\end{amatrix}$
+		}
+		
+		\only<6-7>{$\begin{amatrix}{3}
+			1 & 0 & -4 & -28 \\ 0 & 2 & 1 & 0 \\ 0 & 0 & 1 & 6
+			\end{amatrix}$
+		}
+		
+		\only<7-8>{$\begin{amatrix}{3}
+			1 & 0 & -4 & -28 \\ 0 & -8 & -4 & 0 \\ 0 & 0 & 4 & 24
+			\end{amatrix}$
+		}
+		
+		\only<8-9>{$\begin{amatrix}{3}
+			1 & 0 & 0 & -4 \\ 0 & -8 & 0 & 24 \\ 0 & 0 & 1 & 6
+			\end{amatrix}$
+		}
+		
+		\only<9-10>{$\begin{amatrix}{3}
+			1 & 0 & 0 & -4 \\ 0 & 1 & 0 & -3 \\ 0 & 0 & 1 & 6
+			\end{amatrix}$
+		}
+		
+		\only<10>{The solution is $(-4, -3, 6)$.}
+	\end{frame}
+	
+	\begin{frame}{Using Technology}
+		Good news! Graphing utilities can write matrices in reduced row-echelon form.
+		
+		They do the leg work for us, and then we can use the result to solve the system. \pause
+		
+		I'll be demonstrating with a TI-84 Plus CE, but I've also posted a video demonstrating how to do so on a Casio fx-9750 GII.
+		
+		Any problem on Assignment \#12 that is marked with an asterisk (*) may be worked with a calculator (i.e. no work required). \pause
+	\end{frame}
+	
+	\begin{frame}{Using Technology}
+		Use a graphing utility to solve: $\begin{cases}
+		3x + 3y + 12z &= 6 \\ x + y + 4z &= 2 \\ 2x + 5y + 20z &= 10 \\ -x + 2y + 8z &= 4
+		\end{cases}$ \pause
+		
+		The resulting reduced row-echelon matrix is $\begin{amatrix}{3}
+		1 & 0 & 0 & 0 \\ 0 & 1 & 4 & 2 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0
+		\end{amatrix}$
+		
+		This tells us that $x = 0$ and $y + 4z = 2 \then y = -4z + 2$. We conclude that there are infinitely many solutions and that they are of the form $(0, -4z + 2, z)$ for $z \in \R$.
+	\end{frame}
+	
+	\begin{frame}{Using Technology}
+		Use a graphing utility to solve: $\begin{cases}
+		2x + y - z + 2w &= -6 \\ 3x + 4y + w &= 1 \\ x + 5y + 2z + 6w &= -3 \\ 5x + 2y - z - w &= 3
+		\end{cases}$ \pause
+		
+		The resulting reduced row-echelon matrix is $\begin{amatrix}{4}
+		1 & 0 & 0 & 0 & 1 \\ 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 4 \\ 0 & 0 & 0 & 1 & -2
+		\end{amatrix}$ \pause
+		
+		So the solution is $(1, 0, 4, -2)$.
+	\end{frame}
+	
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Ask questions in Lesson 25 Forum, if you have any
+			\item Complete Assignment \#12
+			\item Begin Module \#15
+			\begin{itemize}
+				\item Read 10.2 (stop at bottom of page 720)
+				\item Watch Video Lesson \#26
+			\end{itemize}
+		\end{itemize}
+		
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

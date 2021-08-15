@@ -1,0 +1,343 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Degree symbol
+\def\deg{^\circ}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[1.3 and 1.4]{Linear Models; Quadratic Equations}
+\subtitle{Sections 1.3 and 1.4}
+\author{Jacob Ayers}
+\institute{Lesson \#5}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+
+% Slide 1 (Title Slide)
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Slide 2 (Objectives)
+\begin{frame}[t]{Objectives}
+\begin{itemize}
+	\item Solve problems involving linear models
+	\item Solve quadratic equations by factoring
+	\item Solve quadratic equations by extracting square roots
+	\item Solve quadratic equations using the Quadratic Formula
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Linear Models}
+Many real-life situations can be modeled using linear equations.
+
+Example: You accept a job with an annual income of \$58,400. This includes your salary and a \$1200 year-end bonus. You are paid weekly. What is your salary per pay period?
+
+\begin{flalign*}
+\onslide<2->{I &= N\cdot P + B & \\}
+\onslide<3->{58400 &= 52P + 1200 & \\}
+\onslide<4->{57200 &= 52P & \\}
+\onslide<5>{\$P &= 1100}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Linear Models}
+You buy a stock at \$15 per share. You sell the stock at \$18 per share. What is the percent increase in the stock's value?
+
+\begin{flalign*}
+\onslide<2->{R &= P\cdot O & \\}
+\onslide<3->{3 &= P\cdot 15 & \\}
+\onslide<4->{P &= 0.2}
+\end{flalign*}
+
+\onslide<5>{The stock's price increased by 20\%.}
+\end{frame}
+
+\begin{frame}[t]{Linear Models}
+A boat travels at a constant speed to an island 14 miles away. It takes 0.5 hour to travel the first 5 miles. How long does the entire trip take?
+
+\pause
+
+We can use the equation $d = rt$ to solve this equation.
+
+\pause
+
+First, find the rate of the boat: $5 = r(0.5) \Rightarrow r = 10$ mph.
+
+\pause
+
+Next, use this rate to determine how long it will take to travel 14 miles.
+
+\pause
+
+$14 = 10t \Rightarrow t = 1.4$
+
+\pause
+
+So it will take 1.4 hours, or 1 hour and 24 minutes, for the entire trip.
+\end{frame}
+
+\begin{frame}[t]{Common Formulas}
+On page 95 of the text, there are two boxes filled with common formulas that can be used to solve applied problems.
+
+You should know most of these already, but make sure you spend time getting to know them (with the exception of the interest formulas; we'll cover interest later). 
+\end{frame}
+
+\begin{frame}[t]{Using Common Formulas}
+A cylinder has a volume of 250 cubic cm and a diameter of 10 inches. How tall is the can?
+
+\pause
+
+We use the formula for the volume of a cylinder, with $V = 250$ and $r = 5$.
+
+\pause
+
+\begin{flalign*}
+V &= \pi r^2 h & \\
+250 &= \pi (5)^2 h & \\
+\dfrac{250}{25\pi} &= h \\
+h &\approx 3.18 \text{ cm}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Linear Models}
+It is currently $65\deg$ F outside. What is the temperature in degrees Celsius?
+
+\pause
+
+We use the formula $C = \dfrac59\fp{F - 32}$, with $F = 65$.
+
+\pause
+
+\begin{flalign*}
+C &= \dfrac59\fp{65 - 32} & \\
+&= \dfrac59\fp{33} \\
+&\approx 18.33\deg \text{ C}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Quadratic Equations}
+\begin{block}{Definition}
+A \textit{quadratic equation} in $x$ is an equation that can be written in the form $$ax^2 + bx + c = 0$$ with $a,b,c\in\R$ and $a \neq 0$.
+\end{block}
+
+\pause
+
+We have three main strategies for solving quadratic equations: \begin{itemize}
+\pause \item Factoring
+\pause \item Square Roots
+\pause \item Quadratic Formula
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Solving Quadratic Equations by Factoring}
+\begin{block}{Strategy: Solve Quadratic Equations by Factoring}
+\begin{enumerate}[1)]
+\item Write the equation in the form $ax^2 + bx + c = 0$
+\item Factor the left-hand side of the equation
+\item Use the zero product property to find solution(s)
+\end{enumerate}
+\end{block}
+
+\onslide<2->{Example: Solve $x^2 - 4x = 60$}
+
+\begin{flalign*}
+\onslide<3->{x^2 - 4x - 60 &= 0 & \\}
+\onslide<4->{(x-10)(x+6) &= 0 & \\}
+\onslide<5>{x &= \set{-6, 10}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Solving Quadratic Equations by Factoring}
+Solve $2x^2 - 3x + 1 = 6$
+
+\begin{flalign*}
+\onslide<2->{2x^2 - 3x - 5 &= 0 & \\}
+\onslide<3->{(2x - 5)(x + 1) &= 0 & \\}
+\onslide<4>{x &= \set{-1, \dfrac{5}{2}}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Extracting Square Roots}
+We can solve equations of the form $ax^2 + c = 0$ by extracting square roots.
+
+\pause
+
+\begin{block}{Strategy: Solve Quadratic Equations by Extracting Square Roots}
+\begin{enumerate}[1)]
+\item Isolate the $x^2$ term
+\item Take the square root of each side of the equation
+\item Write solution(s) (if there are solutions, they'll involve a $\pm$)
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Extracting Square Roots}
+Solve for $x$: $4x^2 = 12$
+
+\pause
+
+$4x^2 = 12 \Rightarrow x^2 = 3 \Rightarrow x = \pm \sqrt{3}$ \vspace{18pt}
+
+\pause
+
+Solve for $x$: $(x-1)^2 = 10$
+
+\pause
+
+$(x-1)^2 = 10 \Rightarrow x - 1 = \pm \sqrt{10} \Rightarrow x = 1 \pm \sqrt{10}$
+\end{frame}
+
+\begin{frame}[t]{The Quadratic Formula}
+The Quadratic Formula is one of the most important formulas in all of algebra. The formula can be used to solve \textit{any} quadratic equation.
+
+\pause
+
+\begin{block}{The Quadratic Formula}
+Given an equation of the form $ax^2 + bx + c = 0$, we can find its solution(s) using the formula $$x = \dfrac{-b\pm\sqrt{b^2 - 4ac}}{2a}$$ if there are any.
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{The Quadratic Formula}
+Solve for $x$: $3x^2 + 2x = 10$
+
+First, write in the form $ax^2 + bx + c = 0$: $3x^2 + 2x - 10 = 0$ \\
+$a = 3$, $b = 2$, $c = -10$
+\begin{flalign*}
+\onslide<2->{x &= \dfrac{-b\pm\sqrt{b^2 - 4ac}}{2a} & \\}
+\onslide<3->{&= \dfrac{-(2) \pm \sqrt{(2)^2 - 4(3)(-10)}}{2(3)} & \\}
+\onslide<4->{&= \dfrac{-2\pm\sqrt{124}}{6} & \\}
+\onslide<5->{&= \dfrac{-2\pm 2\sqrt{31}}{6} & \\}
+\onslide<6>{&= -\dfrac13 \pm \dfrac{\sqrt{31}}{3}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{The Quadratic Formula}
+Solve for $x$: $x^2 - 12x + 9 = 0$
+
+$a = 1$, $b = -12$, $c = 9$
+
+\begin{flalign*}
+\onslide<2->{x &= \dfrac{-b\pm\sqrt{b^2 - 4ac}}{2a} & \\}
+\onslide<3->{&= \dfrac{-(-12)\pm\sqrt{(-12)^2 - 4(1)(9)}}{2(1)} & \\}
+\onslide<4->{&= \dfrac{12\pm\sqrt{108}}{2} & \\}
+\onslide<5->{&= \dfrac{12\pm 6\sqrt{3}}{2} & \\}
+\onslide<6>{&= 6 \pm 3\sqrt{3}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Applications}
+A rectangular kitchen is 6 feet longer than it is wide and has an area of 112 square feet. Find the dimensions of the kitchen.
+
+\pause
+
+$A = \ell w$ \\
+$\ell = w + 6$
+\pause
+\begin{flalign*}
+112 &= w(w+6) & \\
+112 &= w^2 + 6w & \\
+w^2 + 6w - 112 &= 0 & \\
+(w + 14)(w - 8) &= 0 & \\
+w &= \set{-14, 8}
+\end{flalign*}
+
+\pause
+
+But the width can't be negative. So the dimensions of the kitchen are 8 feet wide by 14 feet long. 
+\end{frame}
+
+\begin{frame}[t]{Applications}
+A construction worker accidentally drops a wrench from height of 150 feet. How long will it take the wrench to hit the ground? Use the equation $s = -16t^2 + v_0 t + s_0$.
+
+\pause
+
+We will assume that the wrench has no initial velocity (i.e. $v_0 = 0$). We know that $s = 0$ (since we want to know when the wrench hits the ground and that $s_0 = 150$.
+\pause
+\begin{flalign*}
+0 &= -16t^2 + 0t + 150 \\
+-150 &= -16t^2 \\
+9.375 &= t^2 \\
+t &\approx 3.06 \text{ sec}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Next Steps}
+\begin{itemize}
+\item Post questions in the Lesson 5 Forum, if you have them.
+\item Read Sections 1.5 and 1.6
+\item Watch Video Lesson \#6
+\item Complete Assignment \#3
+\end{itemize}
+
+\vfill
+
+Thanks for watching!
+
+\end{frame}
+\end{document}

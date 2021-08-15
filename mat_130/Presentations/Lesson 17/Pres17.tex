@@ -1,0 +1,280 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[5.1]{Exponential Functions and Their Graphs}
+\subtitle{Section 5.1}
+\author{Jacob Ayers}
+\institute{Lesson \#17}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Evaluate exponential expressions and functions
+			\item Graph exponential functions
+			\item Solve exponential equations using the One-to-One Property
+			\item Solve problems involving the natural base $e$
+			\item Solve applications of exponential functions
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Exponential Functions}
+		\begin{block}{Definition}
+			The \textit{exponential function $f$ with base $a$} is denoted by $$f(x) = a^x$$ where $a > 0$, $a \neq 1$, and $x \in \R$
+		\end{block} \pause
+	
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				Example: Use a calculator to evaluate each expression at the given value of $x$: \begin{enumerate}[a)]
+					\item $f(x)=2^x$ at $x = -2.3$
+					\item $f(x)=2^{-x}$ at $x = 4.92$
+					\item $f(x)=0.6^x$ at $x = -\pi$
+				\end{enumerate} 
+			\end{column} \pause
+			\begin{column}{0.5\textwidth}
+				\begin{enumerate}[a)]
+					\item $f(-2.3) \approx 0.2031$
+					\item $f(4.92) \approx 0.03303$
+					\item $f(-\pi) \approx 4.9769$
+				\end{enumerate}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Graphs of Exponential Functions}
+		We graph exponential functions using the Point-Plotting Method. \pause
+		
+		Example: Graph $f(x) = 3^x$ and $g(x) = 9^x$ on the same coordinate plane. \pause
+		
+		\begin{tabular}{c|cccccc}
+			$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ \\ \hline
+			$f(x)$ & $\frac{1}{27}$ & $\frac{1}{9}$ & $\frac{1}{3}$ & $1$ & $3$ & $9$ \\ \hline
+			$g(x)$ & $\frac{1}{729}$ & $\frac{1}{81}$ & $\frac{1}{9}$ & $1$ & $9$ & $81$  
+		\end{tabular} \pause
+	
+		These points will be enough for us to draw accurate graphs.
+	\end{frame}
+
+	\begin{frame}{Graphs of Exponential Functions}
+		\includegraphics[width=4in]{Exp1.png}
+	\end{frame}
+
+	\begin{frame}{Graphs of Exponential Functions}
+		Graph $f(x) = 3^{-x}$ and $g(x) = 9^{-x}$ on the same coordinate plane. \pause
+		
+		\begin{tabular}{c|cccccc}
+			$x$ & $3$ & $2$ & $1$ & $0$ & $-1$ & $-2$ \\ \hline
+			$f(x)$ & $\frac{1}{27}$ & $\frac{1}{9}$ & $\frac{1}{3}$ & $1$ & $3$ & $9$ \\ \hline
+			$g(x)$ & $\frac{1}{729}$ & $\frac{1}{81}$ & $\frac{1}{9}$ & $1$ & $9$ & $81$  
+		\end{tabular} \pause
+	\end{frame}
+
+	\begin{frame}{Graphs of Exponential Functions}
+		\includegraphics[width=4in]{Exp2.png}
+	\end{frame}
+
+	\begin{frame}{Solving Basic Exponential Equations}
+		\begin{block}{One-To-One Property of Exponents}
+			For all $a > 0$ and $a \neq 1$, $a^x = a^y$ if and only if $x = y$.
+		\end{block} \pause
+	
+		We can use this property to solve simple exponential equations. \pause
+		
+		Example: Solve for $x$: $3^{7x - 4} = 27$ \pause
+		
+		The important thing to notice here is that $27 = 3^3$. \pause \begin{flalign*}
+		3^{7x - 4} &= 27 & \\
+		3^{7x - 4} &= 3^3 & \\
+		7x - 4 &= 3 & \\
+		x &= 1
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Solving Basic Exponential Equations}
+		Solve for $x$: $\fp{\dfrac14}^{-x} =  16$ \pause
+		
+		We can use properties of exponents to show that $\fp{\dfrac14}^{-x} = 4^x$ and we also know that $16 = 4^2$. \pause \begin{flalign*}
+		\fp{\dfrac14}^{-x} &= 16 & \\
+		4^x &= 4^2 & \\
+		x &= 2
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{The Natural Base $e$}
+		The number $e \approx 2.71828...$ is called the natural base, and it is used in many applications. \pause
+		
+		$e$ is an irrational constant, much like $\pi$. Your calculator should have an $e$ and/or an $e^x$ button. \pause
+		
+		The exact value of $e$ is the limit of $\fp{1 + \dfrac{1}{m}}^m$ as $m$ increases without bound (you'll learn more about limits in Calculus). \pause
+		
+		Use a calculator to evaluate $f(x) = e^x$ at $x = 0.3$, $x = -1.2$, and $x = 6.2$ \pause
+		
+		$f(0.3) \approx 1.3499$ \\
+		$f(-1.2) \approx 0.3012$ \\
+		$f(6.2) \approx 492.7490$
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		One of the most common applications of exponential functions is compound interest. \pause
+		
+		\begin{block}{Compound Interest}
+			After $t$ years, the balance $A$ in an account with principal $P$ and annual interest rate $r$ (as a decimal) is given by one of these two formulas: \begin{enumerate}[1)]
+				\item Compounded $n$ times per year: $A = P\fp{1 + \dfrac{r}{n}}^{nt}$ \\
+				\item Compounded continuously: $A = Pe^{rt}$
+			\end{enumerate} \pause
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		Some common values of $n$ are: \\
+		``compounded annually": $n = 1$ \\
+		``compounded semi-annually": $n = 2$ \\
+		``compounded quarterly": $n = 4$ \\
+		``compounded monthly": $n = 12$ \\
+		``compounded daily": $n = 365$
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		Jim places \$50,000 into a retirement account earning 8\%, compounded quarterly. How much will the account be worth when Jim retires in 35 years? \pause
+		
+		This is a compound interest problem with $P = 50000$, $r = 0.08$, $n = 4$, and $t = 35$ \pause \begin{flalign*}
+		A &= P\fp{1+\dfrac{r}{n}}^{nt} & \\
+		&= 50000\fp{1 + \dfrac{0.08}{4}}^{4(35)} & \\
+		&= 50000(1.02)^{140} & \\
+		&\approx \$799,823.30
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		At the time of her graduation, Hailey has student loan debt totaling \$86,719.38 at an interest rate of 6.75\%, compounded continuously. She is not required to make any payment on the loan for six months. How much interest will she be charged during those six months? \pause
+		
+		To solve this continuously compounding interest problem, we'll find Hailey's balance after six month $t = 0.5$ and subtract her current balance from her new balance to figure out how much interest she was charged.
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		$t = 0.5$, $r = 0.0725$, $P = 86719.38$ \pause \begin{flalign*}
+		A &= Pe^{rt} & \\
+		&= 86719.38e^{0.0725*0.5} & \\
+		&\approx \$89920.63
+		\end{flalign*} \pause
+		Hailey was charged $\$89920.63 - \$86719.38 = \$3,201.25$ in interest.
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		In 1986, a nuclear reactor accident occurred in Chernobyl in what was then the Soviet Union. The explosion spread highly toxic radioactive chemicals, such as plutonium $\fp{^{239}\text{Pu}}$, over hundreds of square miles, and the government evacuated the city and the surrounding area. To see why the city is now uninhabited, consider the model $$P = 10\fp{\dfrac{1}{2}}^{t/24000}$$ which represents the amount of Plutonium $P$ that remains (from an initial amount of 10 pounds) after $t$ years. How much of the 10 pounds will remain after 100 years? After 125,000 years?
+	\end{frame}
+
+	\begin{frame}{Applications of Exponential Functions}
+		$P(t) = 10\fp{\dfrac{1}{2}}^{t/24100}$ \pause
+		
+		We need to find $P(100)$ and $P(125000)$.
+		
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\begin{flalign*}
+				P(100) &= 10(0.5)^{100/24100} & \\
+				&\approx 9.9713 \text{ lb}
+				\end{flalign*}
+			\end{column} \pause
+			\begin{column}{0.5\textwidth}
+				\begin{flalign*}
+				P(125000) &= 10(0.5)^{125000/24100} & \\
+				&\approx 0.2746 \text{ lb}
+				\end{flalign*}
+			\end{column}
+		\end{columns} \pause \vspace{12pt}
+	
+		After 100 years, there will be about 9.97 pounds of plutonium, and after 125,000 years there will be about 0.27 pounds of plutonium.
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Ask questions in Lesson 17 Forum, if you have any
+			\item Complete Assignment \#8
+			\item Begin Module \#10
+			\begin{itemize}
+				\item Read 5.2
+				\item Watch Video Lesson \#18
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

@@ -1,0 +1,310 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=white}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}
+		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[P.5 and P.6]{Rational Expressions; The Coordinate Plane}
+\subtitle{Sections P.5 and P.6}
+\author{Jacob Ayers}
+\institute{MAT 130} % Course Name
+\date{Lesson \#3} % Lesson #
+% ----------------------------------------------------------
+
+\begin{document}
+
+% Slide 1 (Title Slide)
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Slide 2 (Objectives)
+\begin{frame}[t]{Objectives}
+\begin{itemize}
+	\item Find the domain of an algebraic expression
+	\item Simplify rational expressions and complex fractions
+	\item Add, subtract, multiply, and divide rational expressions
+	\item Use the distance and midpoint formulas to solve applied problems
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Domain}
+The \textit{domain} of an algebraic expression is the set of real numbers for which it is defined. \vspace{6pt}
+
+\pause
+
+When finding domain, I recommend determining which values cannot be substituted into the function; the domain is everything else. \vspace{6pt}
+
+\pause
+
+There are two common situations when a number won't ``work" in an expression: \vspace{-4pt} \begin{enumerate}[1)]
+\item When it results in a denominator of zero
+\item When it results in taking an even-numbered root (e.g. square root) of a negative number
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Finding Domain}
+Find the domain of the expression $3x^2 + 5x - 2$.
+
+\pause No matter what value of $x$ we plug in, we aren't going to have a zero in the denominator, and there won't be an even root of a negative number. \pause So the domain is all real numbers. \pause We write this as $\R$, or $(-\infty, \infty)$ in interval notation. \vspace{18pt}
+
+\pause
+
+Find the domain of the expression $\sqrt{x+5}$.
+
+\pause
+
+Here, we run into trouble if the expression under the root is less than $0$. \pause So if $x + 5 \geq 0$, then the expression is defined. \pause Thus, the domain is $x \geq -5$, which as an interval is $[-5, \infty)$.
+\end{frame}
+
+\begin{frame}[t]{Finding Domain}
+Find the domain of the expression $\dfrac{3}{4x + 1}$
+
+\pause
+
+We run into trouble if the denominator is zero. So as long as $4x + 1 \neq 0$, the expression will be defined. \pause Thus, the domain is $x \neq -\dfrac14$. As an interval, we write this as $\fp{-\infty, -\dfrac14} \cup \fp{-\dfrac14, \infty}$. \vspace{18pt}
+
+\pause
+
+Find the domain of the expression $\dfrac{\sqrt{x-5}}{x-6}$
+
+\pause
+
+On top, our restriction is $x \geq 5$, and and on bottom our restriction is $x \neq 6$ (why?). \pause So our domain is $x \geq 5, x\neq 6$, or $[5, 6) \cup (6, \infty)$.
+\end{frame}
+
+\begin{frame}[t]{Simplifying Rational Expressions}
+A \textit{rational expression} is a fraction in which the numerator and/or the denominator are polynomial expressions.
+
+To simplify a rational expression, we factor each expression if possible and cancel common terms.
+
+\pause
+
+Simplify $\dfrac{x^3 + 64}{x^2 - 4x + 16}$
+
+\pause
+
+\begin{flalign*}
+\dfrac{x^3 + 64}{x^2 - 4x + 16} &= \dfrac{(x + 4)\fp{x^2 - 4x + 16}}{x^2 - 4x + 16} &\\
+&= x+4 &
+\end{flalign*}
+
+\pause
+
+There is no domain restriction here, as the denominator will always be positive.
+\end{frame}
+
+\begin{frame}[t]{Simplifying Rational Expressions}
+Simplify $\dfrac{4x+12}{x^2 - 3x - 18}$
+
+\pause
+
+\begin{flalign*}
+\dfrac{4x+12}{x^2 - 3x - 18} &= \dfrac{4\fp{x+3}}{(x-6)(x+3)} & \\
+&= \dfrac{4}{x-6} & x \in \fp{-\infty, -3} \cup \fp{-3, 6} \cup \fp{6, \infty} &
+\end{flalign*}
+
+\pause
+
+When thinking about domain restrictions, we look at the \textit{original expression}. In the original expression, the domain is $x \neq -3$, $x \neq 6$.
+
+\end{frame}
+
+\begin{frame}[t]{Operations with Rational Expressions}
+Operations with rational expressions are identical to operations with fractions. First, factor all factorable expressions. \pause
+
+To add or subtract rational expressions, a like denominator is needed before adding. \pause
+
+To multiply rational expressions, multiply the numerators and multiply the denominators. \pause
+
+To divide rational expressions, multiply by the reciprocal of the denominator.
+\end{frame}
+
+\begin{frame}[t]{Operations with Rational Expressions}
+Simplify: $\dfrac{3}{x-1} - \dfrac{2}{x} + \dfrac{x+3}{x^2 - 1}$
+
+\begin{flalign*}
+\onslide<2->{\dfrac{3}{x-1} - \dfrac{2}{x} + \dfrac{x+3}{x^2 - 1} &= \dfrac{3}{x-1} - \dfrac{2}{x} + \dfrac{x+3}{(x+1)(x-1)} &} \\
+\onslide<3->{&= \dfrac{3x(x+1) - 2(x+1)(x-1) + (x+3)(x)}{x(x-1)(x+1)} \\ &x \neq 0, \pm 1}
+\end{flalign*}
+
+\onslide<4>{We could expand the numerator and the denominator, but this is not required.}
+\end{frame}
+
+\begin{frame}[t]{Operations with Rational Expressions}
+Simplify: $\dfrac{15x^2 + 5x}{x^3 - 3x^2 - 18x} \cdot \dfrac{x^2 - 2x - 15}{3x^2 - 8x - 3}$
+
+\begin{flalign*}
+\onslide<2->{\dfrac{15x^2 + 5x}{x^3 - 3x^2 - 18x} \cdot \dfrac{x^2 - 2x - 15}{3x^2 - 8x - 3} &= \dfrac{5x(3x + 1)}{x(x^2 - 3x - 18)} \cdot \dfrac{(x-5)(x+3)}{(3x+1)(x-3)} &} \\
+\onslide<3->{&= \dfrac{5x}{x(x-6)(x+3)}\cdot \dfrac{(x-5)(x+3)}{x-3} &} \\
+\onslide<4->{&= \dfrac{5(x-5)}{(x+6)(x-3)} & \\}
+\onslide<5>{&x\neq -\dfrac13, 0, -3,6}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Operations with Rational Expressions}
+Simplify: $\dfrac{x^3 - 1}{x^2 - 1} \div \dfrac{x^2 + x + 1}{x^2 + 2x + 1}$
+
+\begin{flalign*}
+\onslide<2->{\dfrac{x^3 - 1}{x^2 - 1} \div \dfrac{x^2 + x + 1}{x^2 + 2x + 1} &= \dfrac{x^3 - 1}{x^2 - 1} \cdot \dfrac{x^2 + 2x + 1}{x^2 + x + 1} &} \\
+\onslide<3->{&= \dfrac{(x-1)(x^2 + x + 1)}{(x+1)(x-1)}\cdot \dfrac{(x+1)^2}{x^2 + x + 1} &} \\
+\onslide<4->{&=x+1, \; x \neq \pm 1}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Complex Fractions}
+A \textit{complex fraction} is a fraction in which the numerator and/or denominator.
+
+Complex fractions look ugly, but simplifying them is just dividing fractions.
+\end{frame}
+
+\begin{frame}[t]{Complex Fractions}
+Simplify: $\dfrac{\frac{1}{x+2} + 1}{\frac{x}{3} - 1}$
+
+\begin{flalign*}
+\onslide<2->{\dfrac{\frac{1}{x+2} + 1}{\frac{x}{3} - 1} &= \dfrac{\frac{1 + x + 2}{x + 2}}{\frac{x-3}{3}} &} \\
+\onslide<3->{&= \dfrac{x+3}{x+2}\div \dfrac{x-3}{3} &} \\
+\onslide<4->{&= \dfrac{x+3}{x+2}\cdot \dfrac{3}{x-3} &} \\
+\onslide<5>{&= \dfrac{3(x+3)}{(x+2)(x-3)} \; , \text{ }x \neq -2, 3}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{The Cartesian Coordinate Plate}
+\coordplane
+\end{frame}
+
+\begin{frame}[t]{Distance and Midpoint}
+\includegraphics[width=2in]{Segment.png}
+
+\pause
+
+Using the drawing below, we can develop an understanding of the Distance Formula.
+
+\pause
+
+The length of the horizontal leg is $x_2 - x_1$, and the length of the vertical leg is $y_2 - y_1$. 
+
+\pause
+
+So, using the Pythagorean Theorem, we know that $$D = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+
+\end{frame}
+
+\begin{frame}[t]{Distance and Midpoint}
+\includegraphics[width=2in]{Segment.png}
+
+\pause
+
+The \textit{midpoint} of a segment is the exact center.
+
+\pause
+
+To find it, we take the average of the $x$-coordinates and the average of the $y$-coordinates.
+
+Midpoint = $\fp{\dfrac{x_1 + x_2}{2},\dfrac{y_1+y_2}{2}}$
+\end{frame}
+
+\begin{frame}[t]{Distance and Midpoint}
+Given the points $(-2, 1)$ and $(3, 4)$, find the distance and the midpoint.
+
+\pause
+
+\begin{flalign*}
+\onslide<2->{D &= \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} &} \\
+\onslide<3->{&= \sqrt{(3 - (-2))^2 + (4 - 1)^2} &} \\
+\onslide<4->{&= \sqrt{34} &} \\
+\end{flalign*}
+\vspace{-24pt}
+\begin{flalign*}
+\onslide<5->{M &= \fp{\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}} &} \\
+\onslide<6>{&=\fp{\dfrac{1}{2}, \dfrac{5}{2}}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{An Application}
+Yahoo! Inc. had annual revenues of approximately \$5.0 billion in 2012 and \$4.6 billion in 2014. Without knowing any additional information, what would you estimate the 2013 revenue to have been?
+
+\pause
+
+This is a midpoint problem. To estimate the 2013 revenue, we take the average of $5.0$ and $4.6$, which is \$4.8 billion.
+\end{frame}
+
+\begin{frame}[t]{Next Steps}
+\begin{itemize}
+\item Post questions in the Lesson 3 Forum, if you have any
+\item Read 1.1 and 1.2
+\item Watch Video Lesson \#4
+\item Complete Assignment \#2
+\end{itemize}
+
+\vfill
+
+Thanks for watching!
+\end{frame}
+\end{document}

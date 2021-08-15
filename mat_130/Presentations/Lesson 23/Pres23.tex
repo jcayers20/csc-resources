@@ -1,0 +1,405 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[9.3]{Multivariable Linear Systems}
+\subtitle{Section 9.3}
+\author{Jacob Ayers}
+\institute{Lesson \#23}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use back-substitution to solve linear systems
+			\item Use Gaussian elimination to solve systems of linear equations
+			\item Use systems of equations in applications
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Multivariable Linear Systems}
+		We can use elimination and substitution to solve systems of more than two linear equations. \pause
+		
+		We will mostly use elimination, but first let's take a look at a system that can be solved easily using substitution: \pause
+		
+		$\begin{cases}
+		x - 2y + 3z = 9 \\ y + 3z = 5 \\ z = 2
+		\end{cases}$ \pause
+	\end{frame}
+
+	\begin{frame}{Multivariable Linear Systems}
+		$\begin{cases}
+		x - 2y + 3z = 9 \\ y + 3z = 5 \\ z = 2
+		\end{cases}$ \pause
+		
+		The bottom equation gives us the value of $z$ ($z = 2$). \pause
+		
+		In the middle equation, we can use this fact to find $y$: \\ $y + 3(2) = 5 \then y = -1$ \pause
+		
+		Now that we know the values of $y$ and $z$, we can use them to find the value of $x$: \\
+		$x - 2(-1) + 3(2) = 9 \then x + 2 + 6 = 9 \then x = 1$ \pause
+		
+		Our solution (as a point) is $(1, -1, 2)$.
+	\end{frame}
+
+	\begin{frame}{Multivariable Linear Systems}
+		Solve the system of linear equations: $\begin{cases}
+		x - y + 5z = 22 \\ y + 3z = 6 \\ z = 3
+		\end{cases}$ \pause
+		
+		First, solve for $y$: \\ $y + 3(3) = 6 \then y = -3$ \pause
+		
+		Next, solve for $x$: \\ $x - (-3) + 5(3) = 22 \then x + 18 = 22 \then x = 4$ \pause
+		
+		Finally, write the solution as an ordered triple: $(4, -3, 3)$
+	\end{frame}
+
+	\begin{frame}{Multivariable Linear Systems}
+		Systems that have a ``stair-step" pattern with leading coefficients of $1$ (like the last two systems) are said to be in \textit{row-echelon form}. \pause
+		
+		Of course, not all systems that we encounter will be in row-echelon form. \pause
+		
+		In this case, we use the method of \textit{Gaussian elimination} to write them in row-echelon form.
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		\begin{block}{Operations that Produce Equivalent Systems}
+			\begin{enumerate}[1)]
+				\item Interchanging two equations
+				\item Multiplying one of the equations by a non-zero constant
+				\item Adding a multiple of one equation to another equation to replace the latter equation
+			\end{enumerate}
+		\end{block} \pause
+	
+		In \textit{Gaussian elimination}, we use these row operations to write a system of equations in row-echelon form, then use back-substitution to find the values of all variables.
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		Solve the system of linear equations: $\begin{cases}
+		x - 2y + 3z &= 9 \\ -x + 3y &= -4 \\ 2x - 5y + 5z &= 17
+		\end{cases}$
+		
+		\only<2-3>{$\begin{cases}
+			x - 2y + 3z &= 9 \\ y + 3z &= 5 \\ 2x - 5y + 5z &= 17
+			\end{cases}$
+		}
+	
+		\only<3-4>{$\begin{cases}
+			-2x + 4y - 6z &= -18 \\ y + 3z &= 5 \\ 2x - 4y + 8z &= 22
+			\end{cases}$
+		}
+	
+		\only<4-5>{$\begin{cases}
+			-2x + 4y - 6z &= -18 \\ y + 3z &= 5 \\ 2z &= 4
+			\end{cases}$
+		}
+	
+		\only<5-6>{$\begin{cases}
+			x - 2y + 3z &= 9 \\ y + 3z &= 5 \\ z &= 2
+			\end{cases}$
+		}
+	
+		\only<6>{This system is now written in row-echelon form. We solved this system before, so we won't solve it again here.}
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		Solve the system of linear equations: $\begin{cases}
+		x + y + z &= 6 \\ 2x - y + z &= 3 \\ 3x + y - z &= 2
+		\end{cases}$ \pause
+		
+		Sometimes, we can solve systems faster if we are willing to be less ``strict" in our use of Gaussian elimination.
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		Solve the system of linear equations: $\begin{cases}
+		x + y + z &= 6 \\ 2x - y + z &= 3 \\ 3x + y - z &= 2
+		\end{cases}$
+		
+		\only<2-3>{$\begin{cases}
+			x + y + z &= 6 \\ 2x - y + z &= 3 \\ 3x + y - z &= 2
+			\end{cases}$
+		}
+	
+		\only<3-4>{$\begin{cases}
+			x + y + z &= 6 \\ 2x - y + z &= 3 \\ 5x &= 5
+			\end{cases}$
+		}
+	
+		\only<4-5>{$\begin{cases}
+			x &= 1 \\ 2x - y + z &= 3 \\ x + y + z &= 6
+			\end{cases}$
+		}
+	
+		\only<5-6>{$\begin{cases}
+			x &= 1 \\ 3x + 2z &= 9 \\ x + y + z &= 6
+			\end{cases}$
+		}
+	
+		\only<6->{At this point, we can stop doing row operations and solve.
+		
+		$3(1) + 2z = 9 \then z = 3$
+		
+		$1 + y + 3 = 6 \then y = 2$ 
+		}
+	
+		\only<7>{The solution is $(1, 2, 3)$.}
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		\begin{block}{Number of Solutions for a Linear System}
+			For a system of linear equations, exactly one of the following is true. \begin{enumerate}[1)]
+				\item There is exactly one solution
+				\item There are infinitely many solutions
+				\item There is no solution
+			\end{enumerate}
+		\end{block}
+	
+		Let's take a look at a system that has no solution and a system that has infinitely many solutions.
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		Solve the system of linear equations: $\begin{cases}
+		x + y - 2z &= 3 \\ 3x - 2y + 4z &= 1 \\ 2x - 3y + 6z &= 8
+		\end{cases}$
+		
+		\only<2-3>{$\begin{cases}
+			x + y - 2z &= 3 \\ 3x - 2y + 4z &= 1 \\ 2x - 3y + 6z &= 8
+			\end{cases}$
+		}
+	
+		\only<3-4>{$\begin{cases}
+			-3x - 3y + 6z &= -9 \\ 3x - 2y + 4z &= 1 \\ 2x - 3y + 6z &= 8
+			\end{cases}$
+		}
+	
+		\only<4-5>{$\begin{cases}
+			x + y - 2z &= 3 \\ -5y + 10z &= -8 \\ 2x - 3y + 6z &= 8
+			\end{cases}$
+		}
+	
+		\only<5-6>{$\begin{cases}
+			-2x - 2y + 4z &= -6 \\ -5y + 10z &= -8 \\ 2x - 3y + 6z &= 8
+			\end{cases}$
+		}
+	
+		\only<6->{$\begin{cases}
+			x + y - 2z &= 3 \\ -5y + 10z &= -8 \\ -5y + 10z &= 2
+			\end{cases}$
+		}
+	
+		\only<7>{It is not possible for the same expression to be equivalent to multiple values, so there is no solution to this system.}
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		Solve the system of linear equations: $\begin{cases}
+		x + 2y - 7z &= -4 \\ 2x + 3y + z &= 5 \\ 3x + 7y - 36z &= -25
+		\end{cases}$
+		
+		\only<2-3>{$\begin{cases}
+			x + 2y - 7z &= -4 \\ 2x + 3y + z &= 5 \\ 3x + 7y - 36z &= -25
+			\end{cases}$	
+		}
+	
+		\only<3-4>{$\begin{cases}
+			-2x - 4y + 14z &= 8 \\ 2x + 3y + z &= 5 \\ 3x + 7y - 36z &= -25
+			\end{cases}$		
+		}
+	
+		\only<4-5>{$\begin{cases}
+			x + 2y - 7z &= -4 \\ -y + 15z &= 13 \\ 3x + 7y - 36z &= -25
+			\end{cases}$
+		}
+	
+		\only<5-6>{$\begin{cases}
+			-3x - 6y + 21z &= 12 \\ -y + 15z &= 13 \\ 3x + 7y - 36z &= -25
+			\end{cases}$
+		}
+	
+		\only<6-7>{$\begin{cases}
+			x + 2y - 7z &= -4 \\ -y + 15z &= 13 \\ y - 15z &= -13
+			\end{cases}$
+		}
+	
+		\only<7->{$\begin{cases}
+			x + 2y - 7z &= -4 \\ 0 &= 0 \\ y - 15z &= -13
+			\end{cases}$
+		}
+	
+		\only<8->{The fact that the second equation reduces to $0 = 0$ tells us that it is dependent on the other two equations; it doesn't tell us anything. So what we need to do is to solve for both $y$ and $x$ in terms of $z$.}
+	\end{frame}
+
+	\begin{frame}{Gaussian Elimination}
+		Solve the system of linear equations: $\begin{cases}
+		x + 2y - 7z &= -4 \\ 2x + 3y + z &= 5 \\ 3x + 7y - 36z &= -25
+		\end{cases}$ \pause
+		
+		The bottom equation can be solved for $y$ in terms of $x$: $y = 15z - 13$ \pause
+		
+		We can then use substitution to get solve the top equation for $x$ in terms of $z$: \\
+		$x + 2(15z - 13) - 7z = -4 \then x + 23z - 26 = -4 \then x = -23z + 22$ \pause
+		
+		Our solution, then is $(-23z + 22, 15z - 13, z)$ for all $z \in \R$
+		
+		As an example, let $z = 3$. Then the corresponding solution point is $(-47, 32, 3)$. We can easily confirm that this point is a solution to the system using our calculator.
+	\end{frame}
+
+	\begin{frame}{Applications}
+		The height at time $t$ of an object that is movign in a (vertical) line with constant acceleration $a$ is given by the \textit{position equation} $$s = \dfrac12 at^2 + v_0t + s_0$$ where $s$ is the height of the object (in feet), $v_0$ is the initial velocity (at $t = 0$) and $s_0$ is the initial height of the object (in feet). \pause
+		
+		Use the position equation to find the values of $a, v_0$, and $s_0$ if the following information is given: \\
+		After 1 second, the object's height is $104$ ft \\
+		After 2 seconds, the height is $76$ ft \\
+		After 3 seconds, the height is $16$ ft 
+	\end{frame}
+
+	\begin{frame}{Applications}
+		This application can be solved using a system of three linear equations, as follows: \pause
+		\begin{flalign*}
+		\dfrac12 a(1)^2 + v_0(1) + s_0 &= 104 & \\
+		&\then \dfrac12 a + v_0 + s_0 = 104 & \\
+		&\then a + 2v_0 + 2s_0 = 208
+		\end{flalign*} \pause \vspace{-18pt}
+		\begin{flalign*}
+		\dfrac12 a(2)^2 + v_0(2) + s_0 &= 76 & \\
+		&\then 2a + 2v_0 + s_0 = 76
+		\end{flalign*} \pause \vspace{-18pt}
+		\begin{flalign*}
+		\dfrac12 a(3)^2 + v_0(3) + s_0 &= 16 & \\
+		&\then \dfrac92 a + 3v_0 + s_0 = 16 & \\
+		&\then 9a + 6v_0 + 2s_0 = 32
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Applications}
+		So our problem is to solve the linear system $\begin{cases}
+		a + 2v_0 + 2s_0 &= 208 \\ 2a + 2v_0 + s_0 &= 76 \\ 9a + 6v_0 + 2s_0 &= 32
+		\end{cases}$
+		
+		\only<2-3>{$\begin{cases}
+			a + 2v_0 + 2s_0 &= 208 \\ 2a + 2v_0 + s_0 &= 76 \\ 9a + 6v_0 + 2s_0 &= 32
+			\end{cases}$
+		}
+	
+		\only<3-4>{$\begin{cases}
+			-2a - 4v_0 - 4s_0 &= -416 \\ 2a + 2v_0 + s_0 &= 76 \\ 9a + 6v_0 + 2s &= 32
+			\end{cases}$
+		}
+	
+		\only<4-5>{$\begin{cases}
+			a + 2v_0 + 2s_0 &= 208 \\ -2v - 3s &= -340 \\ 9a + 6v + 2s &= 32
+			\end{cases}$
+		}
+	
+		\only<5-6>{$\begin{cases}
+			-9a - 18v_0 - 18s_0 &= -1872 \\ -2v_0 - 3s_0 &= -340 \\ 9a + 6v_0 + 2s_0 &= 32
+			\end{cases}$
+		}
+	
+		\only<6-7>{$\begin{cases}
+			a + 2v_0 + 2s_0 &= 208 \\ -2v_0 - 3s_0 &= -340 \\ -12v_0 - 16s_0 &= -1840
+			\end{cases}$
+		}
+	
+		\only<7-8>{$\begin{cases}
+			a + 2v_0 + 2s_0 &= 208 \\ 12v_0 + 18s_0 &= 2040 \\ -12v_0 - 16s_0 &= -1840
+			\end{cases}$
+		}
+	
+		\only<8-9>{$\begin{cases}
+			a + 2v_0 + 2s_0 &= 208 \\ -2v_0 - 3s_0 &= -340 \\ s_0 &= 100
+			\end{cases}$
+		}
+	
+		\only<9>{Now we have an equation in row-echelon form and we can use back-substitution to solve it. The solution is $(-32, 20, 100)$ (you should verify this). This means that the object was accelerating downward at $32$ ft/$s^2$, had an initial velocity of $20$ ft/s, and had an initial height of $100$ feet.}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Ask questions in Lesson 23 Forum, if you have any
+			\item Complete Assignment \#11
+			\item Begin Module \#14
+			\begin{itemize}
+				\item Read 10.1
+				\item Watch Video Lesson \#24
+			\end{itemize}
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+\end{document}

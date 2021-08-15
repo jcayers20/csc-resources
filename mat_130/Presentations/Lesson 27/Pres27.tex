@@ -1,0 +1,360 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Change font colors
+\newcommand{\cyan}[1]{{\color{cyan}{#1}}} % Changes font to cyan
+\newcommand{\red}[1]{{\color{red}{#1}}} % Changes font to red
+\newcommand{\magenta}[1]{{\color{magenta}{#1}}} % Changes font to magenta
+\newcommand{\orange}[1]{{\color{orange}{#1}}} % Changes font to orange
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}} % Changes font to yellow
+\newcommand{\violet}[1]{{\color{violet}{#1}}} % Changes font to violet
+\newcommand{\green}[1]{{\color{green}{#1}}} % Changes font to green
+\newcommand{\blue}[1]{{\color{blue}{#1}}} % Changes font to blue
+\newcommand{\white}[1]{{\color{white}{#1}}} % Changes font to white
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Augmented Matrix Environment
+\newenvironment{amatrix}[1]{%
+	\left[\begin{array}{@{}*{#1}{c}|c@{}}
+	}{%
+	\end{array}\right]
+}
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[Abbr]{Determinants of Square Matrices}
+\subtitle{Section 10.4}
+\author{Jacob Ayers}
+\institute{Lesson \#27}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Find the determinant of a $2 \times 2$ matrix
+			\item Find the minors and cofactors of square matrices
+			\item Find determinants of square matrices using technology
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{The Determinant}
+		Every square matrix can be associated with a real number called its determinant.
+		
+		Determinants are used in several applications (see Section 10.5 if interested in seeing some). \pause
+		
+		\begin{block}{Definition}
+			The \textit{determinant} of the matrix $$\begin{bmatrix}
+			a & b \\ c & d
+			\end{bmatrix}$$ is given by $$\det(A) = \begin{vmatrix}
+			a & b \\ c & d
+			\end{vmatrix} = ad - bc$$
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Determinant of a $2\times 2$ Matrix}
+		Find the determinant of each matrix. \vspace{24pt}
+		\begin{columns}
+			\begin{column}{0.3\textwidth}
+				\vspace{-24pt} \begin{enumerate}[a)]
+					\item $A = \begin{bmatrix}
+					1 & 2 \\ 3 & -1
+					\end{bmatrix}$ \vspace{8pt}
+					\item $B = \begin{bmatrix}
+					5 & 0 \\ -4 & 2
+					\end{bmatrix}$ \vspace{8pt}
+					\item $C = \begin{bmatrix}
+					3 & 6 \\ 2 & 4
+					\end{bmatrix}$
+				\end{enumerate}
+			\end{column}
+		\begin{column}{0.7\textwidth}
+			 \onslide<2->{$\det(A) = \begin{vmatrix}
+				1 & 2 \\ 3 & -1
+				\end{vmatrix} = 1(-1) - 3(2) = -7$} \vspace{12pt}
+			
+			\onslide<3->{$\det(B) = \begin{vmatrix}
+				5 & 0 \\ -4 & 2
+				\end{vmatrix} = 5(2) - (-4)(0) = 10$} \vspace{12pt}
+			
+			\onslide<4->{$\det(C) = \begin{vmatrix}
+				3 & 6 \\ 2 & 4
+				\end{vmatrix} = 3(4) - 2(6) = 0$}
+		\end{column}			
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Using Technology}
+		Your graphing calculator is able to find the determinant of a square matrix for you.
+		
+		Do simple $2\times 2$ matrices by hand.
+		
+		For larger matrices, it will be significantly faster to find determinants with the calculator. \pause
+		
+		I will be demonstrating with a TI-84 Plus, but I've also posted a video showing how to do so with a Casio fx-9750 GII.
+	\end{frame}
+
+	\begin{frame}{Using Technology}
+		Find $\begin{vmatrix}
+		7 & 8 \\ -3 & -5
+		\end{vmatrix}$ using a graphing utility. \pause
+		
+		The calculator provides the correct solution: $-11$.
+		
+		We can verify this manually: $7(-5) - 8(-3) = -35 + 24 = -11$.
+	\end{frame}
+
+	\begin{frame}{Minors and Cofactors}
+		While you will be using your calculator to compute determinants, we should see what the calculator is doing.
+		
+		We must first understand minors and cofactors.
+		
+		\begin{block}{Minors and Cofactors of a Square Matrix}
+			If $A$ is a square matrix, then the \textit{minor} $M_{ij}$ of the entry $a_{ij}$ is the determinant of the matrix obtained by deleting the $i$th row the the $j$th column of $A$. The \textit{cofactor} of the entry $a_{ij}$ is $$C_{ij} = \fp{-1}^{i+j}M_{ij}$$
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Minors and Cofactors}
+		Find all the minors and cofactors of $A = \begin{bmatrix}
+		1 & 2 & 3 \\ 0 & -1 & 5 \\ 2 & 1 & 4
+		\end{bmatrix}$
+		
+		First, we'll find the minors:
+		
+		\only<2-4>{$\begin{bmatrix}
+			 & & \\  & -1 & 5 \\ & 1 & 4
+			\end{bmatrix} \then M_{11} = \begin{vmatrix}
+			-1 & 5 \\ 1 & 4
+			\end{vmatrix} = -9$ \\}
+		\only<3-5>{$\begin{bmatrix}
+			& & \\ 0 & & 5 \\ 2 & & 4
+			\end{bmatrix} \then M_{12} = \begin{vmatrix}
+			0 & 5 \\ 2 & 4
+			\end{vmatrix} = -10$ \\}
+		\only<4-6>{$\begin{bmatrix}
+			& & \\ 0 & -1 & \\ 2 & 1 &
+			\end{bmatrix} \then M_{13} = \begin{vmatrix}
+			0 & -1 \\ 2 & 1
+			\end{vmatrix} = 2$ \\}
+		\only<5-7>{$\begin{bmatrix}
+			& 2 & 3 \\ & & \\ & 1 & 4
+			\end{bmatrix} \then M_{21} = \begin{vmatrix}
+			2 & 3 \\ 1 & 4
+			\end{vmatrix} = 5$ \\}
+		\only<6-8>{$\begin{bmatrix}
+			1 & & 3 \\  & &  \\ 2 & & 4
+			\end{bmatrix} \then M_{22} = \begin{vmatrix}
+			1 & 3 \\ 2 & 4
+			\end{vmatrix} = -2$ \\}
+		\only<7-9>{$\begin{bmatrix}
+			1 & 2 & \\ & & \\ 2 & 1 & 
+			\end{bmatrix} \then M_{23} = \begin{vmatrix}
+			1 & 2 \\ 2 & 1
+			\end{vmatrix} = -3$ \\}
+		\only<8-10>{$\begin{bmatrix}
+			 & 2 & 3 \\ & -1 & 5 \\ & &
+			\end{bmatrix} \then M_{31} = \begin{vmatrix}
+			2 & 3 \\ -1 & 5
+			\end{vmatrix} = 13$ \\}
+		\only<9-10>{$\begin{bmatrix}
+			1 & & 3 \\ 0 & & 5 \\ & &
+			\end{bmatrix} \then M_{32} = \begin{vmatrix}
+			1 & 3 \\ 0 & 5
+			\end{vmatrix} = 5$ \\}
+		\only<10>{$\begin{bmatrix}
+			1 & 2 & \\ 0 & -1 & \\ & &
+			\end{bmatrix} \then M_{33} = \begin{vmatrix}
+			1 & 2 \\ 0 & -1
+			\end{vmatrix} = -1$}
+	\end{frame}
+
+	\begin{frame}{Minors and Cofactors}
+		Once we know the minors, we can find the cofactors.
+		
+		\begin{columns}
+			\begin{column}{0.2\textwidth}
+				$M_{11} = -9$ \\
+				$M_{12} = -10$ \\
+				$M_{13} = 2$ \\
+				$M_{21} = 5$ \\
+				$M_{22} = -2$ \\
+				$M_{23} = -3$ \\
+				$M_{31} = 13$ \\
+				$M_{32} = 5$ \\
+				$M_{33} = -1$ \\
+			\end{column}
+			\begin{column}{0.8\textwidth}
+				\onslide<2->{$C_{11} = (-1)^{1+1}(-9) = (-1)^2(-9) = 1(-9) = -9$}
+				\onslide<3->{$C_{12} = (-1)^{1+2}(-10) = (-1)^3(-10) = -1(-10) = 10$}
+				\onslide<4->{$C_{13} = (-1)^{1+3}(2) = (-1)^4(2) = 1(2) = 2$}
+				\onslide<5->{$C_{21} = (-1)^{2+1}(5) = (-1)^3(5) = -1(5) = -5$}
+				\onslide<6->{$C_{22} = (-1)^{2+2}(-2) = (-1)^4(-2) = 1(-2) = -2$}
+				\onslide<7->{$C_{23} = (-1)^{2+3}(-3) = (-1)^5(-3) = -1(-3) = 3$}
+				\onslide<8->{$C_{31} = (-1)^{3+1}(13) = (-1)^4(13) = 1(13) = 13$}
+				\onslide<9->{$C_{32} = (-1)^{3+2}(5) = (-1)^5(5) = -1(5) = -5$}
+				\onslide<10->{$C_{33} = (-1)^{3 + 3}(-1) = (-1)^6(-1) = 1(-1) = -1$}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\begin{frame}{Minors and Cofactors}
+		There was a pattern there - did you catch it? \pause
+		
+		For a $3 \times 3$ matrix, the following represent the cofactor signs ($+$ represents $1$, $-$ represents $-1$):
+		
+		$\begin{bmatrix}
+			+ & - & + \\ - & + & - \\ + & - & +
+		\end{bmatrix}$ \pause
+		
+		In general, to determine the sign of the cofactor, add the row number and column number together. If the sum is even, the cofactor will equal the minor. If the sum is odd, the cofactor will be the opposite of the minor.
+	\end{frame}
+
+	\begin{frame}{Determinants of Square Matrices}
+		\begin{block}{Determinant of a Square Matrix}
+			If $A$ is a square matrix (of dimension $2 \times 2$ or greater), then the determinant is the sum of the entries in any row (or column) of $A$ multiplied by their respective cofactors. For example, expanding along the first row yields $$\av{A} = a_{11} + C{11} + a_{12}C_{12} + \cdots + a_{1n}C_{1n}$$ Applying this definition to find a determinant is called \textit{expanding by cofactors}.
+		\end{block} \pause
+	
+		Note: the more zeros in a row, the more efficient using that row will be.
+		
+	\end{frame}
+
+	\begin{frame}{Determinants of Square Matrices}
+		Find the determinant of $A = \begin{bmatrix}
+		3 & 4 & -2 \\ 3 & 5 & 0 \\ -1 & 4 & 1
+		\end{bmatrix}$ \pause
+		
+		Since the second row has a zero in it, I'll expand using the second row.
+		
+		$M_{21} = \begin{vmatrix}
+		4 & -2 \\ 4 & 1
+		\end{vmatrix} = 12 \then C_{21} = -12$ \\ \pause
+		$M_{22} = \begin{vmatrix}
+		3 & -2 \\ -1 & 1
+		\end{vmatrix} = 1 \then C_{22} = 1$ \\ \pause
+		$M_{23} = \begin{vmatrix}
+		3 & 4 \\ -1 & 4
+		\end{vmatrix} = 16 \then C_{23} = -16$ \pause
+		
+		So $\av{A} = a_{21}C_{21} + a_{22}C_{22} + a_{23}C_{23} = 3(-12) + 5(1) + 0(-16) = -36 + 5 = -31$
+	\end{frame}
+
+	\begin{frame}{Using Technology}
+		Find $\det(A)$ if $A = \begin{bmatrix}
+		2 & -1 & 0 \\ 4 & 2 & 1 \\ 4 & 2 & 1
+		\end{bmatrix}$ \pause
+		
+		Using a graphing calculator, we find a solution of $0$.
+		
+		Confirming by hand (expanding using first row): \pause
+		\begin{flalign*}
+		\av{A} &= 2\begin{vmatrix}
+		2 & 1 \\ 2 & 1
+		\end{vmatrix} - (-1)\begin{vmatrix}
+		4 & 1 \\ 4 & 1
+		\end{vmatrix} + 0\begin{vmatrix}
+		4 & 2 \\ 4 & 2
+		\end{vmatrix} & \\
+		&= 2(0) + 1(0) + 0(0) & \\
+		&= 0
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Using Technology}
+		Find $\det(A)$ if $A = \begin{bmatrix}
+		1 & -1 & 8 & 4 \\ 2 & 6 & 0 & -4 \\ 2 & 0 & 2 & 6 \\ 0 & 2 & 8 & 0
+		\end{bmatrix}$ \pause
+		
+		Using a calculator, we find a solution of $-336$.
+		
+		It would be relatively time-consuming to check this solution, but I encourage you to do so yourself. I recommend using the bottom row since it has two zeros.
+	
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Post questions in Lesson 27 Forum, if you have any
+			\item Complete Assignment \#13
+			\item Begin Module \#16
+			\begin{itemize}
+				\item Read 11.1
+				\item Watch Video Lesson \#28
+			\end{itemize}
+		\end{itemize}
+	
+	\vfill
+	
+	Thanks for watching!
+	\end{frame}
+	
+\end{document}

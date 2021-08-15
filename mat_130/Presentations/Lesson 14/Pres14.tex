@@ -1,0 +1,248 @@
+\documentclass[t]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[3.5]{Mathematical Modeling and Variation}
+\subtitle{Section 3.5}
+\author{Jacob Ayers}
+\institute{Lesson \#14}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Use the regression feature of a graphing utility to find equations of least squares regression lines.
+			\item Write mathematical models for various types of variation.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Least Squares Regression}
+		Our goal in this lesson is to find and write mathematical models.
+		
+		One commonly used model for linear data is the \textit{least squares regression model}. \pause
+		
+		The goal in this model is to minimize the sum of the square differences.
+		
+		The \textit{sum of the squared difference} is the sum of the squares of the differences between the model's predictions and the actual observed values.
+	\end{frame}
+
+	\begin{frame}{Least Squares Regression}
+		Another key term in the least squares regression model is the \textit{correlation coefficient}. The correlation coefficient is a measure of how well the model fits the data. \pause
+		
+		The correlation coefficient will always be between -1 and 1. \begin{itemize}
+			\item If $-1 \leq r \leq -0.2$, then there is some degree of negative correlation between the quantities; the closer to $-1$, the stronger the correlation.
+			\item If $0.2 \leq r \leq 1$, then there is some degree of positive correlation between the quantities; the close to $1$, the stronger the correlation.
+			\item If $-0.2 < r < 0.2$, then there is no meaningful correlation between the quantities.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Least Squares Regression}
+		Least squares regression models are of the form $ax + b$, where $a$ is the slope of the line and $b$ is its $y$-intercept. \pause
+		
+		Given some data, we can find the equation of a least squares regression line, along with the correlation coefficient, using a graphing utility.
+	\end{frame}
+
+	\begin{frame}{Least Squares Regression}
+		The ordered pairs below give the numbers $E$ (in millions) of Medicare Advantage enrollees in health maintenance organization (HMO) plans from 2008 through 2015. Find the equation of the least squares regression line for the data, and report the correlation coefficient. What is the relationship between the two quantities?
+		
+		$(2008, 6.3), (2009, 6.7), (2010, 7.2), (2011, 7.7), \newline (2012, 8.5), (2013, 9.3), (2014, 10.1), (2015, 10.7)$ \pause 
+		
+		Using the graphing utility, we found a least squares regression line of $y = 0.6536x - 1306.3464$ with a correlation coefficient of $r \approx 0.9937$. \pause Since $r$ is very close to $1$, there is a strong positive correlation between time and the number of Medicare Advantage HMO enrollees.
+	\end{frame}
+
+	\begin{frame}{Least Squares Regression}
+		The ordered pairs below give the numbers $E$ (in millions) of Medicare private health plan enrollees from 2008 through 2015. Find the equation of the least squares regression line for the data, and report the correlation coefficient. What is the relationship between the two quantities?
+		
+		$(2008, 9.7), (2009, 10.5), (2010, 11.1), (2011, 11.9), \newline (2012, 13.1), (2013, 14.4), (2014, 15.7), (2015, 16.8)$ \pause
+		
+		Using the graphing utility, we found a least squares regression line of $y = 1.0333x - 2065.65$ with a correlation coefficient of $r \approx 0.9919$. \pause Since $r$ is very close to $1$, there is a strong positive correlation between time and the number of Medicare private health plan enrollees.
+	\end{frame}
+
+	\begin{frame}{Direct Variation}
+		A direct variation model is a linear model, and is of the form $y = kx$ where $k$ is the constant of variation.
+		
+		If two quantities are in direct variation, then we might say any of these things about them. \begin{enumerate}[1)]
+			\item $y$ varies directly as $x$
+			\item $y$ is directly proportional to $x$
+			\item $y = kx$ for some nonzero constant $k$
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Direct Variation}
+		In Illinois, the state income tax is directly proportional to gross income. You work in Illinois and your state income tax deduction is \$118.86 on a paycheck of \$2360.81 (gross). Find a mathematical model that gives the Illinois state income tax in terms of gross income. \pause
+		
+		Our model will be of the form $T = kI$, where $T$ is the amount of tax and $I$ is the gross income. We have one value of $T$ and $I$; we can use it to find $k$: \begin{flalign*}
+		118.86 &= k(2360.81) & \\
+		k &\approx 0.0503
+		\end{flalign*} \pause
+		A mathematical model would be $T = 0.0503I$.
+	\end{frame}
+
+	\begin{frame}{Direct Variation as an $n$th Power}
+		Another type of direct variation relates one variable to a power of another variable. In this case, we say $y = kx^n$ where $k$ is the constant of variation and $n > 1 \in \Z$. \pause
+		
+		 Example: The distance $s$ an object falls varies directly as the square of the duration $t$ of the fall. An object falls 144 feet in 3 seconds. How far does it fall in 6 seconds? \pause
+		 
+		 First, find $k$: $144 = k(3)^2 \Rightarrow k = 16$. Our model is $s = 16t^2$. \pause
+		 
+		 We can use this model to find the distance $s$ when $t = 6$: $s = 16(6)^2 = 576$ ft.
+	\end{frame}
+	
+	\begin{frame}{Inverse Variation}
+		In direct variation, an increase in one variable will lead to an increase in the other. This is obviously not always the case. When one quantity decreases as another increases, the two quantities are said to be in \textit{inverse variation}. \pause
+		
+		If two quantities are in inverse variation, then we might say any of these things about them: \begin{enumerate}[1)]
+			\item $y$ varies inversely with $x$
+			\item $y$ is inversely proportional to $x$
+			\item $y = \dfrac{k}{x}$ for some nonzero constant $k$
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Inverse Variation}
+		A company has found that the demand for one of its products varies inversely as the price of the product. When the price is \$2.75, the demand is 600 units. Find the demand when the price is \$3.25. \pause
+		
+		\begin{flalign*}
+		d &= \dfrac{k}{p} & \\
+		600 &= \dfrac{k}{2.75} & \\
+		k &= 600(2.75) = 1650
+		\end{flalign*} \pause
+		So our model is $d = \dfrac{1650}{p}$; when $p = 3.25$, $d = \dfrac{1650}{3.25} \approx 508$ units.
+	\end{frame}
+
+	\begin{frame}{Combined Variation}
+		Some applications involve both direct and inverse variation. We call this combined variation. \pause
+		
+		Example: The resistance of a copper wire carrying an electrical current is directly proportional to its length and inversely proportional to its cross-sectional area. A copper wire with a diameter of 0.0126 inch has a resistance of 64.9 ohms per thousand feet. What length of 0.0201-inch-diameter copper wire will produce a resistance of 33.5 ohms? \pause
+		
+		First, note that the cross-sectional area is equal to $\pi r^2$ for a circular wire. We can't just use the value of the diameter. \pause
+		
+		Our model will be of the form $R = \dfrac{kL}{A}$
+	\end{frame}
+
+	\begin{frame}{Combined Variation}
+		\vspace{-24pt}
+		\begin{flalign*}
+		R &= \dfrac{kL}{A} & \\
+		64.9 &= \dfrac{k(12000)}{\pi \fp{0.0126/2}^2)} & \\
+		64.9\pi(0.0063)^2 &= 12000k & \\
+		k &\approx 0.000000674
+		\end{flalign*} \pause
+		We can now use this to find out a length in inches (which we can convert to feet), given that $R = 33.5$ and $d = 0.0201$. \pause
+		\begin{flalign*}
+		33.5 &= \dfrac{0.000000674L}{\pi(0.0201/2)^2} & \\
+		33.5(0.0003173) &= 0.000000674L & \\
+		0.000000674L &= 0.01063 & \\
+		L &= 15771.28 \text{ in} \approx 1314.27 \text{ ft} 
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Joint Variation}
+		When one variable is directly proportional to the product of multiple variable (and/or powers of variables), the variables are in jointly related. \pause
+		
+		When variables are jointly related, we might say any of these things about them: \pause \begin{enumerate}[1)]
+			\item $z$ varies jointly as $x$ and $y$
+			\item $z$ is jointly proportional to $x$ and $y$
+			\item $z = kxy$ for some nonzero constant.
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Joint Variation}
+		The simple kinetic energy $E$ of an object varies jointly with the object's mass $m$ and the square of the object's velocity $v$. An object with a mass of 50 kilograms traveling at 16 meters per second has a kinetic energy of 6400 joules. What is the kinetic energy of an object with a mass of 70 kilograms traveling at 20 meters per second? \pause
+		
+		Our model is of the form $E = kmv^2$. \pause
+		\begin{flalign*}
+		6400 &= k(50)(16)^2 & \\
+		12800k &= 6400 & \\
+		k &= 0.5
+		\end{flalign*} \pause
+	\end{frame}
+
+	\begin{frame}{Joint Variation}
+		\begin{flalign*}
+		E &= 0.5(70)(20)^2 & \\
+		&= 14000 \text{ J}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+	\begin{itemize}
+		\item Post questions in the Lesson 14 Forum, if you have any
+		\item Read 4.1
+		\item Watch Video Lesson \#15
+		\item Complete Assignment \#7
+	\end{itemize}
+	\end{frame}
+\end{document}

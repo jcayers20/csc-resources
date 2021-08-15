@@ -1,0 +1,255 @@
+\documentclass[t, aspectratio=169]{beamer}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+% Miscellaneous
+\def\then{\Rightarrow}
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+	\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+	\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+	\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+	\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+	\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[5.2]{Logarithmic Functions and their Graphs}
+\subtitle{Section 5.2}
+\author{Jacob Ayers}
+\institute{Lesson \#18}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+	
+	% Slide 1 (Title Slide)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Slide 2 (Objectives)
+	\begin{frame}{Objectives}
+		\begin{itemize}
+			\item Evaluate logarithmic functions, including natural logarithmic functions
+			\item Graph logarithmic functions, including natural logarithmic functions
+			\item Use logarithmic functions to model and solve real-life problems
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Logarithmic Functions}
+		\begin{block}{Definition}
+			For $x > 0$, $a > 0$, and $a \neq 1$, $$y = \log_a x \text{ if and only if } x = a^y$$ The function $$f(x) = \log_a x$$ is the \textit{logarithmic function with base $a$}
+		\end{block} \pause
+	
+		Key takeaway: $\log_a x = y$ and $a^y = x$ are equivalent.
+	\end{frame}
+
+	\begin{frame}{Converting between Exponential and Logarithmic Form}
+		Write as an exponential equation: $\log_3 81 = 4$ \pause \\
+		$3^4 = 81$ \pause \vspace{12pt}
+		
+		Write as an exponential equation: $\log_9 \dfrac{1}{81} = -2$ \pause \\
+		$9^{-2} = \dfrac{1}{81}$ \pause \vspace{12pt}
+		
+		Write as a logarithmic equation: $16^{3/2} = 64$ \pause \\
+		$\log_{16} 64 = \dfrac32$ \pause \vspace{12pt}
+		
+		Write as a logarithmic equation: $2^8 = 256$ \pause \\
+		$\log_2 256 = 8$
+	\end{frame}
+
+	\begin{frame}{Evaluating Logarithms}
+		When evaluating logarithms, it can be helpful to write the logarithm as an exponential equation.
+		
+		Evaluate $\log_2 32$ \pause \\
+		$\log_2 32 = y \Rightarrow 2^y = 32 \Rightarrow y = 5$ \pause \vspace{12pt}
+		
+		Evaluate $\log_6 1$ \pause \\
+		$\log_6 1 = y \then 6^y = 1 \Rightarrow y = 0$ \pause \vspace{12pt}
+		
+		Evaluate $\log_5 \dfrac{1}{125}$ \pause \\
+		$\log_5 \dfrac{1}{125} = y \then 5^y = \dfrac{1}{125} \then y = -3$
+	\end{frame}
+
+	\begin{frame}{Special Logarithms}
+		\begin{block}{Common and Natural Logarithms}
+			\begin{enumerate}[1)]
+				\item The \textit{common logarithm} is a logarithm with base $10$. It is denoted by $\log_{10}$ or (more commonly) $\log$.
+				\item The \textit{natural logarithm} is a logarithm with base $e$. It is denoted by $\log_e$ or (more commonly) $\ln$.
+			\end{enumerate}
+		\end{block} \pause
+	
+		There are $\log$ and $\ln$ buttons on all calculators. Take a second and find them on yours.
+	\end{frame}
+
+	\begin{frame}{Evaluating Special Logarithms}
+		Using your calculator, evaluate each of the following logarithms (round to four decimal places): \begin{enumerate}[a)]
+			\item $\log 275$
+			\item $\log \dfrac12$
+			\item $\ln -5$
+			\item $\ln 10$
+		\end{enumerate} \pause
+		\begin{enumerate}[a)]
+			\item $\log 275 \approx 2.4393$
+			\item $\log \dfrac12 \approx -0.3010$
+			\item $\ln -5$ has no solution because $-5 \leq 0$
+			\item $\ln 10 \approx 2.3026$
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}{Properties of Logarithms}
+		\begin{block}{Properties of Logarithms}
+			\begin{enumerate}[1)]
+				\item $\log_a 1 = 0$ because $a^0 = 1$
+				\item $\log_a a = 1$ because $a^1 = a$
+				\item (Inverse Property) $\log_a a^x = x$ and $a^{\log_a x} = x$
+				\item (One-to-One Property) If $\log_a x = \log_a y$ then $x = y$
+			\end{enumerate}
+		\end{block} \pause
+	
+		Use properties of logarithms to simplify: \\ a) $\log_4 1$ \hspace{0.5in} b) $20^{\log_{20} 3}$ \hspace{0.5in} c) $\log_8 8$ \\ \pause \vspace{12pt}
+		
+		a) $\log_4 1 = 0$ (Property 1) \\
+		b) $20^{\log_{20} 3} = 3$ (Property 3) \\
+		c) $\log_8 8 = 1$ (Property 2)
+	\end{frame}
+
+	\begin{frame}{Properties of Logarithms}
+		Use the One-to-One Property of Logarithms to solve: $\log_5 \fp{x^2 + 3} = \log_5 12$ \begin{flalign*}
+		\onslide<2->{x^2 + 3 &= 12 & \\}
+		\onslide<3->{x^2 &= 9 & \\}
+		\onslide<4->{x &= \pm 3}
+		\end{flalign*}
+		\onslide<5->{Use the One-to-One Property of Logarithms to solve: $\ln (7x - 3) = \ln (4x + 1)$} \begin{flalign*}
+		\onslide<6->{7x - 3 &= 4x + 1 & \\}
+		\onslide<7->{3x &= 4 & \\}
+		\onslide<8>{x &= \dfrac43}
+		\end{flalign*}
+	\end{frame}
+
+	\begin{frame}{Graphs of Logarithmic Function}
+		Graph $f(x) = 3^x$ and $g(x) = \log_3 x$ in the same coordinate plane. \pause
+		
+		Since $3^x$ and $\log_3 x$ are inverse functions, we can plot points for $f(x)$ and then invert the order of the ordered pairs in order to graph $g(x)$ \pause
+		
+		\begin{tabular}{c|ccccccc}
+			$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\ \hline
+			$f(x)$ & $\dfrac{1}{27}$ & $\dfrac19$ & $\dfrac13$ & $1$ & $3$ & $9$ & $27$
+		\end{tabular} \pause
+	
+		\begin{tabular}{c|ccccccc}
+			$x$ & $\dfrac{1}{27}$ & $\dfrac19$ & $\dfrac13$ & $1$ & $3$ & $9$ & $27$ \\ \hline
+			$g(x)$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$
+		\end{tabular}
+	\end{frame}
+
+	\begin{frame}{Graphs of Logarithmic Functions}
+		\includegraphics[width=4in]{Log1.png}
+	\end{frame}
+
+	\begin{frame}{Graphs of Logarithmic Functions}
+		Graph without using a calculator: $f(x) = \log_2 x$ \pause
+		
+		When graphing without using a calculator, it's often easier to pick values of $f(x)$ and find values of $x$ than vice-versa. \pause
+		
+		$f(x) = 3 \then \log_2 x = 3 \then 2^3 = x \then x = 8 \then (8,3)$ \pause \\
+		$f(x) = 2 \then \log_2 x = 2 \then 2^2 = x \then x = 4 \then (4,2)$ \pause \\
+		$f(x) = 1 \then \log_2 x = 1 \then 2^1 = x \then x = 2 \then (2,1)$ \pause \\
+		$f(x) = 0 \then \log_2 x = 0 \then 2^0 = x \then x = 1 \then (1,0)$ \pause \\
+		$f(x) = -1 \then \log_2 x = -1 \then 2^{-1} = x \then x = \dfrac12 \then \fp{\dfrac12, -1}$ \pause \\
+		$f(x) = -2 \then \log_2 x = -2 \then 2^{-2} = x \then x = \dfrac14 \then \fp{\dfrac14, -2}$ \pause \\
+		$f(x) = -3 \then \log_2 x = -3 \then 2^{-3} = x \then x = \dfrac18 \then \fp{\dfrac18, -3}$
+	\end{frame}
+
+	\begin{frame}{Graphs of Logarithmic Equations}
+		\includegraphics[width=4in]{Log2.png}
+	\end{frame}
+
+	\begin{frame}{An Application}
+		Students participating in a psychology experiment attended several lectures on a subject and took an exam. Every month for a year after the exam, the students took a retest to see how much of the material they remembered. The average scores for the group are given by the \textit{human memory model} $f(t) = 78 - 5\ln(t+1), 0\leq t \leq 12$, where $t$ is the time in months. Find the average score on the original exam ($t = 0$) and the average score after 8 months. \pause
+		
+		To find the score at $t = 0$, we evaluate $f(0)$. \pause \\ $f(0) = 78 - 5\ln(1) = 78 - 0 = 78$. \pause
+		
+		The average score on the original test was 78.
+	\end{frame}
+
+	\begin{frame}{An Application}
+		$f(t) = 78 - 5\ln(t + 1)$
+		
+		To find the average score after 8 months, we evaluate $f(8)$. \pause \\
+		$f(8) = 78 - 5\ln(9) = 78 - 10.9861 \approx 67.0139$ \pause
+		
+		The average score after 8 months was about 67.
+	\end{frame}
+
+	\begin{frame}{Next Steps}
+		\begin{itemize}
+			\item Ask questions in Lesson 18 Forum, if you have any
+			\item Read 5.3
+			\item Watch Video Lesson \#19
+			\item Complete Assignment \#9
+		\end{itemize}
+	
+		\vfill
+		
+		Thanks for watching!
+	\end{frame}
+	
+\end{document}

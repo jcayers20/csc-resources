@@ -1,0 +1,307 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amsthm,amstext,amssymb, xcolor, tikz, pgf}
+
+% ----------------------------------------------------------
+% Theme Setup
+
+% Use Metropolis Theme
+\usetheme[numbering=fraction]{metropolis}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\makeatother
+
+% Define Colors
+\definecolor{chargerblue}{HTML}{002764}
+\definecolor{chargerred}{HTML}{e02034}
+\definecolor{bggray}{HTML}{d0d3d4}
+
+% Set Colors
+\setbeamercolor{title}{fg=chargerblue}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title separator}{fg=chargerred}
+\setbeamercolor{structure}{fg=chargerblue}
+\setbeamercolor{frametitle}{fg=white, bg=chargerblue}
+\setbeamercolor*{normal text}{fg=chargerblue}
+\setbeamercolor*{block body}{bg=bggray}
+\setbeamercolor*{block title}{bg=chargerblue, fg=white}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Custom Definitions, Commands, Environments, etc.
+
+% Sets of numbers
+\def\R{\mathbb{R}} % The reals
+\def\N{\mathbb{N}} % The naturals
+\def\Z{\mathbb{Z}} % The integers
+\def\Q{\mathbb{Q}} % The rationals
+
+% Blank space
+\newcommand{\blank}[1]{\underline{\hspace{#1}}} % Blank space
+
+% Fitted inclusion symbols
+\newcommand{\fp}[1]{\left({#1}\right)} % Fitted parentheses around content
+\newcommand{\fb}[1]{\left[{#1}\right]} % Fitted brackets
+\newcommand{\set}[1]{\left\{{#1}\right\}} % Fitted braces (useful for sets)
+\newcommand{\av}[1]{\left|{#1}\right|} % Fitted absolute value bars
+
+
+
+% Coordinate Plane (Four-Quadrant)
+\def\coordplane {
+	\begin{tikzpicture}		\draw[step=0.25cm,black,very thin,opacity=0.25] (-2.5cm, -2.5cm) grid (2.5cm, 2.5cm);
+		\draw[<->,thick,black] (-2.5cm, 0) -- (2.5cm, 0) node[anchor=north west,pos=0.94,font=\scriptsize]{$x$};
+		\draw[<->,thick,black] (0,-2.5cm) -- (0, 2.5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+
+% Coordinate Plane (One-Quadrant)
+\def\onequad {
+	\begin{tikzpicture}
+		\draw[step=0.25cm, black, very thin, opacity=0.25] (0,0) grid (7.5cm,5cm);
+		\draw[->, thick, black] (0,0) -- (7.5cm, 0) node[anchor=north west,font=\scriptsize,pos=0.94]{$x$};
+		\draw[->, black, thick] (0,0) -- (0,5cm) node[anchor=south east,font=\scriptsize,pos=0.94]{$y$};
+	\end{tikzpicture}
+}
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Presentation Information 
+\title[1.5 and 1.6]{Complex Numbers; Other Types of Equation}
+\subtitle{Sections 1.5 and 1.6}
+\author{Jacob Ayers}
+\institute{Lesson \#6}
+\date{MAT 130}
+% ----------------------------------------------------------
+
+\begin{document}
+
+% Slide 1 (Title Slide)
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Slide 2 (Objectives)
+\begin{frame}[t]{Objectives}
+\begin{itemize}
+	\item Use the imaginary unit $i$ to write complex numbers
+	\item Perform operations on complex numbers
+	\item Find complex solutions to quadratic equations
+	\item Solve polynomial equations of degree three or higher
+	\item Solve radical equation
+	\item Solve rational equations
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{The Imaginary Unit $i$ and Complex Numbers}
+Not all equations have \textit{real} solutions.
+
+Example: $x^2 = -4$
+
+\pause
+
+\begin{block}{Definition}
+We define the \textit{imaginary unit} $i$ by $i = \sqrt{-1}$
+\end{block}
+
+\pause
+
+\begin{block}{Definition}
+A \textit{complex number} is a number of the form $a + bi$. We call $a$ the \textit{real part} and $bi$ the \textit{imaginary part}.
+
+If $b = 0$, then $a+bi \in \R$. If $a,b\neq 0$, then $a + bi$ is an \textit{imaginary number}. If $a = 0$ and $b\neq 0$, then $a + bi$ is a \textit{pure imaginary number}.
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Operations with Complex Numbers}
+To add or subtract complex numbers, combine like terms (real is like to real, imaginary is like to imaginary).
+
+\pause
+
+To multiply complex numbers, use FOIL (bear in mind that $i^2 = -1$).
+
+\pause
+To divide complex numbers, multiply top and bottom by the conjugate of the denominator.
+\end{frame}
+
+\begin{frame}[t]{Adding and Subtracting Complex Numbers}
+Example: $(3 + 4i) + (7 - 6i)$\pause$=10 - 2i$ \vspace{12pt}
+
+\pause
+
+Example: $(-7 - 3i) + (-2 + 13i)$\pause$= -9 + 10i$ \vspace{12pt}
+
+\pause
+
+Example: $(3 + 4i) - (7 - 6i)$\pause$= -4 + 10i$ \vspace{12pt}
+
+\pause
+
+Example: $(-7 - 3i) - (-2 + 13i)$\pause$= -5 - 16i$
+\end{frame}
+
+\begin{frame}[t]{Multiplying Complex Numbers}
+Example: Find the product of $6 - 2i$ and $3 + 5i$.
+\begin{flalign*}
+\onslide<2->{(6-2i)(3+5i) &= 18 + 30i - 6i - 10i^2 & \\}
+\onslide<3->{&= 18 + 24i - 10(-1) & \\}
+\onslide<4->{&= 28 + 24i}
+\end{flalign*}
+
+\onslide<5->{Example: (-6-i)(-4-9i)}
+\begin{flalign*}
+\onslide<6->{(-6-i)(-4-9i) &= 24 + 54i + 4i + 9i^2 & \\}
+\onslide<7->{&= 24 - 9 + 58i & \\}
+\onslide<8>{&= 15 + 58i}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Dividing Complex Numbers}
+Example: $\dfrac{5 + 8i}{2 - 3i}$
+\begin{flalign*}
+\onslide<2->{\dfrac{5+8i}{2-3i}\fp{\dfrac{2+3i}{2+3i}} &= \dfrac{10 + 15i + 16i + 24i^2}{4 + 6i - 6i - 9i^2} & \\}
+\onslide<3->{&= \dfrac{-14 + 31i}{13} & \\}
+\onslide<4>{&= -\dfrac{14}{13} + \dfrac{31}{13}i}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Dividing Complex Numbers}
+Example: $\dfrac{4-2i}{2+3i}$
+\begin{flalign*}
+\onslide<2->{\dfrac{4-2i}{2+3i}\fp{\dfrac{2-3i}{2-3i}} &= \dfrac{8 - 12i - 4i + 6i^2}{4 - 6i + 6i - 9i^2} & \\}
+\onslide<3->{&= \dfrac{2 - 16i}{13} & \\}
+\onslide<4>{&= \dfrac{2}{13} - \dfrac{14}{13}i}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Complex Solutions of Quadratic Equations}
+Whenever $b^2 - 4ac < 0$, a quadratic equation has complex solutions.
+
+Example: Solve $8x^2 + 14x + 9 = 0$
+\begin{flalign*}
+\onslide<2->{x &= \dfrac{-b\pm\sqrt{b^2 - 4ac}}{2a} & \\}
+\onslide<3->{&= \dfrac{-(14)\pm\sqrt{(14)^2 - 4(8)(9)}}{2(8)} & \\}
+\onslide<4->{&= \dfrac{-14\pm\sqrt{-92}}{16} & \\}
+\onslide<5->{&= \dfrac{-14\pm 2i\sqrt{23}}{16} & \\}
+\onslide<6>{&= -\dfrac{7}{8}\pm \dfrac{\sqrt{23}}{8}i}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Polynomial Equations}
+We can solve certain polynomial equations whose degree is 3 or higher using strategies we've learned previously.
+
+Example: Solve $9x^4 - 12x^2 = 0$
+
+\pause
+
+First, factor out the GCD. Now, we have $3x^2\fp{x^2 - 4} = 0$
+
+\pause
+
+Now we can use the zero product property to solve for $x$: \\
+$3x^2 = 0 \Rightarrow x = 0$ \\
+$x^2 - 4 = 0 \Rightarrow x = \pm 2$
+
+\pause
+
+So the solutions to the equation are $x = \set{-2, 0, 2}$
+\end{frame}
+
+\begin{frame}[t]{Polynomial Equations}
+Solve $x^3 - 5x^2 - 2x + 10 = 0$
+
+\pause
+
+This time, we can factor by grouping. \\
+$x^2(x - 5) - 2(x-5) = 0 \Rightarrow \fp{x^2 - 2}(x-5) = 0$
+
+\pause
+
+From here, we again use the zero product property: \\
+$x^2 - 2 = 0 \Rightarrow x = \pm\sqrt{2}$ \\
+$x - 5 = 0 \Rightarrow x = 5$
+
+\pause
+
+So the solutions to the equation are $x = \set{-\sqrt{2}, \sqrt{2}, 5}$
+
+\end{frame}
+
+\begin{frame}[t]{Polynomial Equations}
+Solve: $9x^4 - 37x^2 + 4 = 0$
+
+\pause
+
+This involves the strategy of substitution, which we've not yet encountered. The idea is to write this equation in the form $au^2 + bu + c = 0$, because we can solve that.
+
+\pause
+
+Let $u = x^2$ so that $9u^2 - 37u + 4 = 0$.
+
+Factoring yields $(9u - 1)(u-4) = 0$ so $u = \set{\dfrac19, 4}$
+
+\pause
+
+Now, substitute $x^2$ back in for $u$: \\ $x^2 = \dfrac19 \Rightarrow x = \pm\dfrac13$ \\ $x^2 = 4 \Rightarrow x = \pm 2$
+
+So the solutions to the equation are $x = \set{-2, -\dfrac13, \dfrac13, 2}$
+\end{frame}
+
+\begin{frame}[t]{Radical Equations}
+The inverse of taking an $n$th root is taking an $n$th power. We can use this fact to solve radical equations.
+
+\onslide<2->{Example: Solve for $x$: $\sqrt{2x + 7} - x = 2$} 
+\begin{flalign*}
+\onslide<3->{\sqrt{2x + 7} &= x + 2 & \\}
+\onslide<4->{2x + 7 &= (x+2)^2 & \\}
+\onslide<5->{2x + 7 &= x^2 + 4x + 4 & \\}
+\onslide<6->{x^2 + 2x - 3 &= 0 & \\}
+\onslide<7>{(x + 3)(x - 1) &= 0 & \\
+x &= \set{-3, 1}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Radical Equations}
+Solve $(x-5)^{2/3} = 16$
+\begin{flalign*}
+\onslide<2->{\sqrt[3]{(x-5)^2} &= 16 & \\}
+\onslide<3->{(x-5)^2 &= 4096 & \\}
+\onslide<4->{x - 5 &= 64 & \\ x &= 69}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Rational Equations}
+We solved rational equations before, but now we've seen quadratic equations so we can look at that type of rational equation.
+
+\onslide<2->{Example: Solve $\dfrac{4}{x} + \dfrac{2}{x+3} = -3$ and check your solution(s).}
+\begin{flalign*}
+\onslide<3->{x(x+3)\dfrac{4}{x} + x(x+3)\dfrac{2}{x+3} &= x(x+3)(-3) & \\}
+\onslide<4->{4(x+3) + 2x &= -3x^2 - 9x & \\}
+\onslide<5->{-3x^2 - 15x - 12 &= 0 & \\}
+\onslide<6->{-3(x^2 + 5x + 4) = 0 & \\}
+\onslide<7->{(x+4)(x+1) &= 0 & \\ x&= \set{-4, -1}}
+\end{flalign*}
+\end{frame}
+
+\begin{frame}[t]{Rational Equations}
+We found answers of $-4$ and $-1$. Looking at the original equation $$\dfrac{4}{x} + \dfrac{2}{x+3} = -3$$ both of these numbers are in the domain, so neither is an extraneous solution. I'll leave it to you to plug them in and verify that they yield true statements.
+\end{frame}
+
+\begin{frame}[t]{Next Steps}
+\begin{itemize}
+\item Post questions in the Lesson 6 Forum, if you have them
+\item Complete Assignment \#3
+\item Begin Module \#4
+\begin{itemize}
+\item Read 1.7 and 1.8
+\item Watch Video Lesson \#7
+\end{itemize}
+\end{itemize}
+
+\vfill
+
+Thanks for watching!
+\end{frame}
+
+\end{document}
