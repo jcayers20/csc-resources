@@ -112,31 +112,17 @@ There are two common situations when a number won't ``work" in an expression: \v
 \begin{frame}[t]{Finding Domain}
 Find the domain of the expression $3x^2 + 5x - 2$.
 
-\pause No matter what value of $x$ we plug in, we aren't going to have a zero in the denominator, and there won't be an even root of a negative number. \pause So the domain is all real numbers. \pause We write this as $\R$, or $(-\infty, \infty)$ in interval notation. \vspace{18pt}
-
-\pause
+\pause \vfill
 
 Find the domain of the expression $\sqrt{x+5}$.
-
-\pause
-
-Here, we run into trouble if the expression under the root is less than $0$. \pause So if $x + 5 \geq 0$, then the expression is defined. \pause Thus, the domain is $x \geq -5$, which as an interval is $[-5, \infty)$.
 \end{frame}
 
 \begin{frame}[t]{Finding Domain}
 Find the domain of the expression $\dfrac{3}{4x + 1}$
 
-\pause
-
-We run into trouble if the denominator is zero. So as long as $4x + 1 \neq 0$, the expression will be defined. \pause Thus, the domain is $x \neq -\dfrac14$. As an interval, we write this as $\fp{-\infty, -\dfrac14} \cup \fp{-\dfrac14, \infty}$. \vspace{18pt}
-
-\pause
+\pause \vfill
 
 Find the domain of the expression $\dfrac{\sqrt{x-5}}{x-6}$
-
-\pause
-
-On top, our restriction is $x \geq 5$, and and on bottom our restriction is $x \neq 6$ (why?). \pause So our domain is $x \geq 5, x\neq 6$, or $[5, 6) \cup (6, \infty)$.
 \end{frame}
 
 \begin{frame}[t]{Simplifying Rational Expressions}
@@ -147,32 +133,14 @@ To simplify a rational expression, we factor each expression if possible and can
 \pause
 
 Simplify $\dfrac{x^3 + 64}{x^2 - 4x + 16}$
-
-\pause
-
-\begin{flalign*}
-\dfrac{x^3 + 64}{x^2 - 4x + 16} &= \dfrac{(x + 4)\fp{x^2 - 4x + 16}}{x^2 - 4x + 16} &\\
-&= x+4 &
-\end{flalign*}
-
-\pause
-
-There is no domain restriction here, as the denominator will always be positive.
 \end{frame}
 
 \begin{frame}[t]{Simplifying Rational Expressions}
 Simplify $\dfrac{4x+12}{x^2 - 3x - 18}$
 
-\pause
+\pause \vfill
 
-\begin{flalign*}
-\dfrac{4x+12}{x^2 - 3x - 18} &= \dfrac{4\fp{x+3}}{(x-6)(x+3)} & \\
-&= \dfrac{4}{x-6} & x \in \fp{-\infty, -3} \cup \fp{-3, 6} \cup \fp{6, \infty} &
-\end{flalign*}
-
-\pause
-
-When thinking about domain restrictions, we look at the \textit{original expression}. In the original expression, the domain is $x \neq -3$, $x \neq 6$.
+Note that, when thinking about domain restrictions, we look at the \textit{original expression} rather than the simplified expression. In the original expression, the domain is $x \neq -3$, $x \neq 6$.
 
 \end{frame}
 
@@ -188,51 +156,28 @@ To divide rational expressions, multiply by the reciprocal of the denominator.
 
 \begin{frame}[t]{Operations with Rational Expressions}
 Simplify: $\dfrac{3}{x-1} - \dfrac{2}{x} + \dfrac{x+3}{x^2 - 1}$
-
-\begin{flalign*}
-\onslide<2->{\dfrac{3}{x-1} - \dfrac{2}{x} + \dfrac{x+3}{x^2 - 1} &= \dfrac{3}{x-1} - \dfrac{2}{x} + \dfrac{x+3}{(x+1)(x-1)} &} \\
-\onslide<3->{&= \dfrac{3x(x+1) - 2(x+1)(x-1) + (x+3)(x)}{x(x-1)(x+1)} \\ &x \neq 0, \pm 1}
-\end{flalign*}
-
-\onslide<4>{We could expand the numerator and the denominator, but this is not required.}
 \end{frame}
 
 \begin{frame}[t]{Operations with Rational Expressions}
 Simplify: $\dfrac{15x^2 + 5x}{x^3 - 3x^2 - 18x} \cdot \dfrac{x^2 - 2x - 15}{3x^2 - 8x - 3}$
 
-\begin{flalign*}
-\onslide<2->{\dfrac{15x^2 + 5x}{x^3 - 3x^2 - 18x} \cdot \dfrac{x^2 - 2x - 15}{3x^2 - 8x - 3} &= \dfrac{5x(3x + 1)}{x(x^2 - 3x - 18)} \cdot \dfrac{(x-5)(x+3)}{(3x+1)(x-3)} &} \\
-\onslide<3->{&= \dfrac{5x}{x(x-6)(x+3)}\cdot \dfrac{(x-5)(x+3)}{x-3} &} \\
-\onslide<4->{&= \dfrac{5(x-5)}{(x+6)(x-3)} & \\}
-\onslide<5>{&x\neq -\dfrac13, 0, -3,6}
-\end{flalign*}
-\end{frame}
+\pause \vfill
 
-\begin{frame}[t]{Operations with Rational Expressions}
 Simplify: $\dfrac{x^3 - 1}{x^2 - 1} \div \dfrac{x^2 + x + 1}{x^2 + 2x + 1}$
-
-\begin{flalign*}
-\onslide<2->{\dfrac{x^3 - 1}{x^2 - 1} \div \dfrac{x^2 + x + 1}{x^2 + 2x + 1} &= \dfrac{x^3 - 1}{x^2 - 1} \cdot \dfrac{x^2 + 2x + 1}{x^2 + x + 1} &} \\
-\onslide<3->{&= \dfrac{(x-1)(x^2 + x + 1)}{(x+1)(x-1)}\cdot \dfrac{(x+1)^2}{x^2 + x + 1} &} \\
-\onslide<4->{&=x+1, \; x \neq \pm 1}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Complex Fractions}
-A \textit{complex fraction} is a fraction in which the numerator and/or denominator.
+A \textit{complex fraction} is a fraction in which the numerator and/or denominator is a fraction.
 
-Complex fractions look ugly, but simplifying them is just dividing fractions.
+Complex fractions look ugly, but they're really just fraction division.
 \end{frame}
 
 \begin{frame}[t]{Complex Fractions}
+Simplify: $\dfrac{\frac{x + 3}{x - 4}}{\frac{x^2 - 8x + 16}{x^2 + x - 12}}$
+
+\pause \vfill
+
 Simplify: $\dfrac{\frac{1}{x+2} + 1}{\frac{x}{3} - 1}$
-
-\begin{flalign*}
-\onslide<2->{\dfrac{\frac{1}{x+2} + 1}{\frac{x}{3} - 1} &= \dfrac{\frac{1 + x + 2}{x + 2}}{\frac{x-3}{3}} &} \\
-\onslide<3->{&= \dfrac{x+3}{x+2}\div \dfrac{x-3}{3} &} \\
-\onslide<4->{&= \dfrac{x+3}{x+2}\cdot \dfrac{3}{x-3} &} \\
-\onslide<5>{&= \dfrac{3(x+3)}{(x+2)(x-3)} \; , \text{ }x \neq -2, 3}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{The Cartesian Coordinate Plate}
@@ -272,32 +217,19 @@ Midpoint = $\fp{\dfrac{x_1 + x_2}{2},\dfrac{y_1+y_2}{2}}$
 
 \begin{frame}[t]{Distance and Midpoint}
 Given the points $(-2, 1)$ and $(3, 4)$, find the distance and the midpoint.
-
-\pause
-
-\begin{flalign*}
-\onslide<2->{D &= \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} &} \\
-\onslide<3->{&= \sqrt{(3 - (-2))^2 + (4 - 1)^2} &} \\
-\onslide<4->{&= \sqrt{34} &} \\
-\end{flalign*}
-\vspace{-24pt}
-\begin{flalign*}
-\onslide<5->{M &= \fp{\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}} &} \\
-\onslide<6>{&=\fp{\dfrac{1}{2}, \dfrac{5}{2}}}
-\end{flalign*}
 \end{frame}
 
-\begin{frame}[t]{An Application}
+\begin{frame}[t]{Applications}
 Yahoo! Inc. had annual revenues of approximately \$5.0 billion in 2012 and \$4.6 billion in 2014. Without knowing any additional information, what would you estimate the 2013 revenue to have been?
 
-\pause
+\vfill \pause
 
-This is a midpoint problem. To estimate the 2013 revenue, we take the average of $5.0$ and $4.6$, which is \$4.8 billion.
+An airplane flies from Naples, Italy in a straight line to Naples, Italy, which is 120 kilometers north and 150 kilometers west of Naples. How far does the plane fly?
+
 \end{frame}
 
 \begin{frame}[t]{Next Steps}
 \begin{itemize}
-\item Post questions in the Lesson 3 Forum, if you have any
 \item Read 1.1 and 1.2
 \item Watch Video Lesson \#4
 \item Complete Assignment \#2
