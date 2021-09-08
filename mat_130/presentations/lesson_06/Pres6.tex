@@ -143,49 +143,24 @@ Example: $(-7 - 3i) - (-2 + 13i)$\pause$= -5 - 16i$
 
 \begin{frame}[t]{Multiplying Complex Numbers}
 Example: Find the product of $6 - 2i$ and $3 + 5i$.
-\begin{flalign*}
-\onslide<2->{(6-2i)(3+5i) &= 18 + 30i - 6i - 10i^2 & \\}
-\onslide<3->{&= 18 + 24i - 10(-1) & \\}
-\onslide<4->{&= 28 + 24i}
-\end{flalign*}
 
-\onslide<5->{Example: (-6-i)(-4-9i)}
-\begin{flalign*}
-\onslide<6->{(-6-i)(-4-9i) &= 24 + 54i + 4i + 9i^2 & \\}
-\onslide<7->{&= 24 - 9 + 58i & \\}
-\onslide<8>{&= 15 + 58i}
-\end{flalign*}
+\vfill \pause
+
+Example: $(-6-i)(-4-9i)$
 \end{frame}
 
 \begin{frame}[t]{Dividing Complex Numbers}
 Example: $\dfrac{5 + 8i}{2 - 3i}$
-\begin{flalign*}
-\onslide<2->{\dfrac{5+8i}{2-3i}\fp{\dfrac{2+3i}{2+3i}} &= \dfrac{10 + 15i + 16i + 24i^2}{4 + 6i - 6i - 9i^2} & \\}
-\onslide<3->{&= \dfrac{-14 + 31i}{13} & \\}
-\onslide<4>{&= -\dfrac{14}{13} + \dfrac{31}{13}i}
-\end{flalign*}
-\end{frame}
 
-\begin{frame}[t]{Dividing Complex Numbers}
-Example: $\dfrac{4-2i}{2+3i}$
-\begin{flalign*}
-\onslide<2->{\dfrac{4-2i}{2+3i}\fp{\dfrac{2-3i}{2-3i}} &= \dfrac{8 - 12i - 4i + 6i^2}{4 - 6i + 6i - 9i^2} & \\}
-\onslide<3->{&= \dfrac{2 - 16i}{13} & \\}
-\onslide<4>{&= \dfrac{2}{13} - \dfrac{14}{13}i}
-\end{flalign*}
+\vfill \pause
+
+Example: $\dfrac{4 - 2i}{2 + 3i}$
 \end{frame}
 
 \begin{frame}[t]{Complex Solutions of Quadratic Equations}
 Whenever $b^2 - 4ac < 0$, a quadratic equation has complex solutions.
 
 Example: Solve $8x^2 + 14x + 9 = 0$
-\begin{flalign*}
-\onslide<2->{x &= \dfrac{-b\pm\sqrt{b^2 - 4ac}}{2a} & \\}
-\onslide<3->{&= \dfrac{-(14)\pm\sqrt{(14)^2 - 4(8)(9)}}{2(8)} & \\}
-\onslide<4->{&= \dfrac{-14\pm\sqrt{-92}}{16} & \\}
-\onslide<5->{&= \dfrac{-14\pm 2i\sqrt{23}}{16} & \\}
-\onslide<6>{&= -\dfrac{7}{8}\pm \dfrac{\sqrt{23}}{8}i}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Polynomial Equations}
@@ -193,95 +168,33 @@ We can solve certain polynomial equations whose degree is 3 or higher using stra
 
 Example: Solve $9x^4 - 12x^2 = 0$
 
-\pause
+\vfill \pause
 
-First, factor out the GCD. Now, we have $3x^2\fp{x^2 - 4} = 0$
-
-\pause
-
-Now we can use the zero product property to solve for $x$: \\
-$3x^2 = 0 \Rightarrow x = 0$ \\
-$x^2 - 4 = 0 \Rightarrow x = \pm 2$
-
-\pause
-
-So the solutions to the equation are $x = \set{-2, 0, 2}$
-\end{frame}
-
-\begin{frame}[t]{Polynomial Equations}
 Solve $x^3 - 5x^2 - 2x + 10 = 0$
-
-\pause
-
-This time, we can factor by grouping. \\
-$x^2(x - 5) - 2(x-5) = 0 \Rightarrow \fp{x^2 - 2}(x-5) = 0$
-
-\pause
-
-From here, we again use the zero product property: \\
-$x^2 - 2 = 0 \Rightarrow x = \pm\sqrt{2}$ \\
-$x - 5 = 0 \Rightarrow x = 5$
-
-\pause
-
-So the solutions to the equation are $x = \set{-\sqrt{2}, \sqrt{2}, 5}$
-
 \end{frame}
 
 \begin{frame}[t]{Polynomial Equations}
 Solve: $9x^4 - 37x^2 + 4 = 0$
-
-\pause
-
-This involves the strategy of substitution, which we've not yet encountered. The idea is to write this equation in the form $au^2 + bu + c = 0$, because we can solve that.
-
-\pause
-
-Let $u = x^2$ so that $9u^2 - 37u + 4 = 0$.
-
-Factoring yields $(9u - 1)(u-4) = 0$ so $u = \set{\dfrac19, 4}$
-
-\pause
-
-Now, substitute $x^2$ back in for $u$: \\ $x^2 = \dfrac19 \Rightarrow x = \pm\dfrac13$ \\ $x^2 = 4 \Rightarrow x = \pm 2$
-
-So the solutions to the equation are $x = \set{-2, -\dfrac13, \dfrac13, 2}$
 \end{frame}
 
 \begin{frame}[t]{Radical Equations}
 The inverse of taking an $n$th root is taking an $n$th power. We can use this fact to solve radical equations.
 
-\onslide<2->{Example: Solve for $x$: $\sqrt{2x + 7} - x = 2$} 
-\begin{flalign*}
-\onslide<3->{\sqrt{2x + 7} &= x + 2 & \\}
-\onslide<4->{2x + 7 &= (x+2)^2 & \\}
-\onslide<5->{2x + 7 &= x^2 + 4x + 4 & \\}
-\onslide<6->{x^2 + 2x - 3 &= 0 & \\}
-\onslide<7>{(x + 3)(x - 1) &= 0 & \\
-x &= \set{-3, 1}}
-\end{flalign*}
-\end{frame}
+\pause
 
-\begin{frame}[t]{Radical Equations}
+Example: Solve for $x$: $\sqrt{2x + 7} - x = 2$
+
+\vfill \pause
+
 Solve $(x-5)^{2/3} = 16$
-\begin{flalign*}
-\onslide<2->{\sqrt[3]{(x-5)^2} &= 16 & \\}
-\onslide<3->{(x-5)^2 &= 4096 & \\}
-\onslide<4->{x - 5 &= 64 & \\ x &= 69}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Rational Equations}
 We solved rational equations before, but now we've seen quadratic equations so we can look at that type of rational equation.
 
-\onslide<2->{Example: Solve $\dfrac{4}{x} + \dfrac{2}{x+3} = -3$ and check your solution(s).}
-\begin{flalign*}
-\onslide<3->{x(x+3)\dfrac{4}{x} + x(x+3)\dfrac{2}{x+3} &= x(x+3)(-3) & \\}
-\onslide<4->{4(x+3) + 2x &= -3x^2 - 9x & \\}
-\onslide<5->{-3x^2 - 15x - 12 &= 0 & \\}
-\onslide<6->{-3(x^2 + 5x + 4) = 0 & \\}
-\onslide<7->{(x+4)(x+1) &= 0 & \\ x&= \set{-4, -1}}
-\end{flalign*}
+\pause
+
+Example: Solve $\dfrac{4}{x} + \dfrac{2}{x+3} = -3$ and check your solution(s).
 \end{frame}
 
 \begin{frame}[t]{Rational Equations}
@@ -290,7 +203,6 @@ We found answers of $-4$ and $-1$. Looking at the original equation $$\dfrac{4}{
 
 \begin{frame}[t]{Next Steps}
 \begin{itemize}
-\item Post questions in the Lesson 6 Forum, if you have them
 \item Complete Assignment \#3
 \item Begin Module \#4
 \begin{itemize}
