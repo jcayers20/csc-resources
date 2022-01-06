@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 6911251  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 1 A</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Evaluate&nbsp;\( x^2 + 7x - 3 \) when \( x = -3 \).<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>-15<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>-33<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>27<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>0<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911260  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 10 A</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Which of the following is the x-intercept of the equation \( 3x + 8y = 48 \)?<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\( (16, 0) \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (0, 16) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (6, 0) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (0, 6) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911261  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 11</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Solve for \( r \): \( V = \pi r^2 h \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( r = \sqrt{\dfrac{V}{\pi h}} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( r = \left( \dfrac{V}{\pi h} \right)^2 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( r = \sqrt{\pi hV} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( r = (\pi hV)^2 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911262  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 12 A</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Solve for \( x \): \( -2x^2 - 5x + 27 = 0 \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( x = \dfrac{-5 \pm \sqrt{241}}{4} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x = \dfrac{5 \pm \sqrt{241}}{4} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x = \dfrac{-5 \pm \sqrt{241}}{2} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x = \dfrac{5 \pm \sqrt{241}}{2} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911278  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 13</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Write the quotient in standard form: \( \dfrac{4 - 3i}{2 + 5i} \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\( -\dfrac{7}{29} - \dfrac{26}{29}i \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac13 + \dfrac{26}{21}i \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{23}{29} - \dfrac{26}{29}i \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{23}{21} + \dfrac{26}{21}i \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911280  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 14</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is NOT a solution to the equation \( x^3 - 7x^2 + 4x - 28 = 0 \)?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>-7<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>7<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>2i<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>-2i<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911284  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 15</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Solve for \( x \): \( -3(x - 5) \leq 4x - 13 \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x \leq 4 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( x \geq 4 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x \leq -4 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x \geq -4 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911286  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 16</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is the solution to the inequality \( x^2 + 4x - 45 &lt; 0 \)?</p>
+
+<p><iframe src="https://www.geogebra.org/material/iframe/id/czheqq7t/width/1200/height/800/border/888888/rc/true/ai/true/sdz/true/smb/false/stb/true/stbh/false/ld/true/sri/false/sfsb/true/szb/true" scrolling="no" style="border: 0px;" allowfullscreen="" width="1200" height="800"></iframe></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( (-9, 5) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( [-9, 5] \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[\( (-\infty, -9) \cup (5, \infty) \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (-\infty, -9] \cup [5, \infty) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911287  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 17</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Calculate the slope between \( (-2, 8) \) and \( (5, 20) \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( \dfrac{12}{7} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{7}{12} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{28}{3} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{3}{28} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911289  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 18</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Find the slope-intercept form of the equation of a line passing through \( (2, 4) \) and parallel to \( y = 3x - 4 \).<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( y - 4 = 3(x - 2) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( y = 3x - 2 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( y = 3x - 10 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( y - 2 = 3(x - 4) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911292  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 19</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Consider the function \( f \) given by \( f(x) = x^{2/3} \). Evaluate \( f(64) \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( 16 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 512 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{128}{3} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 64 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911252  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Simplify the expression \( (4a)^3\left(5a^2\right) \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( 320a^5 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 320a^6 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 20a^5 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 20a^6 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911294  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 20</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Find the zeros of the function \( f(x) = 5x^2 + 4x - 1 \).</p>
+
+ <p><iframe src="https://www.geogebra.org/material/iframe/id/czheqq7t/width/1200/height/800/border/888888/rc/true/ai/true/sdz/true/smb/false/stb/true/stbh/false/ld/true/sri/false/sfsb/true/szb/true" scrolling="no" style="border: 0px;" allowfullscreen="" width="1200" height="800"></iframe></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( \left\{ -1, \dfrac15 \right\} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \left\{ \dfrac15, 1 \right\} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \left\{ -1, -\dfrac15 \right\} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \left\{ -\dfrac15, 1 \right\} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911296  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 21</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following is NOT a relative extremum of the function \( g(x) = x^4 - 3x^2 + 2x + 4 \)?</p>
+
+ <p><iframe src="https://www.geogebra.org/material/iframe/id/czheqq7t/width/1200/height/800/border/888888/rc/true/ai/true/sdz/true/smb/false/stb/true/stbh/false/ld/true/sri/false/sfsb/true/szb/true" scrolling="no" style="border: 0px;" allowfullscreen="" width="1200" height="800"></iframe></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( (-2.38, 5.16) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (0.37, 4.35) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (1, 4) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (-1.37, -0.85) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911297  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 22</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Identify the transformation of the parent function described by the function \( h(x) = \sqrt{x + 5} + 2 \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Parent function \(f(x) = \sqrt{x} \), translated five units to the right and two units up<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>Parent function \(f(x) = \sqrt{x} \), translated five units to the left and two units up</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Parent function \(f(x) = \sqrt{x} \), translated five units to the right and two units down<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Parent function \(f(x) = \sqrt{x} \), translated five units to the left and two units down<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911302  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 23</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Let \( f(x) = 7x - 11 \) and \( g(x) = 4x + 19 \). Find \(f \circ g \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( f \circ g = 28x + 122 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><p>\( f \circ g = 28x - 25 \)<br></p><br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><p>\( f \circ g = 11x + 8 \)<br></p><br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><p>\( f \circ g = 28x^2 + 89x - 209 \)<br></p><br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911309  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 25</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>If \( f(x) = \sqrt{x - 5} \), then find \(f^{-1} (x) \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( f^{-1} (x) = x^2 + 5 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><p>\( f^{-1} (x) = x^2 - 5 \)<br></p><br></p>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p><p><br></p><br></p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( f^{-1} (x) = \sqrt{x + 5} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( f^{-1} (x) = \sqrt{x - 5} \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911253  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 3</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Find the product: \( (2x-3)^2 \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( 4x^2 - 12x + 9 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 4x^2 + 9 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 4x^2 + 12x + 9 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( 2x^2 - 6x + 9 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911254  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 4</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Factor completely: \( 27x^3 - 8 \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( (3x - 2)\left(9x^2 + 6x + 4\right) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[\( (3x + 2)(3x - 2) \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[\( (3x + 2)\left( 9x^2 - 6x + 4 \right) \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (3x - 2)^3 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911255  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 5</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Find the domain of the expression \( \sqrt{x - 8} \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>\( [8, \infty) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (-\infty, 8] \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( (-\infty, -8] \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( [-8, \infty) \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911256  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 6</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Perform the operation and simplify: \( \dfrac{x^2 - 7x + 12}{x^2 + 8x + 16} \cdot \dfrac{x+4}{x^2 - 9} \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\( \dfrac{x - 4}{(x+4)(x+3)} \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( \dfrac{x + 4}{(x-4)(x+3)}\)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[\( \dfrac{1}{(x+4)(x+3)} \)<br>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>\( x - 4 \)<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911257  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 7</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>To the nearest hundredth, find the distance between \( (-3.5, 6.1) \) and \( (2.8, 9.9) \).<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>7.36<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>3.86<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>16.02<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>8.41<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911258  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 8</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Test the equation \( y = |x| - 4 \) for symmetry about both axes.</p>
+
+<p><iframe src="https://www.geogebra.org/material/iframe/id/czheqq7t/width/1200/height/800/border/888888/rc/true/ai/true/sdz/true/smb/false/stb/true/stbh/false/ld/true/sri/false/sfsb/true/szb/true" scrolling="no" style="border: 0px;" allowfullscreen="" width="1200" height="800"></iframe></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Symmetric about the x-axis<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Symmetric about the y-axis<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Symmetric about both the x-axis and the y-axis<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Symmetric about neither the x-axis nor the y-axis<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911259  -->
+  <question type="multichoiceset">
+    <name>
+      <text>Question 9</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Solve for \( x \): \( \dfrac{x}{4} - 5 = \dfrac{x}{5} + 6 \)<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>220<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>240<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>180<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>200<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 6911306  -->
+  <question type="truefalse">
+    <name>
+      <text>Question 24</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Based on the Horizontal Line Test, the function \( f(x) = (x - 3)^2 \) has an inverse.</p>
+
+ <p><iframe src="https://www.geogebra.org/material/iframe/id/czheqq7t/width/1200/height/800/border/888888/rc/true/ai/true/sdz/true/smb/false/stb/true/stbh/false/ld/true/sri/false/sfsb/true/szb/true" scrolling="no" style="border: 0px;" allowfullscreen="" width="1200" height="800"></iframe></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>
