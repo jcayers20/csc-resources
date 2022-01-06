@@ -109,33 +109,10 @@ Quotient: $\fp{\dfrac{f}{g}}(x) = \dfrac{f(x)}{g(x)} \; \text{ provided } g(x) \
 
 \begin{frame}[t]{Operations with Functions}
 Suppose that $f(x) = x^2 + 6x + 5$ and $g(x) = x^2 - 4x - 21$. Find $(f + g)(x)$ and $(g - f)(x)$.
-\begin{flalign*}
-\onslide<2->{(f+g)(x) &= f(x) + g(x) & \\}
-\onslide<3->{&= \fp{x^2 + 6x + 5} + \fp{x^2 - 4x - 21} & \\}
-\onslide<4->{&= 2x^2 + 2x - 16}
-\end{flalign*}
-
-\begin{flalign*}
-\onslide<5->{(g-f)(x) &= g(x) - f(x) & \\}
-\onslide<6->{&= \fp{x^2 - 4x - 21} - \fp{x^2 + 6x + 5} & \\}
-\onslide<7>{&= -10x - 26}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Operations with Functions}
 Suppose that $f(x) = x^2 - 1$ and $g(x) = x - 1$. Find $(fg)(x)$ and $\fp{\dfrac{f}{g}}(x)$.
-\begin{flalign*}
-\onslide<2->{(fg)(x) &= f(x)\cdot g(x) & \\}
-\onslide<3->{&= \fp{x^2 - 1}\fp{x - 1} & \\}
-\onslide<4->{&= x^3 - x^2 - x + 1}
-\end{flalign*}
-
-\begin{flalign*}
-\onslide<5->{\fp{\dfrac{f}{g}}(x) &= \dfrac{f(x)}{g(x)} & \\}
-\onslide<6->{&= \dfrac{x^2 - 1}{x - 1} & \\}
-\onslide<7->{&= \dfrac{(x+1)(x-1)}{x-1)} & \\}
-\onslide<8>{&= x + 1; \; \text{ } x \neq 1}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Composing Functions}
@@ -150,35 +127,10 @@ The \textit{composition} of the function $f$ with the function $g$ is \vspace{-8
 
 \begin{frame}[t]{Composing Functions}
 Suppose that $f(x) = 2x + 5$ and $g(x) = 4x^2 + 1$. Find $f\circ g$ and $g\circ f$
-\begin{flalign*}
-\onslide<2->{f\circ g &= f\fb{g(x)} & \\}
-\onslide<3->{&= f\fb{4x^2 + 1} & \\}
-\onslide<4->{&= 2\fp{4x^2 + 1} + 5 & \\}
-\onslide<5->{&= 8x^2 + 7}
-\end{flalign*}
-\begin{flalign*}
-\onslide<6->{g\circ f &= g\fb{f(x)} & \\}
-\onslide<7->{&= g\fb{2x+5} & \\}
-\onslide<8->{&= 4\fp{2x+5}^2 + 1 & \\}
-\onslide<9->{&= 4\fp{4x^2 + 20x + 25} + 1 & \\}
-\onslide<10>{&= 16x^2 + 80x + 101}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Composing Functions}
 Suppose that $f(x) = \sqrt{x-2}$ and $g(x) = x^2 + 2$. Find $f\circ g$ and $g\circ f$.
-\begin{flalign*}
-\onslide<2->{f\circ g &= f\fb{g(x)} & \\}
-\onslide<3->{&= f\fb{x^2 + 2} & \\}
-\onslide<4->{&= \sqrt{x^2 + 2 - 2} & \\}
-\onslide<5->{&= \sqrt{x^2} = x}
-\end{flalign*} 
-\begin{flalign*}
-\onslide<6->{g\circ f &= g\fb{f(x)} & \\}
-\onslide<7->{&= g\fb{\sqrt{x-2}} & \\}
-\onslide<8->{&= \fp{\sqrt{x-2}}^2 + 2 & \\}
-\onslide<9>{&= x-2+2 = x}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{An Application}
@@ -188,71 +140,12 @@ The number $N$ of bacteria in a refrigerated food is given by $$N(T) = 8T^2 - 14
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[t]{An Application}
-(a) Find and interpret $N \circ T$.
-
-\pause
-
-Let's start by interpreting the meaning of this composition. This involves looking at the input (domain) and output (range) of each function.
-
-\pause
-
-We know that $N \circ T = N\fb{T(t)}$. Starting with the inner function, $T(t)$: \pause \\
-The \textit{input}, $t$, is the time since the food was removed from the refrigerator. \\
-The \textit{output}, $T(t)$, is the temperature of the food after $t$ hours.
-
-\pause
-
-Now, moving to the outer function, $N\fb{T(t)}$: \pause \\
-The \textit{input}, $T(t)$ is the temperature of the food after $t$ hours. \\
-The \textit{output}, $N\fb{T(t)}$, is the number of bacteria at that temperature.
-\end{frame}
-
-\begin{frame}[t]{An Application}
-Putting it all together: \\ \pause
-The initial input is a time in hours, and the final output is a number of bacteria.
-
-\pause
-
-The function $N\circ T$ represents the number of bacteria present $t$ hours after the food was removed from the refrigerator.
-
-\pause
-
-We can now find $N\circ T$: \pause
-\begin{flalign*}
-N\circ T &= N\fb{T(t)} & \\
-&= N\fb{2t + 2} & \\
-&= 8\fp{2t+2}^2 - 14\fp{2t+2} + 200 & \\
-&= 8\fp{4t^2 + 8t + 4} - 28t - 28 + 200 & \\
-&= 32t^2 + 36t + 204
-\end{flalign*}
-\end{frame}
-
-\begin{frame}[t]{An Application}
-(b) Find the time when the bacteria count reaches 1000.
-
-\pause
-
-The variables are time and bacteria count, so we need to use the function $N \circ T$. We want to know when the \textit{output} reaches 1000.
-\pause
-\begin{flalign*}
-1000 &= 32t^2 + 36t + 204 & \\
-32t^2 + 36t - 796 &= 0 &
-\end{flalign*}
-\pause
-I trust you could solve that using the Quadratic Formula if you had to, but we'll let Wolfram|Alpha do the work for us here.
-
-\pause
-
-The solutions given are $t \approx 4.4566$ and $t \approx -5.5816$; a negative time makes no sense, so we conclude that there will be 1000 bacteria after about $4.4566$ hr.
-\end{frame}
-
 \begin{frame}[t]{Inverse Functions}
 We saw earlier that $f\circ g$ and $g\circ f$ might come out to the same answer, and they might not.
 
 \pause
 
-It turns out that functions for which $f\circ g$ and $g\circ f$ are special - they are called \textit{inverses} of one another. \vspace{12pt}
+It turns out that functions for which $f\circ g = x$ and $g\circ f = x$ are special - they are called \textit{inverses} of one another. \vspace{12pt}
 
 \pause
 
@@ -278,17 +171,6 @@ It is important to remember that $f^{-1}$ represents the inverse of $f$, not its
 \begin{frame}[t]{Verifying Inverse Functions Algebraically}
 Verify that $f(x) = \dfrac{x-4}{7}$ and $g(x) = 7x + 4$ are inverses of each other.
 
-\onslide<2->{To verify this, we need to confirm that $f\circ g = g\circ f = x}$.
-\begin{flalign*}
-\onslide<3->{f\fb{g(x)} &= f\fp{7x+4} & \\}
-\onslide<4->{&= \dfrac{\fp{7x+4}-4}{7} & \\}
-\onslide<5->{&= \dfrac{7x}{7}=x}
-\end{flalign*}
-\begin{flalign*}
-\onslide<6->{g\fb{f(x)} &= g\fp{\dfrac{x-4}{7}} & \\}
-\onslide<7->{&= 7\fp{\dfrac{x-4}{7}} + 4 & \\}
-\onslide<8>{&= x-4+4 = x}
-\end{flalign*}
 \end{frame}
 
 \begin{frame}[t]{Verifying Inverse Functions Graphically}
@@ -331,42 +213,23 @@ Example: Determine whether each function has an inverse: (a) $f(x) = x^2$ and (b
 \begin{frame}[t]{Finding Inverse Functions Algebraically}
 Find the inverse function of $f(x) = \dfrac{5-3x}{x+2}$.
 
-\begin{flalign*}
-\onslide<2->{y &= \dfrac{5 - 3x}{x+2} & \text{(replace $f(x)$ with $y$)} & \\}
-\onslide<3->{x &= \dfrac{5-3y}{y+2} & \text{(interchange $x$ and $y$)} & \\}
-\onslide<4->{x(y+2) &= 5 - 3y & \\}
-\onslide<5->{xy+2x &=5-3y & \\}
-\onslide<6->{xy+3y&=5-2x & \\}
-\onslide<7->{y(x+3)&=5-2x & \\}
-\onslide<8->{f^{-1} &= \dfrac{5-2x}{x+3} & \text{(solve for $y$, replace $y$ with $f^{-1}$)}}
-\end{flalign*}
-\end{frame}
+\pause \vfill
 
-\begin{frame}[t]{Finding Inverse Functions Algebraically}
-Find the inverse function of $f(x) = \sqrt[3]{10 + x}$
-
-\begin{flalign*}
-\onslide<2->{y &= \sqrt[3]{10 + x} & \text{(replace $f(x)$ with $y$)} & \\}
-\onslide<3->{x &= \sqrt[3]{10 + y} & \text{(interchange $x$ and $y$)} & \\}
-\onslide<4->{x^3 &= 10 + y & \\}
-\onslide<5->{f^{-1} &= x^3 - 10 & \text{(solve for $y$, replace $y$ with $f^{-1}$)}}
-\end{flalign*}
+Find the inverse function of $f(x) = \sqrt[3]{10 + x}$.
 \end{frame}
 
 \begin{frame}[t]{Next Steps}
 \begin{itemize}
-\item Prepare for and Take Midterm 1
-\begin{itemize}
-\item Post questions in Lesson 10 Forum or Midterm 1 Forum, if you have any
-\item Work on study guide (NOT a graded assignment)
-\item Attend conference Monday night
-\item Midterm 1 is Wednesday
-\end{itemize}
 \item Complete Assignment \#5
-\item Begin Module \#7
+\item Prepare for and take Exam 1
 \begin{itemize}
-\item Read 3.1 and 3.2
-\item Watch Video Lesson \#11
+	\item Study guide posted on Moodle in Week 6 (NOT for a grade, but highly recommended)
+	\item Exam 1 - Wednesday of Week 7
+\end{itemize}
+\item Begin Module 7
+\begin{itemize}
+	\item Read 3-1 and 3-2
+	\item Watch Video Lesson \#11
 \end{itemize}
 \end{itemize}
 
