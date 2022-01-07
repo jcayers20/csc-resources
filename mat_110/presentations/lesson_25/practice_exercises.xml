@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 7608235  -->
+  <question type="essay">
+    <name>
+      <text>p. 435 #1</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The average depth of the Hudson Bay is 305 feet. Climatologists were interested in seeing if the warming and ice melt were affecting the water level. Fifty-five measurements over a period of randomly selected weeks yielded a sample mean of 306.2 feet. The population variance is known to be 3.6. Can it be concluded at the 0.05 level of significance that the average depth has increased? Is there evidence of what caused this to happen?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <minwordlimit></minwordlimit>
+    <maxwordlimit></maxwordlimit>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><strong>Hypotheses:</strong> H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr" style="text-align: left;"><strong>Critical Value:</strong> z = <br></p><p dir="ltr" style="text-align: left;"><strong>Test Value:</strong> z = <br></p><p dir="ltr" style="text-align: left;"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr" style="text-align: left;"><strong>Summary:</strong><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608341  -->
+  <question type="essay">
+    <name>
+      <text>p. 436 #11</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">An obstetrician read that a newborn baby loses on average 7 ounces in the first two days of his or her life. He feels that in the hospital where he works, the average weight loss of a newborn baby is less than 7 ounces. A random sample of 32 newborn babies has a mean weight loss of 6.5 ounces. The population standard deviation is 1.8 ounces. Is there enough evidence at \( \alpha = 0.01 \) to support his claim?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <minwordlimit></minwordlimit>
+    <maxwordlimit></maxwordlimit>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><strong>Hypotheses: </strong>H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr" style="text-align: left;"><strong>Critical Value:</strong> z = <br></p><p dir="ltr" style="text-align: left;"><strong>Test Value: </strong>z =</p><p dir="ltr" style="text-align: left;"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr" style="text-align: left;"><strong>Summary:</strong><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608342  -->
+  <question type="essay">
+    <name>
+      <text>p. 436 #13</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">In a previous study conducted several years ago, a man owned on average 15 dress shirts. The standard deviation of the population is 3. A researcher wishes to see if the average has changed. He selected a random sample of 42 men and found that the average number of dress shirts that they owned was 13.8. At \( \alpha = 0.05 \), is there enough evidence to support the claim that the average has changed?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <minwordlimit></minwordlimit>
+    <maxwordlimit></maxwordlimit>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses: </strong>H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr"><strong>Critical Value:</strong> z = <br></p><p dir="ltr"><strong>Test Value: </strong>z =</p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr"><strong>Summary:</strong><br></p><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608343  -->
+  <question type="essay">
+    <name>
+      <text>p. 437 #19</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">A medical college dean read that the average number of applications a potential medical school student sends is 7.8. She thinks that the mean is higher. So she selects a random sample of 35 applicants and asks each how many medical schools they applied to. The mean of the sample is 8.7. The population standard deviation is 2.6. Test her claim at \( \alpha = 0.01 \) using the \( P \)-value method.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <minwordlimit></minwordlimit>
+    <maxwordlimit></maxwordlimit>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses: </strong>H_0:&nbsp;&nbsp; and H_1: <br></p><p dir="ltr"><strong>Critical Value:</strong> 0.01<br></p><p dir="ltr"><strong>P-Value:</strong><strong></strong></p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr"><strong>Summary:</strong><br></p><br></p>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text></text>
+    </responsetemplate>
+  </question>
+
+<!-- question: 7608344  -->
+  <question type="essay">
+    <name>
+      <text>p. 437 #21</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The average farm size in the United States is 444 acres. A random sample of 40 farms in Oregon indicated a mean size of 430 acres, and the population standard deviation is 52 acres. Can it be concluded that the average farm in Oregon differs from the national mean? Use the \( P \)-value method.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <minwordlimit></minwordlimit>
+    <maxwordlimit></maxwordlimit>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <filetypeslist></filetypeslist>
+    <graderinfo format="html">
+      <text></text>
+    </graderinfo>
+    <responsetemplate format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><p dir="ltr"><strong>Hypotheses: </strong>H_0:&nbsp;&nbsp; and H_1:&nbsp; <br></p><p dir="ltr"><strong></strong><strong>P-Value: </strong><br></p><p dir="ltr"><strong>Decision:</strong> (Reject / Do not reject) H_0.</p><p dir="ltr"><strong>Summary:</strong><br></p><br></p>]]></text>
+    </responsetemplate>
+  </question>
+
+</quiz>
